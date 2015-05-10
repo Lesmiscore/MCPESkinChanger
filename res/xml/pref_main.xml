@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceScreen
+		android:title="@string/changeableSkins">
+		<pref.StartPref
+			android:title="@string/selectSteve"
+			android:summary="@string/selectSteve_desc"
+			android:key="selectSteve"/>
+		<pref.StartPref
+			android:title="@string/selectZombie"
+			android:summary="@string/selectZombie_desc"
+			android:key="selectZombie"/>
+		<pref.StartPref
+			android:title="@string/selectZombiePigman"
+			android:summary="@string/selectZombiePigman_desc"
+			android:key="selectZombiePigman"/>
+		<pref.StartPref
+			android:title="@string/more"
+			android:enabled="false"/>
+	</PreferenceScreen>
+	<PreferenceScreen
+		android:title="@string/options">
+		<!--<CheckBoxPreference
+			android:title="@string/memRun"
+			android:summary="@string/memRun_desc"
+			android:key="runOnMemory"/>-->
+	</PreferenceScreen>
+	<pref.StartPref
+		android:title="@string/startChange"
+		android:key="startChange"/>
+	<pref.StartPref
+		android:title="@string/wantUpdate"
+		android:summary="@string/wantUpdate_desc"
+		android:key="wantUpdate"/>
+</PreferenceScreen>

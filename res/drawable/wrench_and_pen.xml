@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<item><!--wrench-->
+		<rotate
+	        android:fromDegrees="315"
+	        android:toDegrees="315"
+	        android:pivotX="65%"
+	        android:pivotY="55%"
+	        android:drawable="@android:drawable/ic_menu_manage" />
+	</item>
+	<item><!--pen-->
+		<rotate 
+	        android:fromDegrees="135"
+	        android:toDegrees="135"
+	        android:pivotX="35%"
+	        android:pivotY="55%"
+	        android:drawable="@android:drawable/ic_menu_edit" />
+	</item>
+</layer-list>

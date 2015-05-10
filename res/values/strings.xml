@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="hello">Hello World, MainActivity!</string>
-    <string name="app_name">MCPESkinChanger</string>
-
+    <string name="app_name">MCPE Skin Changer</string>
+	<string name="err_title">Error</string>
+	<string name="startChange">Start Changing</string>
+	<string name="optins">Options</string>
+	<string name="memRun">Execute changing on memory</string>
+	<string name="memRun_desc">If you enable this option, you can reduce the internal storage, but this is a reason of make a lag of other apps.</string>
+	<string name="localMode">Only using internal storage(Don\'t use external storage)</string>
+	<string name="localMode_desc"></string>
+	<string name="err_no_skins">Any Skins won\'t be changed.\nSelect more than one skin to change.</string>
+	<string name="wantUpdate">Want update? Tap here to open Google Play.</string>
+	<string name="wantUpdate_desc">Tap [Uninstall] (-> [Yes]) -> [Install] to update.\nYou can change skin using this app again.</string>
+	<string name="selectSteve">Select Steve\'s skin</string>
+	<string name="selectSteve_desc">It is main character in Minecraft.</string>
+	<string name="selectZombie">Select Zombie\'s skin</string>
+	<string name="selectZombie_desc">It is popluar enemy in Minecraft.</string>
+	<string name="selectZombiePigman">Select Zimbie Pigman\'s skin</string>
+	<string name="selectZombiePigman_desc">It is ... I don\'t know what to say...</string>
+	<string name="more">Want change skins more? I\'m working on it...</string>
+	<string name="changeableSkins">Select skin to change</string>
+	<string name="checking">Checking some...</string>
+	<string name="changing">Changing skins...</string>
+	<string-array name="checkName">
+		<item>Checking Minecraft PE is installed...</item>
+		<item>Checking Minecraft PE can be copied...</item>
+	</string-array>
+	<string-array name="errors">
+		<item>Minecraft PE is not installed. Install it and start this app again.</item>
+		<item>Minecraft PE\'s APK file cannot be copied.\nIf you are using Android 4.4(KitKat), update to 5.0(Lollipop) or downgrade the version.\nAndroid 4.4 doesn\'t allow to copy non-free app.</item>
+	</string-array>
+	<string-array name="modSteps">
+		<item>Copying a Minecraft PE APK to working folder...</item>
+		<item>Replacing target files...</item>
+		<item>Signing a changed APK...</item>
+		<item>Copying a changed APK to External Storage...</item>
+		<item>Complete! Install it and have fun!</item>
+	</string-array>
+	<string-array name="modSteps_mem">
+		<item>Copying a Minecraft PE APK on the memory...</item>
+		<item>Replacing target files...</item>
+		<item>Signing a changed APK...</item>
+		<item>Copying a changed APK to External Storage...</item>
+		<item>Complete! Install it and have fun!</item>
+	</string-array>
 </resources>

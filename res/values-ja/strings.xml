@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="err_title">エラー</string>
+	<string name="startChange">変更開始</string>
+	<string name="options">オプション</string>
+	
+	<string name="memRun">メモリ上で変換を実行</string>
+	<string name="memRun_desc">このオプションを有効にすると、内部領域の使用容量を節約できますが、メモリを多く使うため、他のアプリが重くなる原因になります。</string>
+	<string name="localMode">内部領域だけで操作を実行(外部領域を使用しない)</string>
+	<string name="localMode_desc"></string>
+	
+	<string name="err_no_skins">どのスキンも変更されません。\n変更したいスキンを1つ以上選択してください。</string>
+	<string name="wantUpdate">アップデートしたい? ここをタッチしてGoogle Playに移動します。</string>
+	<string name="wantUpdate_desc">[アンインストール] (-> [はい]) -> [インストール]の順番でタッチするとアップデートできます。\nスキン変更は何度でもできます。</string>
+	<string name="selectSteve">Steve(スティーブ)のスキンを変更</string>
+	<string name="selectSteve_desc">これは、Minecraft内の主人公です。(つまり君)</string>
+	<string name="selectZombie">ゾンビのスキンを変更</string>
+	<string name="selectZombie_desc">ウーとか鳴くあの敵。分かるよね?</string>
+	<string name="selectZombiePigman">ゾンビピッグマンのスキンを変更</string>
+	<string name="selectZombiePigman_desc">なんと言ったら良いんだろうか...分かんない</string>
+	<string name="more">え、これだけ? 追加までしばしお待ちを...</string>
+	<string name="changeableSkins">変更スキンを指定</string>
+	<string name="checking">いくつかの項目を調べています...</string>
+	<string name="changing">スキンを変更しています...</string>
+	<string-array name="checkName">
+		<item>Minecraft PEがインストールされているかを調べています...</item>
+		<item>Minecraft PEのAPKファイルがコピー可能かを調べています...</item>
+	</string-array>
+	<string-array name="errors">
+		<item>Minecraft PEがインストールされていません。インストールしてからもう一度起動して下さい。(BlockLauncherではダメです。)</item>
+		<item>Minecraft PEのAPKファイルをコピーできません。\nもし、Android 4.4(KitKat)を使っているなら、5.0(Lollipop)にアップデートするか、バージョンを下げて下さい。\nAndroid 4.4は有料アプリのコピーを禁止しているようです。</item>
+	</string-array>
+	<string-array name="modSteps">
+		<item>Minecraft PEのAPKを作業用フォルダにコピーしています...</item>
+		<item>APKファイルを加工しています...</item>
+		<item>加工したAPKファイルに署名しています...</item>
+		<item>署名したAPKファイルを外部ストレージにコピーしています...</item>
+		<item>完了!インストールしてお楽しみ下さい。</item>
+	</string-array>
+	<string-array name="modSteps_mem">
+		<item>Minecraft PEのAPKをメモリ上にコピーしています...</item>
+		<item>APKファイルを加工しています...</item>
+		<item>加工したAPKファイルに署名しています...</item>
+		<item>署名したAPKファイルを外部ストレージにコピーしています...</item>
+		<item>完了!インストールしてお楽しみ下さい。</item>
+	</string-array>
+</resources>
