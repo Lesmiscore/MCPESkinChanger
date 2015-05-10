@@ -2,7 +2,7 @@ package com.nao20010128nao.MCPE.SC;
 import android.app.*;
 import android.os.*;
 import java.util.*;
-import android.util.*;
+import android.util.Log;
 import java.lang.ref.*;
 import android.widget.*;
 import android.content.*;
@@ -11,10 +11,11 @@ import android.net.*;
 import java.io.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 import com.nao20010128nao.SpoofBrowser.classes.*;
+import android.support.v4.util.*;
 
 public class ModificateActivity extends Activity{
 	public static WeakReference<ModificateActivity> instance=new WeakReference<>(null);
-	public static Map<String,URI> skins=new HashMap<>();
+	public static Map<String,URI> skins=new ArrayMap<>();
 	volatile transient static int totalMax,totalVal,compMax,compVal;
 	volatile transient static String log="";
 	volatile transient static boolean ready=false;

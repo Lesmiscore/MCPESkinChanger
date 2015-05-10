@@ -7,7 +7,7 @@ import android.widget.*;
 import android.preference.*;
 import com.nao20010128nao.ToolBox.*;
 import com.nao20010128nao.ToolBox.HandledPreference.*;
-import android.util.*;
+import android.util.Log;
 import java.util.*;
 import android.content.*;
 import android.content.pm.*;

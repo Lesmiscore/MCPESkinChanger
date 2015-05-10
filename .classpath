@@ -5,4 +5,19 @@
 <classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 <classpathentry kind="output" path="bin/classes"/>
 <classpathentry kind="lib" path="/storage/emulated/0/BTSync/libnao20010128nao.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/bcprov-jdk16-1.46.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/commons-cli-1.1.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/junit-3.8.1.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/kellinwood-logging-android-1.4.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/kellinwood-logging-lib-1.1.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/kellinwood-logging-log4j-1.0.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/log4j-1.2.14.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/sc-light-jdk15on-1.47.0.2.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/scpkix-jdk15on-1.47.0.2.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/scprov-jdk15on-1.47.0.2.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/zipio-lib-1.8.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/zipsigner-cmdline-1.2.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/zipsigner-lib-1.17.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/zipsigner-lib-optional-1.16.jar"/>
+<classpathentry kind="lib" path="/storage/emulated/0/.aide/android-support-v4.jar"/>
 </classpath>
