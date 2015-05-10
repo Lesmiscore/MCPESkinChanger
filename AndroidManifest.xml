@@ -38,10 +38,5 @@
             android:name="com.nao20010128nao.MCPE.SC.ModificationService"
 			android:exported="false">
 		</service>
-		<service
-			android:label="@string/app_name"
-            android:name="com.nao20010128nao.MCPE.SC.ModificationService_mem"
-			android:exported="false">
-		</service>
     </application>
 </manifest>
