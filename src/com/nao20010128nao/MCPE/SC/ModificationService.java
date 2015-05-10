@@ -98,7 +98,7 @@ public class ModificationService extends ServiceX{
 						}
 						InputStream source=zis;
 						if(skins.containsKey(ze.getName())){
-							source=getContentResolver().openInputStream(Uri.parse(skins.get(ze.getName()).toString()));
+							source=tryOpen(skins.get(ze.getName()).toString());
 						}
 						zos.putNextEntry(ze);
 						while(true){
@@ -174,6 +174,15 @@ public class ModificationService extends ServiceX{
 					ModificateActivity.instance.get().doLast();
 				stopForeground(true);
 				return null;
+			}
+			public InputStream tryOpen(String uri) throws IOException{
+				if(uri.startsWith("content://")){
+					return getContentResolver().openInputStream(Uri.parse(uri));
+				}else if(uri.startsWith("/")){
+					return new FileInputStream(uri);
+				}else{
+					return URI.create(uri).toURL().openConnection().getInputStream();
+				}
 			}
 			public boolean isStopped(java.lang.Process pr){
 				try{
