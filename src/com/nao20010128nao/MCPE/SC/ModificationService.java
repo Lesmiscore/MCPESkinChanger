@@ -184,24 +184,6 @@ public class ModificationService extends ServiceX{
 					return URI.create(uri).toURL().openConnection().getInputStream();
 				}
 			}
-			public boolean isStopped(java.lang.Process pr){
-				try{
-					pr.exitValue();
-					return true;
-				}catch(Throwable e){
-					return false;
-				}
-			}
-			public Object getAppData(final String name_) throws IOException{
-				final ZipInputStream zis=new ZipInputStream(new FileInputStream(getPackageResourcePath()));
-				final ZipEntry ze;
-				while(!(ze=zis.getNextEntry()).getName().equals(name_));
-				return new Object(){
-					public final String name=name_;
-					public final InputStream stream=new BufferedInputStream(zis);
-					public final long size=ze.getSize();
-				};
-			}
 			public void onProgressUpdate(Integer[] a){
 				n.setLatestEventInfo(ModificationService.this,getResources().getString(R.string.app_name),getResources().getStringArray(R.array.modSteps)[a[0]],PendingIntent.getActivity(ModificationService.this,-1,new Intent().setClass(ModificationService.this,ModificateActivity.class).putExtra("mode","noservice"),Intent.FLAG_ACTIVITY_CLEAR_TOP));
 				mNM.notify(100,n);

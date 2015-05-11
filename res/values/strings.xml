@@ -3,11 +3,13 @@
     <string name="app_name">MCPE Skin Changer</string>
 	<string name="err_title">Error</string>
 	<string name="startChange">Start Changing</string>
-	<string name="optins">Options</string>
+	
+	<string name="options">Options</string>
 	<string name="memRun">Execute changing on memory</string>
 	<string name="memRun_desc">If you enable this option, you can reduce the internal storage, but this is a reason of make a lag of other apps.</string>
 	<string name="localMode">Only using internal storage(Don\'t use external storage)</string>
 	<string name="localMode_desc"></string>
+	
 	<string name="err_no_skins">Any Skins won\'t be changed.\nSelect more than one skin to change.</string>
 	<string name="wantUpdate">Want update? Tap here to open Google Play.</string>
 	<string name="wantUpdate_desc">Tap [Uninstall] (-> [Yes]) -> [Install] to update.\nYou can change skin using this app again.</string>

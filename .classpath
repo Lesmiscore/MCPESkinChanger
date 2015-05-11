@@ -4,7 +4,6 @@
 <classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 <classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 <classpathentry kind="output" path="bin/classes"/>
-<classpathentry kind="lib" path="/storage/emulated/0/BTSync/libnao20010128nao.jar"/>
 <classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/bcprov-jdk16-1.46.jar"/>
 <classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/commons-cli-1.1.jar"/>
 <classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/junit-3.8.1.jar"/>
