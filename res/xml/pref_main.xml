@@ -16,6 +16,22 @@
 			android:summary="@string/selectZombiePigman_desc"
 			android:key="selectZombiePigman"/>
 		<pref.StartPref
+			android:title="@string/selectCow"
+			android:summary="@string/selectCow_desc"
+			android:key="selectCow"/>
+		<pref.StartPref
+			android:title="@string/selectCreeper"
+			android:summary="@string/selectCreeper_desc"
+			android:key="selectCreeper"/>
+		<pref.StartPref
+			android:title="@string/selectPig"
+			android:summary="@string/selectPig_desc"
+			android:key="selectPig"/>
+		<pref.StartPref
+			android:title="@string/selectSheep"
+			android:summary="@string/selectSheep_desc"
+			android:key="selectSheep"/>
+		<pref.StartPref
 			android:title="@string/more"
 			android:enabled="false"/>
 	</PreferenceScreen>
