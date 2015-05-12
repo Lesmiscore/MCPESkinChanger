@@ -37,11 +37,4 @@
 		<item>署名したAPKファイルを外部ストレージにコピーしています...</item>
 		<item>完了!インストールしてお楽しみ下さい。</item>
 	</string-array>
-	<string-array name="modSteps_mem">
-		<item>Minecraft PEのAPKをメモリ上にコピーしています...</item>
-		<item>APKファイルを加工しています...</item>
-		<item>加工したAPKファイルに署名しています...</item>
-		<item>署名したAPKファイルを外部ストレージにコピーしています...</item>
-		<item>完了!インストールしてお楽しみ下さい。</item>
-	</string-array>
 </resources>

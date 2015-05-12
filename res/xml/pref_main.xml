@@ -37,10 +37,6 @@
 	</PreferenceScreen>
 	<PreferenceScreen
 		android:title="@string/options">
-		<!--<CheckBoxPreference
-			android:title="@string/memRun"
-			android:summary="@string/memRun_desc"
-			android:key="runOnMemory"/>-->
 	</PreferenceScreen>
 	<pref.StartPref
 		android:title="@string/startChange"
