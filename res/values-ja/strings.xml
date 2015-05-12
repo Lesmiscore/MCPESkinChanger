@@ -18,6 +18,16 @@
 	<string name="selectZombie_desc">ウーとか鳴くあの敵。分かるよね?</string>
 	<string name="selectZombiePigman">ゾンビピッグマンのスキンを変更</string>
 	<string name="selectZombiePigman_desc">なんと言ったら良いんだろうか...分かんない</string>
+	
+	<string name="selectCow">牛のスキンを変更</string>
+	<string name="selectCow_desc">\"モーモー\"うるせえんだおい!!</string>
+	<string name="selectCreeper">クリーパーのスキンを変更</string>
+	<string name="selectCreeper_desc">え? どこ? あ ｼｭｰ 畜生め!</string>
+	<string name="selectPig">ブタのスキンを変更</string>
+	<string name="selectPig_desc">やったぁ! これはg...お宝だ!(おそらく嘘)</string>
+	<string name="selectSheep">羊のスキンを変更</string>
+	<string name="selectSheep_desc">メェー... ん? やったぜ! 羊だぁ!</string>
+	
 	<string name="more">え、これだけ? 追加までしばしお待ちを...</string>
 	<string name="changeableSkins">変更スキンを指定</string>
 	<string name="checking">いくつかの項目を調べています...</string>
