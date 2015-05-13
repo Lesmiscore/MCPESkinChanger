@@ -27,10 +27,58 @@
 			android:title="@string/selectPig"
 			android:summary="@string/selectPig_desc"
 			android:key="selectPig"/>
-		<pref.StartPref
+		<PreferenceScreen
 			android:title="@string/selectSheep"
-			android:summary="@string/selectSheep_desc"
-			android:key="selectSheep"/>
+			android:summary="@string/selectSheep_desc">
+			<pref.StartPref
+				android:title="@string/selectSheep0"
+				android:key="selectSheep0"/>
+			<pref.StartPref
+				android:title="@string/selectSheep1"
+				android:key="selectSheep1"/>
+			<pref.StartPref
+				android:title="@string/selectSheep2"
+				android:key="selectSheep2"/>
+			<pref.StartPref
+				android:title="@string/selectSheep3"
+				android:key="selectSheep3"/>
+			<pref.StartPref
+				android:title="@string/selectSheep4"
+				android:key="selectSheep4"/>
+			<pref.StartPref
+				android:title="@string/selectSheep5"
+				android:key="selectSheep5"/>
+			<pref.StartPref
+				android:title="@string/selectSheep6"
+				android:key="selectSheep6"/>
+			<pref.StartPref
+				android:title="@string/selectSheep7"
+				android:key="selectSheep7"/>
+			<pref.StartPref
+				android:title="@string/selectSheep8"
+				android:key="selectSheep8"/>
+			<pref.StartPref
+				android:title="@string/selectSheep9"
+				android:key="selectSheep9"/>
+			<pref.StartPref
+				android:title="@string/selectSheep10"
+				android:key="selectSheep10"/>
+			<pref.StartPref
+				android:title="@string/selectSheep11"
+				android:key="selectSheep11"/>
+			<pref.StartPref
+				android:title="@string/selectSheep12"
+				android:key="selectSheep12"/>
+			<pref.StartPref
+				android:title="@string/selectSheep13"
+				android:key="selectSheep13"/>
+			<pref.StartPref
+				android:title="@string/selectSheep14"
+				android:key="selectSheep14"/>
+			<pref.StartPref
+				android:title="@string/selectSheep15"
+				android:key="selectSheep15"/>
+		</PreferenceScreen>
 		<pref.StartPref
 			android:title="@string/more"
 			android:enabled="false"/>
