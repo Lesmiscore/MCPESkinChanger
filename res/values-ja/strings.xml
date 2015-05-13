@@ -28,6 +28,23 @@
 	<string name="selectSheep">羊のスキンを変更</string>
 	<string name="selectSheep_desc">メェー... ん? やったぜ! 羊だぁ!</string>
 	
+	<string name="selectSheep0">白い羊のスキンを選択</string>
+	<string name="selectSheep1">オレンジ色の羊のスキンを選択</string>
+	<string name="selectSheep2">明るい紫色の羊のスキンを選択</string>
+	<string name="selectSheep3">明るい青色の羊のスキンを選択</string>
+	<string name="selectSheep4">黄色の羊のスキンを選択</string>
+	<string name="selectSheep5">ライム色の羊のスキンを選択</string>
+	<string name="selectSheep6">ピンク色の羊のスキンを選択</string>
+	<string name="selectSheep7">暗いグレーの羊のスキンを選択</string>
+	<string name="selectSheep8">グレーの羊のスキンを選択</string>
+	<string name="selectSheep9">シアン色の羊のスキンを選択</string>
+	<string name="selectSheep10">紫色の羊のスキンを選択</string>
+	<string name="selectSheep11">青色の羊のスキンを選択</string>
+	<string name="selectSheep12">茶色の羊のスキンを選択</string>
+	<string name="selectSheep13">緑色の羊のスキンを選択</string>
+	<string name="selectSheep14">赤色の羊のスキンを選択</string>
+	<string name="selectSheep15">黒色の羊のスキンを選択</string>
+	
 	<string name="more">え、これだけ? 追加までしばしお待ちを...</string>
 	<string name="changeableSkins">変更スキンを指定</string>
 	<string name="checking">いくつかの項目を調べています...</string>
