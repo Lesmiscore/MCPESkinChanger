@@ -14,6 +14,8 @@ import android.net.*;
 import kellinwood.security.zipsigner.*;
 import kellinwood.security.zipsigner.optional.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
+import com.nao20010128nao.SpoofBrowser.classes.*;
+import android.content.pm.*;
 
 public class ModificationService extends ServiceX{
 	Map<String,URI> skins=ModificateActivity.skins;
@@ -57,7 +59,7 @@ public class ModificationService extends ServiceX{
 				try{
 					int tmp=0;
 					ModificateActivity.set(-1,-1,(int)new File(createPackageContext("com.mojang.minecraftpe",CONTEXT_IGNORE_SECURITY).getPackageCodePath()).length(),0,null);
-					is=new FileInputStream(createPackageContext("com.mojang.minecraftpe",CONTEXT_IGNORE_SECURITY).getPackageCodePath());
+					is=openAPK();
 					os=openFileOutput("vanilla.apk",MODE_MULTI_PROCESS|MODE_WORLD_READABLE);
 					byte[] buf=new byte[10000];
 					while(true){
@@ -144,9 +146,7 @@ public class ModificationService extends ServiceX{
 					int tmp=0;
 					ModificateActivity.set(-1,-1,(int)new File(getFilesDir(),"signed.apk").length(),0,null);
 					is=openFileInput("signed.apk");
-					File f=new File(Environment.getExternalStorageDirectory(),"games/com.mojang");
-					(f=new File(f,"skinchanger")).mkdirs();
-					os=new FileOutputStream(new File(f,"signed.apk"));
+					os=saveAPK();
 					byte[] buf=new byte[10000];
 					while(true){
 						int i=is.read(buf);
@@ -184,6 +184,15 @@ public class ModificationService extends ServiceX{
 					return URI.create(uri).toURL().openConnection().getInputStream();
 				}
 			}
+			public OutputStream trySave(String uri) throws IOException{
+				if(uri.startsWith("content://")){
+					return getContentResolver().openOutputStream(Uri.parse(uri));
+				}else if(uri.startsWith("/")){
+					return new FileOutputStream(uri);
+				}else{
+					return URI.create(uri).toURL().openConnection().getOutputStream();
+				}
+			}
 			public void onProgressUpdate(Integer[] a){
 				n.setLatestEventInfo(ModificationService.this,getResources().getString(R.string.app_name),getResources().getStringArray(R.array.modSteps)[a[0]],PendingIntent.getActivity(ModificationService.this,-1,new Intent().setClass(ModificationService.this,ModificateActivity.class).putExtra("mode","noservice"),Intent.FLAG_ACTIVITY_CLEAR_TOP));
 				mNM.notify(100,n);
@@ -196,6 +205,28 @@ public class ModificationService extends ServiceX{
 				while(zis.getNextEntry()!=null)
 					count++;
 				return count;
+			}
+			InputStream openAPK() throws IOException,PackageManager.NameNotFoundException{
+				switch(Tools.getSettings("input.mode",0,ModificationService.this)){
+					case 0://installed
+						return new FileInputStream(createPackageContext("com.mojang.minecraftpe",CONTEXT_IGNORE_SECURITY).getPackageCodePath());
+					case 1://select
+						return tryOpen(Tools.getSettings("input.where","",ModificationService.this));
+					default:
+						return null;
+				}
+			}
+			OutputStream saveAPK() throws IOException{
+				switch(Tools.getSettings("input.mode",0,ModificationService.this)){
+					case 0://installed
+						File f=new File(Environment.getExternalStorageDirectory(),"games/com.mojang");
+						(f=new File(f,"skinchanger")).mkdirs();
+						return new FileOutputStream(new File(f,"signed.apk"));
+					case 1://select
+						return trySave(Tools.getSettings("output.where","",ModificationService.this));
+					default:
+						return null;
+				}
 			}
 		}.execute();
 		return START_NOT_STICKY;
