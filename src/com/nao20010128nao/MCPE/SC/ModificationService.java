@@ -176,6 +176,7 @@ public class ModificationService extends ServiceX{
 				return null;
 			}
 			public InputStream tryOpen(String uri) throws IOException{
+				Log.d("dbg","tryOpen:"+uri);
 				if(uri.startsWith("content://")){
 					return getContentResolver().openInputStream(Uri.parse(uri));
 				}else if(uri.startsWith("/")){
@@ -185,6 +186,7 @@ public class ModificationService extends ServiceX{
 				}
 			}
 			public OutputStream trySave(String uri) throws IOException{
+				Log.d("dbg","trySave:"+uri);
 				if(uri.startsWith("content://")){
 					return getContentResolver().openOutputStream(Uri.parse(uri));
 				}else if(uri.startsWith("/")){

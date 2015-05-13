@@ -333,13 +333,13 @@ public class MainActivity extends PreferenceActivity{
 				break;
 			case 456:
 				if(resultCode==RESULT_OK)
-					Tools.setSettings("input.where",data.getStringExtra("apkPath"),this);
+					Tools.setSettings("input.where",data.getDataString(),this);
 				else if(Tools.getSettings("input.where",(String)null,this)==null)
 					Tools.setSettings("input.mode",0,this);
 				break;
 			case 789:
 				if(resultCode==RESULT_OK)
-					Tools.setSettings("output.where",data.getStringExtra("apkPath"),this);
+					Tools.setSettings("output.where",data.getDataString(),this);
 				else if(Tools.getSettings("output.where",(String)null,this)==null)
 					Tools.setSettings("output.mode",0,this);
 				break;
