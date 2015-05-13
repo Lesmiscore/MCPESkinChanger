@@ -4,8 +4,8 @@
 	<string name="startChange">変更開始</string>
 	<string name="options">オプション</string>
 	
-	<string name="deleteCache">Delete cache</string>
-	<string name="deletedCache">Deleted cache</string>
+	<string name="deleteCache">キャッシュを消去</string>
+	<string name="deletedCache">キャッシュを消去しました。</string>
 	
 	<string name="err_no_skins">どのスキンも変更されません。\n変更したいスキンを1つ以上選択してください。</string>
 	<string name="wantUpdate">アップデートしたい? ここをタッチしてGoogle Playに移動します。</string>
