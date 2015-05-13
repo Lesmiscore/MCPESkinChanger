@@ -5,10 +5,6 @@
 	<string name="startChange">Start Changing</string>
 	
 	<string name="options">Options</string>
-	<string name="memRun">Execute changing on memory</string>
-	<string name="memRun_desc">If you enable this option, you can reduce the internal storage, but this is a reason of make a lag of other apps.</string>
-	<string name="localMode">Only using internal storage(Don\'t use external storage)</string>
-	<string name="localMode_desc"></string>
 	<string name="deleteCache">Delete cache</string>
 	<string name="deletedCache">Deleted cache</string>
 	
