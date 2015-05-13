@@ -6,6 +6,8 @@
 	
 	<string name="deleteCache">キャッシュを消去</string>
 	<string name="deletedCache">キャッシュを消去しました。</string>
+	<string name="inputFrom">MCPEのAPKの読み込み元</string>
+	<string name="outputTo">MCPEのAPKの出力先</string>
 	
 	<string name="err_no_skins">どのスキンも変更されません。\n変更したいスキンを1つ以上選択してください。</string>
 	<string name="wantUpdate">アップデートしたい? ここをタッチしてGoogle Playに移動します。</string>
@@ -61,5 +63,13 @@
 		<item>加工したAPKファイルに署名しています...</item>
 		<item>署名したAPKファイルを外部ストレージにコピーしています...</item>
 		<item>完了!インストールしてお楽しみ下さい。</item>
+	</string-array>
+	<string-array name="inputList">
+		<item>インストールされたAPK</item>
+		<item>APKファイルを選択</item>
+	</string-array>
+	<string-array name="outputList">
+		<item>インストール</item>
+		<item>出力先を選択</item>
 	</string-array>
 </resources>
