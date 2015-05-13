@@ -9,6 +9,8 @@
 	<string name="memRun_desc">If you enable this option, you can reduce the internal storage, but this is a reason of make a lag of other apps.</string>
 	<string name="localMode">Only using internal storage(Don\'t use external storage)</string>
 	<string name="localMode_desc"></string>
+	<string name="deleteCache">Delete cache</string>
+	<string name="deletedCache">Deleted cache</string>
 	
 	<string name="err_no_skins">Any Skins won\'t be changed.\nSelect more than one skin to change.</string>
 	<string name="wantUpdate">Want update? Tap here to open Google Play.</string>

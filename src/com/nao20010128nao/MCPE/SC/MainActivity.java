@@ -15,6 +15,7 @@ import android.net.*;
 import java.lang.ref.*;
 import java.net.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
+import java.io.*;
 
 public class MainActivity extends PreferenceActivity{
 	public static WeakReference<MainActivity> instance=new WeakReference<>(null);
@@ -235,6 +236,15 @@ public class MainActivity extends PreferenceActivity{
 					intent.setType("image/png");
 					changeTmp="assets/images/mob/sheep_15.png";
 					startActivityForResult(intent, 123);
+				}
+			});
+		sH("deleteCache",new OnClickListener(){
+				public void onClick(String p1,String p2,String p3){
+					new File(Environment.getExternalStorageDirectory(),"games/com.mojang/minecraft/skinchanger").delete();
+					new File(getFilesDir(),"vanilla.apk").delete();
+					new File(getFilesDir(),"modded.apk").delete();
+					new File(getFilesDir(),"signed.apk").delete();
+					Toast.makeText(MainActivity.this,R.string.deletedCache,Toast.LENGTH_LONG).show();
 				}
 			});
     }

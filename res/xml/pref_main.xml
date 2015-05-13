@@ -90,6 +90,9 @@
 		android:title="@string/startChange"
 		android:key="startChange"/>
 	<pref.StartPref
+		android:title="@string/deleteCache"
+		android:key="deleteCache"/>
+	<pref.StartPref
 		android:title="@string/wantUpdate"
 		android:summary="@string/wantUpdate_desc"
 		android:key="wantUpdate"/>

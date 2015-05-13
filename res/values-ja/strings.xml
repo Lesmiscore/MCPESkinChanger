@@ -8,6 +8,8 @@
 	<string name="memRun_desc">このオプションを有効にすると、内部領域の使用容量を節約できますが、メモリを多く使うため、他のアプリが重くなる原因になります。</string>
 	<string name="localMode">内部領域だけで操作を実行(外部領域を使用しない)</string>
 	<string name="localMode_desc"></string>
+	<string name="deleteCache">Delete cache</string>
+	<string name="deletedCache">Deleted cache</string>
 	
 	<string name="err_no_skins">どのスキンも変更されません。\n変更したいスキンを1つ以上選択してください。</string>
 	<string name="wantUpdate">アップデートしたい? ここをタッチしてGoogle Playに移動します。</string>
