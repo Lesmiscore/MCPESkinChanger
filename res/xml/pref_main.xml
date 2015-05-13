@@ -85,6 +85,12 @@
 	</PreferenceScreen>
 	<PreferenceScreen
 		android:title="@string/options">
+		<pref.StartPref
+			android:title="@string/inputFrom"
+			android:key="inputFrom"/>
+		<pref.StartPref
+			android:title="@string/outputTo"
+			android:key="outputTo"/>
 	</PreferenceScreen>
 	<pref.StartPref
 		android:title="@string/startChange"

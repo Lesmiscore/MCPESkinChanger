@@ -16,6 +16,7 @@ import java.lang.ref.*;
 import java.net.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 import java.io.*;
+import com.nao20010128nao.SpoofBrowser.classes.*;
 
 public class MainActivity extends PreferenceActivity{
 	public static WeakReference<MainActivity> instance=new WeakReference<>(null);
@@ -247,6 +248,65 @@ public class MainActivity extends PreferenceActivity{
 					Toast.makeText(MainActivity.this,R.string.deletedCache,Toast.LENGTH_LONG).show();
 				}
 			});
+		sH("inputFrom",new OnClickListener(){
+				public void onClick(String p1,String p2,String p3){
+					final int revert=Tools.getSettings("input.mode",0,MainActivity.this);
+					new AlertDialog.Builder(MainActivity.this).
+						setTitle(R.string.inputFrom).
+						setSingleChoiceItems(R.array.inputList,revert,new DialogInterface.OnClickListener(){
+							public void onClick(DialogInterface di,int where){
+								Tools.setSettings("input.mode",where,MainActivity.this);
+							}
+						}).
+						setNegativeButton(android.R.string.cancel,new DialogInterface.OnClickListener(){
+							public void onClick(DialogInterface di,int where){
+								Tools.setSettings("input.mode",revert,MainActivity.this);
+							}
+						}).
+						setPositiveButton(android.R.string.ok,new DialogInterface.OnClickListener(){
+							public void onClick(DialogInterface di,int where){
+								switch(Tools.getSettings("input.mode",0,MainActivity.this)){
+									case 0://installed
+										startActivity(new Intent(MainActivity.this,SupportCheckerActivity.class));
+										break;
+									case 1://select
+										startActivityForResult(new Intent(Intent.ACTION_GET_CONTENT).setType("application/vnd.android.package-archive"),456);
+										break;
+								}
+							}
+						}).
+						show();
+				}
+			});
+		sH("outputTo",new OnClickListener(){
+				public void onClick(String p1,String p2,String p3){
+					final int revert=Tools.getSettings("output.mode",0,MainActivity.this);
+					new AlertDialog.Builder(MainActivity.this).
+						setTitle(R.string.outputTo).
+						setSingleChoiceItems(R.array.outputList,revert,new DialogInterface.OnClickListener(){
+							public void onClick(DialogInterface di,int where){
+								Tools.setSettings("output.mode",where,MainActivity.this);
+							}
+						}).
+						setNegativeButton(android.R.string.cancel,new DialogInterface.OnClickListener(){
+							public void onClick(DialogInterface di,int where){
+								Tools.setSettings("output.mode",revert,MainActivity.this);
+							}
+						}).
+						setPositiveButton(android.R.string.ok,new DialogInterface.OnClickListener(){
+							public void onClick(DialogInterface di,int where){
+								switch(Tools.getSettings("output.mode",0,MainActivity.this)){
+									case 0://install
+										break;
+									case 1://select
+										startActivityForResult(new Intent(Intent.ACTION_CREATE_DOCUMENT).setType("application/vnd.android.package-archive"),789);
+										break;
+								}
+							}
+						}).
+						show();
+				}
+			});
     }
 	void sH(Preference pref,HandledPreference.OnClickListener handler){
 		if(!(pref instanceof HandledPreference))return;
@@ -270,6 +330,18 @@ public class MainActivity extends PreferenceActivity{
 					}
 				}
 				changeTmp=null;
+				break;
+			case 456:
+				if(resultCode==RESULT_OK)
+					Tools.setSettings("input.where",data.getStringExtra("apkPath"),this);
+				else if(Tools.getSettings("input.where",(String)null,this)==null)
+					Tools.setSettings("input.mode",0,this);
+				break;
+			case 789:
+				if(resultCode==RESULT_OK)
+					Tools.setSettings("output.where",data.getStringExtra("apkPath"),this);
+				else if(Tools.getSettings("output.where",(String)null,this)==null)
+					Tools.setSettings("output.mode",0,this);
 				break;
 		}
 	}

@@ -7,6 +7,8 @@
 	<string name="options">Options</string>
 	<string name="deleteCache">Delete cache</string>
 	<string name="deletedCache">Deleted cache</string>
+	<string name="inputFrom">Load the MCPE APK from</string>
+	<string name="outputTo">Save modded MCPE APK to</string>
 	
 	<string name="err_no_skins">Any Skins won\'t be changed.\nSelect more than one skin to change.</string>
 	<string name="wantUpdate">Want update? Tap here to open Google Play.</string>
@@ -62,5 +64,13 @@
 		<item>Signing a changed APK...</item>
 		<item>Copying a changed APK to External Storage...</item>
 		<item>Complete! Install it and have fun!</item>
+	</string-array>
+	<string-array name="inputList">
+		<item>Installed APK</item>
+		<item>Select APK file</item>
+	</string-array>
+	<string-array name="outputList">
+		<item>Install</item>
+		<item>Select output at</item>
 	</string-array>
 </resources>
