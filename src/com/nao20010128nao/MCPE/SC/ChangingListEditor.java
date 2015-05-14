@@ -26,7 +26,7 @@ public class ChangingListEditor extends ListActivity
 				new AlertDialog.Builder(ChangingListEditor.this).
 					setTitle(R.string.confirm).
 					setMessage(getResources().getString(R.string.changeDeleteConfirm).replace("@KEY@",key)).
-					setPositiveButton(android.R.string.yes,new DialogInterface.OnClickListener(){
+					setPositiveButton(R.string.delete,new DialogInterface.OnClickListener(){
 						public void onClick(DialogInterface di,int w){
 							ModificateActivity.skins.remove(key);
 							getListView().setAdapter(new InternalListAdapter());
@@ -40,7 +40,7 @@ public class ChangingListEditor extends ListActivity
 							startActivityForResult(intent, 123);
 						}
 					}).
-					setNegativeButton(android.R.string.no,new DialogInterface.OnClickListener(){
+					setNegativeButton(android.R.string.cancel,new DialogInterface.OnClickListener(){
 						public void onClick(DialogInterface di,int w){}
 					}).
 					show();
