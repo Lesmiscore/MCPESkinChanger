@@ -8,6 +8,12 @@
 	<string name="deletedCache">キャッシュを消去しました。</string>
 	<string name="inputFrom">MCPEのAPKの読み込み元</string>
 	<string name="outputTo">MCPEのAPKの出力先</string>
+	<string name="changeDeleteConfirm">"@KEY@に対して、何をしますか?"</string>
+	<string name="confirm">確認</string>
+	<string name="chgList">変更ファイルを確認</string>
+	<string name="nodata">変更ファイルはありません</string>
+	<string name="select">選択</string>
+	<string name="delete">削除</string>
 	
 	<string name="err_no_skins">どのスキンも変更されません。\n変更したいスキンを1つ以上選択してください。</string>
 	<string name="wantUpdate">アップデートしたい? ここをタッチしてGoogle Playに移動します。</string>
