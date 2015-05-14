@@ -12,6 +12,7 @@
 	<string name="changeDeleteConfirm">Do you want to delete @KEY@?</string>
 	<string name="confirm">Confirm</string>
 	<string name="chgList">Check the chage files</string>
+	<string name="nodata">No change files.</string>
 	
 	<string name="err_no_skins">Any Skins won\'t be changed.\nSelect more than one skin to change.</string>
 	<string name="wantUpdate">Want update? Tap here to open Google Play.</string>
