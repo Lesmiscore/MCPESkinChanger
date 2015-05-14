@@ -38,5 +38,10 @@
             android:name="com.nao20010128nao.MCPE.SC.ModificationService"
 			android:exported="false">
 		</service>
+		<activity
+            android:label="@string/chgList"
+            android:name="com.nao20010128nao.MCPE.SC.ChangingListEditor"
+			android:exported="false">
+        </activity>
     </application>
 </manifest>

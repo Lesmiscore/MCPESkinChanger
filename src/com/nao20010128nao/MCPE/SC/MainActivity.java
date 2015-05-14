@@ -307,6 +307,11 @@ public class MainActivity extends PreferenceActivity{
 						show();
 				}
 			});
+		sH("chgList",new OnClickListener(){
+				public void onClick(String p1,String p2,String p3){
+					startActivity(new Intent(MainActivity.this,ChangingListEditor.class));
+				}
+			});
     }
 	void sH(Preference pref,HandledPreference.OnClickListener handler){
 		if(!(pref instanceof HandledPreference))return;
