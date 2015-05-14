@@ -50,9 +50,16 @@ public class ModificateActivity extends Activity{
 		};//.execute();
 	}
 	public void doLast(){
-		Intent intent = new Intent(Intent.ACTION_DELETE, Uri.fromParts("package", "com.mojang.minecraftpe", null));
-		//intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		startActivityForResult(intent,100);
+		switch(Tools.getSettings("input.mode",0,this)){
+			case 0://installed
+				Intent intent = new Intent(Intent.ACTION_DELETE, Uri.fromParts("package", "com.mojang.minecraftpe", null));
+				//intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivityForResult(intent,100);
+				break;
+			case 1://select
+				finish();
+				System.exit(0);
+		}
 	}
 	public void doStart(){
 		startService(new Intent(this,ModificationService.class));
