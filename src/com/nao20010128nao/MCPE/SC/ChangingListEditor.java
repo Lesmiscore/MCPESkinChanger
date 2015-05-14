@@ -7,9 +7,11 @@ import java.util.*;
 import java.net.*;
 import android.view.*;
 import android.content.*;
+import android.util.*;
 
 public class ChangingListEditor extends ListActivity
 {
+	String changeTmp=null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -28,6 +30,14 @@ public class ChangingListEditor extends ListActivity
 						public void onClick(DialogInterface di,int w){
 							ModificateActivity.skins.remove(key);
 							getListView().setAdapter(new InternalListAdapter());
+						}
+					}).
+					setNeutralButton(R.string.select,new DialogInterface.OnClickListener(){
+						public void onClick(DialogInterface di,int w){
+							Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+							intent.setType("image/png");
+							changeTmp=key;
+							startActivityForResult(intent, 123);
 						}
 					}).
 					setNegativeButton(android.R.string.no,new DialogInterface.OnClickListener(){
@@ -60,5 +70,25 @@ public class ChangingListEditor extends ListActivity
 		for(Map.Entry<String,URI> o:ModificateActivity.skins.entrySet())
 			result.add(o);
 		return result;
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		// TODO: Implement this method
+		super.onActivityResult(requestCode, resultCode, data);
+		switch(requestCode){
+			case 123:
+				if(resultCode==RESULT_OK){
+					try{
+						ModificateActivity.skins.put(changeTmp, new URI(data.getDataString()));
+					}catch (URISyntaxException e){
+
+					}
+					getListView().setAdapter(new InternalListAdapter());
+				}
+				changeTmp=null;
+				break;
+		}
 	}
 }
