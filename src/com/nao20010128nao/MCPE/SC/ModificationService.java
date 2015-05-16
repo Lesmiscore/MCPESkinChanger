@@ -102,7 +102,7 @@ public class ModificationService extends ServiceX{
 						if(skins.containsKey(ze.getName())){
 							source=tryOpen(skins.get(ze.getName()).toString());
 						}
-						ze=new ZipEntry(ze.getName());
+						ze=new ZipEntry(ze.getName());//by private issue reporting
 						zos.putNextEntry(ze);
 						while(true){
 							int i=source.read(buf);
