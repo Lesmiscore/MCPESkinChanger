@@ -14,6 +14,10 @@ public class SupportCheckerActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState){
 		// TODO: Implement this method
 		super.onCreate(savedInstanceState);
+		if(RunOnceApplication.instance.isCheckedMCPE()){
+			finish();
+			return;
+		}
 		setContentView(R.layout.checker);
 		final ProgressBar progress=(ProgressBar)findViewById(R.id.pbProgress);
 		final TextView state=(TextView)findViewById(R.id.tvState);
@@ -103,6 +107,7 @@ public class SupportCheckerActivity extends Activity{
 						.show();
 					return null;
 				}
+				RunOnceApplication.instance.completeCheckMCPE();
 				return null;
 			}
 			public void onPostExecute(Void r){
