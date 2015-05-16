@@ -27,19 +27,22 @@
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
 			android:src="@android:drawable/ic_menu_delete"
-			android:layout_weight="1.0"/>
+			android:layout_weight="1.0"
+			android:id="@+id/delete"/>
 
 		<ImageView
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
 			android:src="@android:drawable/ic_menu_preferences"
-			android:layout_weight="1.0"/>
+			android:layout_weight="1.0"
+			android:id="@+id/reselect"/>
 
 		<ImageView
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
 			android:src="@android:drawable/ic_menu_gallery"
-			android:layout_weight="1.0"/>
+			android:layout_weight="1.0"
+			android:id="@+id/preview"/>
 
 	</LinearLayout>
 

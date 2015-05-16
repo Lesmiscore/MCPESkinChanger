@@ -44,5 +44,10 @@
             android:name="com.nao20010128nao.MCPE.SC.ChangingListEditor"
 			android:exported="false">
         </activity>
+		<activity
+            android:label="@string/chgList"
+            android:name="com.nao20010128nao.MCPE.SC.RecyclerViewChangingListEditor"
+			android:exported="false">
+        </activity>
     </application>
 </manifest>

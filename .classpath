@@ -18,5 +18,5 @@
 <classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/zipsigner-cmdline-1.2.jar"/>
 <classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/zipsigner-lib-1.17.jar"/>
 <classpathentry kind="lib" path="/storage/emulated/0/BTSync/AppProjects/MCPESkinChanger/libs/zipsigner-lib-optional-1.16.jar"/>
-<classpathentry kind="lib" path="/storage/emulated/0/.aide/android-support-v4.jar"/>
+
 </classpath>
