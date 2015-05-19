@@ -7,10 +7,13 @@ import java.util.*;
 import java.net.*;
 import android.view.*;
 import android.widget.*;
+import android.support.v7.widget.RecyclerView.*;
+import android.view.ViewGroup.*;
 
 public class RecyclerViewChangingListEditor extends Activity
 {
 	RecyclerView rv;
+	RVAdapter currentAdapter;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -18,16 +21,18 @@ public class RecyclerViewChangingListEditor extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.recyclerchglist);
 		rv=(RecyclerView)findViewById(R.id.receclerview);
-		rv.setAdapter(new RVAdapter());
+		rv.setLayoutManager(new LinearLayoutManager(this));
+		rv.setAdapter(currentAdapter=new RVAdapter());
 	}
 	private class RVAdapter extends RecyclerView.Adapter<RVHolder>
 	{
+		int obtained;
 		Map<String,URI> skins=ModificateActivity.skins;
 		List<Map.Entry<String,URI>> datas=new ArrayList<>();
 		{
 			for(Map.Entry<String,URI> obj:skins.entrySet())datas.add(obj);
 		}
-		List<RVHolder> holders;
+		List<RVHolder> holders=new ArrayList<>();
 		@Override
 		public int getItemCount()
 		{
@@ -44,17 +49,28 @@ public class RecyclerViewChangingListEditor extends Activity
 		public RecyclerViewChangingListEditor.RVHolder onCreateViewHolder(ViewGroup p1, int p2)
 		{
 			// TODO: Implement this method
-			RVHolder h=new RVHolder(null);
-			holders.add(h);
-			return h;
+			return obtain();
+		}
+		public void resetObtainedCount(){
+			obtained=0;
+		}
+		public RVHolder obtain(){
+			if(holders.size()>=obtained){
+				return holders.get(obtained++);
+			}else{
+				obtained++;
+				RVHolder h=new RVHolder(null);
+				holders.add(h);
+				return h;
+			}
 		}
 	}
 	private class RVHolder extends RecyclerView.ViewHolder{
-		CardView cv;
+		LinearLayout cv;
 		Map.Entry<String,URI> data;
 		TextView mimg,name;
 		ImageView delete,reselect,preview;
-		private RVHolder(Map.Entry<String,URI> data,CardView cv){
+		private RVHolder(Map.Entry<String,URI> data,LinearLayout cv){
 			super(cv);
 			this.cv=cv;
 			this.data=data;
@@ -65,7 +81,7 @@ public class RecyclerViewChangingListEditor extends Activity
 			preview=(ImageView)cv.findViewById(R.id.preview);
 		}
 		public RVHolder(Map.Entry<String,URI> data){
-			this(data,createCardView());
+			this(data,createView());
 		}
 		public void setData(Map.Entry<String,URI> data){
 			if(data==null)return;
@@ -74,10 +90,20 @@ public class RecyclerViewChangingListEditor extends Activity
 			cv.setTag(this.data=data);
 		}
 	}
-	CardView createCardView(){
-		CardView cv=new CardView(this);
-		LinearLayout content=(LinearLayout)getLayoutInflater().inflate(R.layout.carddata,null);
-		cv.addView(content);
-		return cv;
+	LinearLayout createView(){
+		return (LinearLayout)getLayoutInflater().inflate(R.layout.carddata,null);	
+	}
+	private class RVLayoutManager extends RecyclerView.LayoutManager
+	{
+		@Override
+		public RecyclerView.LayoutParams generateDefaultLayoutParams()
+		{
+			// TODO: Implement this method
+			return null;
+		}
+	}
+	public void doUpdate(){
+		currentAdapter.resetObtainedCount();
+		rv.setAdapter(currentAdapter);
 	}
 }
