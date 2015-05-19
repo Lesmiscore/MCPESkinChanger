@@ -309,7 +309,7 @@ public class MainActivity extends PreferenceActivity{
 			});
 		sH("chgList",new OnClickListener(){
 				public void onClick(String p1,String p2,String p3){
-					startActivity(new Intent(MainActivity.this,RecyclerViewChangingListEditor.class));
+					startActivity(new Intent(MainActivity.this,ChangingListEditor.class));
 				}
 			});
     }
