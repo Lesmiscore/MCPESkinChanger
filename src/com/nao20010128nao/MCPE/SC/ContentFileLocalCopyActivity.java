@@ -7,6 +7,7 @@ import java.io.*;
 import java.net.*;
 import android.net.*;
 import android.util.*;
+import android.content.*;
 
 public class ContentFileLocalCopyActivity extends Activity
 {
@@ -49,7 +50,8 @@ public class ContentFileLocalCopyActivity extends Activity
 				return false;
 			}
 			public void onPostExecute(Boolean a){
-				
+				setResult(RESULT_OK,new Intent().putExtra("result",a));
+				finish();
 			}
 		}.execute();
 	}
