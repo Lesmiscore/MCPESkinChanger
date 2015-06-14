@@ -49,5 +49,11 @@
             android:name="com.nao20010128nao.MCPE.SC.RecyclerViewChangingListEditor"
 			android:exported="false">
         </activity>
+		<activity
+            android:label="@string/wait"
+            android:name="com.nao20010128nao.MCPE.SC.ContentFileLocalCopyActivity"
+			android:theme="@style/AppDialog"
+			android:exported="false">
+        </activity>
     </application>
 </manifest>
