@@ -333,8 +333,18 @@ public class MainActivity extends PreferenceActivity{
 					}catch (URISyntaxException e){
 						
 					}
+					startActivityForResult(new Intent(this,ContentFileLocalCopyActivity.class).
+					setData(Uri.parse(data.getDataString())).
+					putExtra("path",changeTmp),1231);
 				}
 				changeTmp=null;
+				break;
+			case 1231:
+				try{
+					skins.put(data.getStringExtra("path"), new URI(data.getDataString()));
+				}catch (URISyntaxException e){
+
+				}
 				break;
 			case 456:
 				if(resultCode==RESULT_OK)
