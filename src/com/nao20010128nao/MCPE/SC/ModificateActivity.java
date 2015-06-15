@@ -15,7 +15,7 @@ import android.support.v4.util.*;
 
 public class ModificateActivity extends Activity{
 	public static WeakReference<ModificateActivity> instance=new WeakReference<>(null);
-	public static Map<String,URI> skins=new ArrayMap<>();
+	public static Map<String,URI> skins=new HashMap<>();
 	volatile transient static int totalMax,totalVal,compMax,compVal;
 	volatile transient static String log="";
 	volatile transient static boolean ready=false;
