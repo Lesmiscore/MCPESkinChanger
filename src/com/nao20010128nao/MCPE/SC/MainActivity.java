@@ -341,8 +341,8 @@ public class MainActivity extends PreferenceActivity{
 				break;
 			case 1231:
 				try{
-					skins.put(data.getStringExtra("path"), new URI(data.getDataString()));
-				}catch (URISyntaxException e){
+					skins.put(data.getStringExtra("path"), new File(data.getStringExtra("result")).toURI());
+				}catch (Throwable e){
 
 				}
 				break;

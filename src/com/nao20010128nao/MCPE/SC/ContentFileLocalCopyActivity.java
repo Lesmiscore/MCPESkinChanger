@@ -8,6 +8,7 @@ import java.net.*;
 import android.net.*;
 import android.util.*;
 import android.content.*;
+import java.util.*;
 
 public class ContentFileLocalCopyActivity extends Activity
 {
@@ -23,8 +24,8 @@ public class ContentFileLocalCopyActivity extends Activity
 		progress=(ProgressBar)findViewById(R.id.pbProgress);
 		state.setText(R.string.wait);
 		progress.setIndeterminate(true);
-		new AsyncTask<Void,Void,Boolean>(){
-			public Boolean doInBackground(Void... a){
+		new AsyncTask<Void,Void,String>(){
+			public String doInBackground(Void... a){
 				try{
 					String contentUri=getIntent().getDataString();
 					String saveFile=getIntent().getExtras().getString("dest",null);
@@ -43,14 +44,14 @@ public class ContentFileLocalCopyActivity extends Activity
 						}
 						to.write(buf,0,r);
 					}
-					return true;
+					return saveFile;
 				}catch(Throwable ex){
 					ex.printStackTrace();
 				}
-				return false;
+				return null;
 			}
-			public void onPostExecute(Boolean a){
-				setResult(RESULT_OK,new Intent().putExtra("result",a));
+			public void onPostExecute(String a){
+				setResult(RESULT_OK,getIntent().putExtra("result",a));
 				finish();
 			}
 		}.execute();
@@ -77,8 +78,9 @@ public class ContentFileLocalCopyActivity extends Activity
 	}
 	public String getRandomString(){
 		StringBuilder sb=new StringBuilder("cache_");
+		Random r=new Random();
 		for(int i=0;i<9;i++){
-			String append=String.format("%06x", MyRandom.staticInstance.next());
+			String append=String.format("%06x", r.nextInt());
 			sb.append(append);
 		}
 		Log.d("random",sb.toString());
