@@ -55,13 +55,14 @@ public class ChangingListEditor extends ListActivity
 		public View getView(int position, View convertView, ViewGroup parent)
 		{
 			// TODO: Implement this method
-			if(convertView!=null)return convertView;
-			convertView=getLayoutInflater().inflate(R.layout.chglistcomponent,null);
+			if(convertView==null)
+				convertView=getLayoutInflater().inflate(R.layout.chglistcomponent,null);
 			convertView.setTag(getItem(position));
 			TextView mimg=(TextView)convertView.findViewById(R.id.mobimgname);
 			mimg.setText(getItem(position).getKey());
 			TextView name=(TextView)convertView.findViewById(R.id.fname);
 			name.setText(getItem(position).getValue().toString());
+			Log.d("listAdapter","key:"+getItem(position).getKey()+"-value:"+getItem(position).getValue().toString());
 			return convertView;
 		}
 	}
