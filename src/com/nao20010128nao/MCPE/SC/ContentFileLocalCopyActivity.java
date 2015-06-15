@@ -80,7 +80,7 @@ public class ContentFileLocalCopyActivity extends Activity
 		StringBuilder sb=new StringBuilder("cache_");
 		Random r=new Random();
 		for(int i=0;i<9;i++){
-			String append=String.format("%06x", r.nextInt());
+			String append=String.format("%06x", r.nextInt()&0xff).substring(4);
 			sb.append(append);
 		}
 		Log.d("random",sb.toString());
