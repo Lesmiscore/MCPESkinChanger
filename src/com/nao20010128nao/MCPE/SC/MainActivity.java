@@ -33,6 +33,7 @@ public class MainActivity extends PreferenceActivity{
 			finish();
 		}else
 			startActivity(new Intent(this,SupportCheckerActivity.class));
+		startService(new Intent(this,CacheDeleteService.class));
        	addPreferencesFromResource(R.xml.pref_main);
 		sH("startChange",new OnClickListener(){
 			public void onClick(String p1,String p2,String p3){
@@ -347,10 +348,14 @@ public class MainActivity extends PreferenceActivity{
 				}
 				break;
 			case 456:
-				if(resultCode==RESULT_OK)
+				if(resultCode==RESULT_OK){
 					Tools.setSettings("input.where",data.getDataString(),this);
-				else if(Tools.getSettings("input.where",(String)null,this)==null)
+					startActivityForResult(data.setClass(this,ContentFileLocalCopyActivity.class).putExtra("dest",new File(getFilesDir(),"mcpeCopy.apk")+""),4561);
+				}else if(Tools.getSettings("input.where",(String)null,this)==null)
 					Tools.setSettings("input.mode",0,this);
+				break;
+			case 4561:
+				Tools.setSettings("input.where",data.getStringExtra("result"),this);
 				break;
 			case 789:
 				if(resultCode==RESULT_OK)

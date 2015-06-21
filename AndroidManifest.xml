@@ -55,5 +55,10 @@
 			android:theme="@style/AppDialog"
 			android:exported="false">
         </activity>
+		<service
+			android:label="@string/app_name"
+            android:name="com.nao20010128nao.MCPE.SC.CacheDeleteService"
+			android:exported="false">
+		</service>
     </application>
 </manifest>
