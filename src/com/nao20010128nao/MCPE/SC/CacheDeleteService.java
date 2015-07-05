@@ -23,7 +23,7 @@ public class CacheDeleteService extends Service
 			public Void doInBackground(Void... a){
 				File cacheDir=new File(getFilesDir(),"cache");
 				for(String f:cacheDir.list()){
-					File delFile=new File(f);
+					File delFile=new File(cacheDir,f);
 					Log.d("cacheDeleter",delFile+"");
 					delFile.delete();
 				}
