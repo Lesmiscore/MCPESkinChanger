@@ -17,16 +17,11 @@ import java.net.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 import java.io.*;
 import com.nao20010128nao.SpoofBrowser.classes.*;
-import android.util.*;
-import android.graphics.*;
-import java.lang.reflect.*;
-import java.util.zip.*;
 
 public class MainActivity extends PreferenceActivity{
 	public static WeakReference<MainActivity> instance=new WeakReference<>(null);
 	Map<String,URI> skins=ModificateActivity.skins;
 	String changeTmp=null;
-	Typeface font=null;
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -369,95 +364,5 @@ public class MainActivity extends PreferenceActivity{
 					Tools.setSettings("output.mode",0,this);
 				break;
 		}
-	}
-	
-/*
-	@Override
-	public View onCreateView(View parent, String name, Context context, AttributeSet attrs)
-	{
-		// TODO: Implement this method
-		View v = super.onCreateView(parent, name, context, attrs);
-		Log.d("viewInflate",v+"");
-		try{
-			Class vCl=v.getClass();
-			Method m=vCl.getDeclaredMethod("setTypeface",Typeface.class);
-			m.invoke(v,font);
-		}catch(Throwable e){
-			e.printStackTrace();
-		}
-		return v;
-	}
-
-	@Override
-	public View onCreateView(String name, Context context, AttributeSet attrs)
-	{
-		// TODO: Implement this method
-		View v = super.onCreateView(name, context, attrs);
-		Log.d("viewInflate",v+"");
-		try{
-			Class vCl=v.getClass();
-			Method m=vCl.getDeclaredMethod("setTypeface",Typeface.class);
-			m.invoke(v,font);
-		}catch(Throwable e){
-			e.printStackTrace();
-		}
-		return v;
-	}
-*/
-	void setFontAllViews(ViewGroup vg,Typeface tf){
-		for(int i=0;i<vg.getChildCount();i++){
-			View v=vg.getChildAt(i);
-			try{
-				Class vCl=v.getClass();
-				Log.d("viewClass",vCl.getName());
-				Method m=vCl.getDeclaredMethod("setTypeface",Typeface.class);
-				m.invoke(v,tf);
-			}catch(Throwable e){
-				e.printStackTrace();
-			}
-			if(v instanceof ViewGroup)
-				setFontAllViews((ViewGroup)v,tf);
-		}
-	}
-
-	@Override
-	protected void onStart()
-	{
-		// TODO: Implement this method
-		super.onStart();
-		setFontAllViews((ViewGroup)getWindow().getDecorView().findViewById(android.R.id.content),font);
-	}
-
-	@Override
-	protected void attachBaseContext(Context newBase)
-	{
-		// TODO: Implement this method
-		super.attachBaseContext(newBase);
-		InputStream is=null;
-		OutputStream os=null;
-		try{
-			is=newBase.getAssets().open("meiryo.ttc.zip");
-			ZipInputStream zis=new ZipInputStream(is);
-			zis.getNextEntry();
-			is=new BufferedInputStream(zis);
-			os=newBase.openFileOutput("meiryo.ttc",755);
-			byte[] buf=new byte[1000];
-			while(true){
-				int r=is.read(buf);
-				if(r<=0)
-					break;
-				os.write(buf,0,r);
-			}
-		}catch (IOException e){
-			
-		}finally{
-			try{
-				if (is != null)is.close();
-				if (os != null)os.close();
-			}catch (IOException e){
-				
-			}
-		}
-		font=Typeface.createFromFile(new File(newBase.getFilesDir(),"meiryo.ttc"));
 	}
 }
