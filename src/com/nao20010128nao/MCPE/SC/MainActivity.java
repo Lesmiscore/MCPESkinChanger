@@ -72,6 +72,22 @@ public class MainActivity extends PreferenceActivity{
 					startActivityForResult(intent, 123);
 				}
 			});
+		sH("selectSteveN",new OnClickListener(){
+				public void onClick(String p1,String p2,String p3){
+					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+					intent.setType("image/png");
+					changeTmp="assets/images/mob/steve.png";
+					startActivityForResult(intent, 123);
+				}
+			});
+		sH("selectAlexN",new OnClickListener(){
+				public void onClick(String p1,String p2,String p3){
+					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+					intent.setType("image/png");
+					changeTmp="assets/images/mob/alex.png";
+					startActivityForResult(intent, 123);
+				}
+			});
 		sH("selectZombie",new OnClickListener(){
 				public void onClick(String p1,String p2,String p3){
 					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
