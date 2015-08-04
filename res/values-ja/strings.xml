@@ -19,7 +19,9 @@
 	<string name="err_no_skins">どのスキンも変更されません。\n変更したいスキンを1つ以上選択してください。</string>
 	<string name="wantUpdate">アップデートしたい? ここをタッチしてGoogle Playに移動します。</string>
 	<string name="wantUpdate_desc">[アンインストール] (-> [はい]) -> [インストール]の順番でタッチするとアップデートできます。\nスキン変更は何度でもできます。</string>
-	<string name="selectSteve">Steve(スティーブ)のスキンを変更</string>
+	<string name="selectSteve">Steve(スティーブ)のスキンを変更(~0.10.5)</string>
+	<string name="selectSteveN">Steve(スティーブ)のスキンを変更(0.11.0~)</string>
+	<string name="selectAlexN">Alex(アレックス)のスキンを変更(0.11.0~)</string>
 	<string name="selectSteve_desc">これは、Minecraft内の主人公です。(つまり君)</string>
 	<string name="selectZombie">ゾンビのスキンを変更</string>
 	<string name="selectZombie_desc">ウーとか鳴くあの敵。分かるよね?</string>
