@@ -38,17 +38,6 @@ public class ModificationService extends ServiceX{
 		mNM.notify(100,n);
 		//Toast.makeText(this,"",Toast.LENGTH_LONG).show();
 		new AsyncTask<Void,Integer,Void>(){
-			AsyncTask<Void,Void,Void> inderminate=new AsyncTask<Void,Void,Void>(){
-				public Void doInBackground(Void... A){
-					while(!this.isCancelled()){
-						ModificateActivity.set(-1,-1,1,0,null);
-						Thread.sleep(500);
-						ModificateActivity.set(-1,-1,1,1,null);
-						Thread.sleep(500);
-					}
-					return null;
-				}
-			};
 			public Void doInBackground(Void[] p){
 				ModificateActivity.set(-1,-1,-1,-1,null);
 				ModificateActivity.set(getResources().getStringArray(R.array.modSteps).length-1,0,-1,-1,null);
@@ -140,7 +129,6 @@ public class ModificationService extends ServiceX{
 				}catch (Throwable e){
 					e.printStackTrace(System.out);
 				}
-				inderminate.cancel(true);
 				/*Step4*/
 				publishProgress(3);
 				try{
