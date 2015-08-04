@@ -5,26 +5,23 @@ import android.os.*;
 import java.io.*;
 import android.util.*;
 
-public class CacheDeleteService extends Service
-{
+public class CacheDeleteService extends Service {
 
 	@Override
-	public IBinder onBind(Intent p1)
-	{
+	public IBinder onBind(Intent p1) {
 		// TODO: Implement this method
 		return null;
 	}
 
 	@Override
-	public int onStartCommand(Intent intent, int flags, int startId)
-	{
+	public int onStartCommand(Intent intent, int flags, int startId) {
 		// TODO: Implement this method
 		new AsyncTask<Void,Void,Void>(){
-			public Void doInBackground(Void... a){
-				File cacheDir=new File(getFilesDir(),"cache");
-				for(String f:cacheDir.list()){
-					File delFile=new File(cacheDir,f);
-					Log.d("cacheDeleter",delFile+"");
+			public Void doInBackground(Void... a) {
+				File cacheDir=new File(getFilesDir(), "cache");
+				for (String f:cacheDir.list()) {
+					File delFile=new File(cacheDir, f);
+					Log.d("cacheDeleter", delFile + "");
 					delFile.delete();
 				}
 				return null;
