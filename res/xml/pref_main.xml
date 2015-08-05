@@ -12,7 +12,7 @@
 			android:key="selectSteveN"/>
 		<pref.StartPref
 			android:title="@string/selectAlexN"
-			android:key="selectSteveAlexN"/>
+			android:key="selectAlexN"/>
 		
 		<pref.StartPref
 			android:title="@string/selectZombie"
