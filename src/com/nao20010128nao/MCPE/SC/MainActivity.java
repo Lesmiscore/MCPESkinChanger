@@ -63,198 +63,30 @@ public class MainActivity extends PreferenceActivity {
 					}
 				}
 			});
-		sH("selectSteve", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/char.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSteveN", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/steve.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectAlexN", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/alex.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectZombie", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/zombie.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectZombiePigman", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/pigzombie.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectCow", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/cow.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectCreeper", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/creeper.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectPig", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/pig.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep0", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_0.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep1", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_1.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep2", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_2.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep3", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_3.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep4", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_4.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep5", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_5.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep6", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_6.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep7", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_7.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep8", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_8.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep9", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_9.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep10", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_10.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep11", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_11.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep12", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_12.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep13", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_13.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep14", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_14.png";
-					startActivityForResult(intent, 123);
-				}
-			});
-		sH("selectSheep15", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-					intent.setType("image/png");
-					changeTmp = "assets/images/mob/sheep_15.png";
-					startActivityForResult(intent, 123);
-				}
-			});
+		sH("selectSteve", createListenerForPerf("assets/images/mob/char.png"));
+		sH("selectSteveN", createListenerForPerf("assets/images/mob/steve.png"));
+		sH("selectAlexN", createListenerForPerf("assets/images/mob/alex.png"));
+		sH("selectZombie", createListenerForPerf("assets/images/mob/zombie.png"));
+		sH("selectZombiePigman", createListenerForPerf("assets/images/mob/pigzombie.png"));
+		sH("selectCow", createListenerForPerf("assets/images/mob/cow.png"));
+		sH("selectCreeper", createListenerForPerf("assets/images/mob/creeper.png"));
+		sH("selectPig", createListenerForPerf("assets/images/mob/pig.png"));
+		sH("selectSheep0", createListenerForPerf("assets/images/mob/sheep_0.png"));
+		sH("selectSheep1", createListenerForPerf("assets/images/mob/sheep_1.png"));
+		sH("selectSheep2", createListenerForPerf("assets/images/mob/sheep_2.png"));
+		sH("selectSheep3", createListenerForPerf("assets/images/mob/sheep_3.png"));
+		sH("selectSheep4", createListenerForPerf("assets/images/mob/sheep_4.png"));
+		sH("selectSheep5", createListenerForPerf("assets/images/mob/sheep_5.png"));
+		sH("selectSheep6", createListenerForPerf("assets/images/mob/sheep_6.png"));
+		sH("selectSheep7", createListenerForPerf("assets/images/mob/sheep_7.png"));
+		sH("selectSheep8", createListenerForPerf("assets/images/mob/sheep_8.png"));
+		sH("selectSheep9", createListenerForPerf("assets/images/mob/sheep_9.png"));
+		sH("selectSheep10", createListenerForPerf("assets/images/mob/sheep_10.png"));
+		sH("selectSheep11", createListenerForPerf("assets/images/mob/sheep_11.png"));
+		sH("selectSheep12", createListenerForPerf("assets/images/mob/sheep_12.png"));
+		sH("selectSheep13", createListenerForPerf("assets/images/mob/sheep_13.png"));
+		sH("selectSheep14", createListenerForPerf("assets/images/mob/sheep_14.png"));
+		sH("selectSheep15", createListenerForPerf("assets/images/mob/sheep_15.png"));
 		sH("deleteCache", new OnClickListener(){
 				public void onClick(String p1, String p2, String p3) {
 					new File(Environment.getExternalStorageDirectory(), "games/com.mojang/minecraft/skinchanger").delete();
@@ -335,6 +167,19 @@ public class MainActivity extends PreferenceActivity {
 	}
 	void sH(String pref, HandledPreference.OnClickListener handler) {
 		sH(findPreference(pref), handler);
+	}
+	void selectFileForSkin(String name){
+		Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+		intent.setType("image/png");
+		changeTmp = name;
+		startActivityForResult(intent, 123);
+	}
+	OnClickListener createListenerForPerf(final String name){
+		return new OnClickListener(){
+			public void onClick(String p1, String p2, String p3) {
+				selectFileForSkin(name);
+			}
+		};
 	}
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
