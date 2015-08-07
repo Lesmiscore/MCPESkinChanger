@@ -1,13 +1,13 @@
 package com.nao20010128nao.MCPE.SC;
 import android.app.*;
-import android.os.*;
-import java.util.*;
-import java.io.*;
 import android.content.*;
+import android.os.*;
 import android.util.*;
-import com.nao20010128nao.MC_PE.SkinChanger.*;
-import java.util.zip.*;
 import android.widget.*;
+import com.nao20010128nao.MC_PE.SkinChanger.*;
+import java.io.*;
+import java.util.*;
+import java.util.zip.*;
 
 public class APKVerifyActivity extends Activity {
 	volatile transient static int totalMax,totalVal,compMax,compVal;

@@ -1,17 +1,15 @@
 package com.nao20010128nao.MCPE.SC;
 import android.app.*;
-import android.os.*;
-import java.util.*;
-import android.util.Log;
-import java.lang.ref.*;
-import android.widget.*;
 import android.content.*;
-import java.net.*;
 import android.net.*;
-import java.io.*;
+import android.os.*;
+import android.widget.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 import com.nao20010128nao.SpoofBrowser.classes.*;
-import android.support.v4.util.*;
+import java.io.*;
+import java.lang.ref.*;
+import java.net.*;
+import java.util.*;
 
 public class ModificateActivity extends Activity {
 	public static WeakReference<ModificateActivity> instance=new WeakReference<>(null);

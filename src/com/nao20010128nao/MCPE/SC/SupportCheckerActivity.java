@@ -1,13 +1,12 @@
 package com.nao20010128nao.MCPE.SC;
 import android.app.*;
-import android.os.*;
-import android.content.pm.*;
 import android.content.*;
-import android.content.pm.PackageManager.*;
-import java.io.*;
+import android.content.pm.*;
+import android.os.*;
 import android.util.*;
 import android.widget.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
+import java.io.*;
 
 public class SupportCheckerActivity extends Activity {
 	@Override

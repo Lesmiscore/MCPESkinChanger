@@ -1,22 +1,21 @@
 package com.nao20010128nao.MCPE.SC;
 
 import android.app.*;
-import android.os.*;
-import android.view.*;
-import android.widget.*;
-import android.preference.*;
-import com.nao20010128nao.ToolBox.*;
-import com.nao20010128nao.ToolBox.HandledPreference.*;
-import android.util.Log;
-import java.util.*;
 import android.content.*;
 import android.content.pm.*;
 import android.net.*;
+import android.os.*;
+import android.preference.*;
+import android.util.*;
+import android.widget.*;
+import com.nao20010128nao.MC_PE.SkinChanger.*;
+import com.nao20010128nao.SpoofBrowser.classes.*;
+import com.nao20010128nao.ToolBox.*;
+import com.nao20010128nao.ToolBox.HandledPreference.*;
+import java.io.*;
 import java.lang.ref.*;
 import java.net.*;
-import com.nao20010128nao.MC_PE.SkinChanger.*;
-import java.io.*;
-import com.nao20010128nao.SpoofBrowser.classes.*;
+import java.util.*;
 
 public class MainActivity extends PreferenceActivity {
 	public static WeakReference<MainActivity> instance=new WeakReference<>(null);
