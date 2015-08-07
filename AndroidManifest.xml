@@ -22,37 +22,37 @@
             </intent-filter>
         </activity>
 		<activity
-            android:label="@string/checking"
-            android:name="com.nao20010128nao.MCPE.SC.SupportCheckerActivity"
+			android:label="@string/checking"
+                        android:name="com.nao20010128nao.MCPE.SC.SupportCheckerActivity"
 			android:exported="false"
 			android:theme="@style/AppDialog" >
         </activity>
 		<activity
-            android:label="@string/changing"
-            android:name="com.nao20010128nao.MCPE.SC.ModificateActivity"
+                        android:label="@string/changing"
+			android:name="com.nao20010128nao.MCPE.SC.ModificateActivity"
 			android:exported="false"
 			android:theme="@style/AppDialog"
 			android:launchMode="singleInstance">
         </activity>
 		<service
 			android:label="@string/app_name"
-            android:name="com.nao20010128nao.MCPE.SC.ModificationService"
+			android:name="com.nao20010128nao.MCPE.SC.ModificationService"
 			android:exported="false">
 		</service>
 		<activity
-            android:label="@string/chgList"
-            android:name="com.nao20010128nao.MCPE.SC.ChangingListEditor"
+			android:label="@string/chgList"
+			android:name="com.nao20010128nao.MCPE.SC.ChangingListEditor"
 			android:exported="false">
         </activity>
 		<activity
-            android:label="@string/wait"
-            android:name="com.nao20010128nao.MCPE.SC.ContentFileLocalCopyActivity"
+			android:label="@string/wait"
+			android:name="com.nao20010128nao.MCPE.SC.ContentFileLocalCopyActivity"
 			android:theme="@style/AppDialog"
 			android:exported="false">
         </activity>
 		<service
 			android:label="@string/app_name"
-            android:name="com.nao20010128nao.MCPE.SC.CacheDeleteService"
+			android:name="com.nao20010128nao.MCPE.SC.CacheDeleteService"
 			android:exported="false">
 		</service>
     </application>
