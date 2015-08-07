@@ -67,7 +67,7 @@ public class APKVerifyActivity extends Activity {
 						set(-1,++time,-1,time);
 					}
 				} catch (IOException e) {
-					
+					return new ReturnObject(false,false);
 				}finally{
 					try {
 						zis.close();
@@ -75,7 +75,14 @@ public class APKVerifyActivity extends Activity {
 						
 					}
 				}
-				return null;
+				if(check.size()==0){
+					return new ReturnObject(true,true);
+				}else{
+					return new ReturnObject(true,false);
+				}
+			}
+			public void onPostExecute(ReturnObject res){
+				setResult(res.success?RESULT_OK:RESULT_CANCELED,new Intent().putExtra("valid",res.valid));
 			}
 		}.execute();
 	}
