@@ -34,6 +34,12 @@
 			android:theme="@style/AppDialog"
 			android:launchMode="singleInstance">
         </activity>
+		<activity
+            android:label="@string/verifying"
+            android:name="com.nao20010128nao.MCPE.SC.APKVerifyActivity"
+			android:exported="false"
+			android:theme="@style/AppDialog">
+        </activity>
 		<service
 			android:label="@string/app_name"
             android:name="com.nao20010128nao.MCPE.SC.ModificationService"

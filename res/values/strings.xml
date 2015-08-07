@@ -59,6 +59,7 @@
 	<string name="changeableSkins">Select skin to change</string>
 	<string name="checking">Checking some...</string>
 	<string name="changing">Changing skins...</string>
+	<string name="verifying">Verifying the APK...</string>
 	<string-array name="checkName">
 		<item>Checking Minecraft PE is installed...</item>
 		<item>Checking Minecraft PE can be copied...</item>
