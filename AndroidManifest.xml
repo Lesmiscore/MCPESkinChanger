@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.nao20010128nao.MC_PE.SkinChanger"
-    android:versionCode="8"
-    android:versionName="0.3.0_2" >
+    android:versionCode="9"
+    android:versionName="0.3.1" >
     <uses-sdk 
         android:minSdkVersion="8" 
         android:targetSdkVersion="21" />
@@ -23,12 +23,12 @@
         </activity>
 		<activity
 			android:label="@string/checking"
-                        android:name="com.nao20010128nao.MCPE.SC.SupportCheckerActivity"
+			android:name="com.nao20010128nao.MCPE.SC.SupportCheckerActivity"
 			android:exported="false"
 			android:theme="@style/AppDialog" >
         </activity>
 		<activity
-                        android:label="@string/changing"
+            android:label="@string/changing"
 			android:name="com.nao20010128nao.MCPE.SC.ModificateActivity"
 			android:exported="false"
 			android:theme="@style/AppDialog"
