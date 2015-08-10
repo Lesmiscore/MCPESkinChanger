@@ -60,6 +60,12 @@
 	<string name="checking">Checking some...</string>
 	<string name="changing">Changing skins...</string>
 	<string name="verifying">Verifying the APK...</string>
+
+	<string name="check_internal">An error occured while checking the APK: Maybe an internal error, or called from out of the app.</string>
+	<string name="check_apk">An error occured while checking the APK: Some files are missing. It is caused by this app. Report it tp the developer!</string>
+	<string name="check_success">Generated APK has no problem!</string>
+
+
 	<string-array name="checkName">
 		<item>Checking Minecraft PE is installed...</item>
 		<item>Checking Minecraft PE can be copied...</item>
