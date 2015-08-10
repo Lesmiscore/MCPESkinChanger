@@ -62,7 +62,7 @@
 	<string name="verifying">Verifying the APK...</string>
 
 	<string name="check_internal">An error occured while checking the APK: Maybe an internal error, or called from out of the app.</string>
-	<string name="check_apk">An error occured while checking the APK: Some files are missing. It is caused by this app. Report it tp the developer!</string>
+	<string name="check_apk">An error occured while checking the APK: Some files are missing. It is caused by this app. Report it to the developer!</string>
 	<string name="check_success">Generated APK has no problem!</string>
 
 
