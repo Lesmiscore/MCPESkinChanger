@@ -71,6 +71,7 @@ public class ModificationService extends ServiceX {
 				ZipOutputStream zos=null;
 				ZipInputStream zis=null;
 				ModificateActivity.set(-1, 1, 0, 0, null);
+				Set<String> toCheck=new HashSet<>();
 				try {
 					ModificateActivity.set(-1, -1, countZipEntries("vanilla.apk"), 0, null);
 					is = openFileInput("vanilla.apk");
@@ -85,6 +86,7 @@ public class ModificationService extends ServiceX {
 							ModificateActivity.set(-1, -1, -1, ++tmp, null);
 							continue;//don't copy sign data
 						}
+						toCheck.add(ze.getName());
 						InputStream source=zis;
 						if (skins.containsKey(ze.getName())) {
 							source = tryOpen(skins.get(ze.getName()).toString());
@@ -155,9 +157,11 @@ public class ModificationService extends ServiceX {
 				/*Step5*/
 				publishProgress(4);
 				//ModificateActivity.set(-1,5,-1,-1,null);
-				if (ModificateActivity.instance.get() == null)
-					startActivity(new Intent(ModificationService.this, ModificateActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("mode", "last"));
-				else
+				if (ModificateActivity.instance.get() == null){
+					Intent data=new Intent(ModificationService.this, ModificateActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("mode", "last");
+					APKVerifyActivity.putIntoIntent(toCheck,data);
+					startActivity(data);
+				}else
 					ModificateActivity.instance.get().doLast();
 				stopForeground(true);
 				return null;
