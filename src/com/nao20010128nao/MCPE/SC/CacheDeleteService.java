@@ -22,6 +22,7 @@ public class CacheDeleteService extends Service {
 				for (String f:cacheDir.list()) {
 					File delFile=new File(cacheDir, f);
 					Log.d("cacheDeleter", delFile + "");
+					if(delFile==null)continue;
 					delFile.delete();
 				}
 				return null;
