@@ -48,6 +48,7 @@ public class ModificateActivity extends Activity {
 		};//.execute();
 	}
 	public void doLast(){
+		Set data=APKVerifyActivity.restoreFromIntent(getIntent());
 		startActivityForResult(getIntent().setClass(this,APKVerifyActivity.class),300);
 	}
 	public void successCheck() {

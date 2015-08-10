@@ -157,12 +157,16 @@ public class ModificationService extends ServiceX {
 				/*Step5*/
 				publishProgress(4);
 				//ModificateActivity.set(-1,5,-1,-1,null);
-				if (ModificateActivity.instance.get() == null){
-					Intent data=new Intent(ModificationService.this, ModificateActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("mode", "last");
-					APKVerifyActivity.putIntoIntent(toCheck,data);
-					startActivity(data);
-				}else
-					ModificateActivity.instance.get().doLast();
+				if (ModificateActivity.instance.get() != null){
+					ModificateActivity.instance.get().runOnUiThread(new Thread(){
+						public void run(){
+							ModificateActivity.instance.get().finish();
+						}
+					});
+				}
+				Intent data=new Intent(ModificationService.this, ModificateActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("mode", "last");
+				APKVerifyActivity.putIntoIntent(toCheck,data);
+				startActivity(data);
 				stopForeground(true);
 				return null;
 			}
