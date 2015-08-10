@@ -58,6 +58,11 @@
 	<string name="changeableSkins">変更スキンを指定</string>
 	<string name="checking">いくつかの項目を調べています...</string>
 	<string name="changing">スキンを変更しています...</string>
+
+	<string name="check_internal">APKのチェック中に問題が発生しました: 内部的なエラー、もしくは外部からの呼び出しの可能性があります。</string>
+	<string name="check_apk">APKのチェック中に問題が発生しました: APKの中身が足りないようです。開発者に連絡してください!</string>
+	<string name="check_success">生成されたAPKには何の異常もないようです。</string>
+
 	<string-array name="checkName">
 		<item>Minecraft PEがインストールされているかを調べています...</item>
 		<item>Minecraft PEのAPKファイルがコピー可能かを調べています...</item>
