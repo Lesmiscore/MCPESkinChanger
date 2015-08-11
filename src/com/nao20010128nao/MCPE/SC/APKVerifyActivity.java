@@ -25,10 +25,12 @@ public class APKVerifyActivity extends Activity {
 		final Set<String> data=restoreFromIntent(getIntent());
 		final String target=getIntent().getStringExtra("target");
 		if(data==null){
+			Log.d("apkCheck","data == null");
 			setResult(RESULT_CANCELED);
 			finish();
 			return;
 		}else if(data.size()==0){
+			Log.d("apkCheck","data.size() == 0");
 			setResult(RESULT_CANCELED);
 			finish();
 			return;
@@ -55,6 +57,7 @@ public class APKVerifyActivity extends Activity {
 				Set<String> check=new HashSet<>(data);//copy for safe
 				int count=countZipEntries(targetFile);
 				if(count==-1){
+					Log.d("apkCheck","count == -1");
 					return new ReturnObject(false,false);
 				}
 				set(count,0,count,0);
@@ -67,6 +70,7 @@ public class APKVerifyActivity extends Activity {
 						set(-1,++time,-1,time);
 					}
 				} catch (IOException e) {
+					e.printStackTrace();
 					return new ReturnObject(false,false);
 				}finally{
 					try {
@@ -76,13 +80,16 @@ public class APKVerifyActivity extends Activity {
 					}
 				}
 				if(check.size()==0){
+					Log.d("apkCheck","check.size() == 0");
 					return new ReturnObject(true,true);
 				}else{
+					Log.d("apkCheck","check.size() == 0");
 					return new ReturnObject(true,false);
 				}
 			}
 			public void onPostExecute(ReturnObject res){
 				setResult(res.success?RESULT_OK:RESULT_CANCELED,new Intent().putExtra("valid",res.valid));
+				finish();
 			}
 		}.execute();
 	}
