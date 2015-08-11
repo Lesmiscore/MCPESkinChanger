@@ -48,8 +48,7 @@ public class ModificateActivity extends Activity {
 		};//.execute();
 	}
 	public void doLast(){
-		Set data=APKVerifyActivity.restoreFromIntent(getIntent());
-		startActivityForResult(getIntent().setClass(this,APKVerifyActivity.class),300);
+		startActivityForResult(getIntent().setClass(this,APKVerifyActivity.class).putExtra("target",new File(getFilesDir(),"signed.apk").toString()),300);
 	}
 	public void successCheck() {
 		switch (Tools.getSettings("input.mode", 0, this)) {
