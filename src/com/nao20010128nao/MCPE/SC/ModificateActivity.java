@@ -10,6 +10,7 @@ import java.io.*;
 import java.lang.ref.*;
 import java.net.*;
 import java.util.*;
+import android.util.*;
 
 public class ModificateActivity extends Activity {
 	public static WeakReference<ModificateActivity> instance=new WeakReference<>(null);
@@ -115,6 +116,7 @@ public class ModificateActivity extends Activity {
 				finish();
 				break;
 			case 300:
+				Log.d("apkCheck","result="+resultCode+" data="+data);
 				if(resultCode==RESULT_OK){
 					if(data.getBooleanExtra("valid",false)){
 						successCheck();

@@ -83,11 +83,12 @@ public class APKVerifyActivity extends Activity {
 					Log.d("apkCheck","check.size() == 0");
 					return new ReturnObject(true,true);
 				}else{
-					Log.d("apkCheck","check.size() == 0");
+					Log.d("apkCheck","check.size() != 0");
 					return new ReturnObject(true,false);
 				}
 			}
 			public void onPostExecute(ReturnObject res){
+				Log.d("apkCheck","res: success="+res.success+" valid="+res.valid);
 				setResult(res.success?RESULT_OK:RESULT_CANCELED,new Intent().putExtra("valid",res.valid));
 				finish();
 			}
