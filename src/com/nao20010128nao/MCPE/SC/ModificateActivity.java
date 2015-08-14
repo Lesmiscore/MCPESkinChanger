@@ -10,7 +10,6 @@ import java.io.*;
 import java.lang.ref.*;
 import java.net.*;
 import java.util.*;
-import android.util.*;
 
 public class ModificateActivity extends Activity {
 	public static WeakReference<ModificateActivity> instance=new WeakReference<>(null);
@@ -48,9 +47,6 @@ public class ModificateActivity extends Activity {
 			}
 		};//.execute();
 	}
-	/*public void doLast(){
-		startActivityForResult(getIntent().setClass(this,APKVerifyActivity.class).putExtra("target",new File(getFilesDir(),"signed.apk").toString()),300);
-	}*/
 	public void doLast() {
 		switch (Tools.getSettings("input.mode", 0, this)) {
 			case 0://installed
@@ -115,18 +111,6 @@ public class ModificateActivity extends Activity {
 			case 200:
 				finish();
 				break;
-			/*case 300:
-				Log.d("apkCheck","result="+resultCode+" data="+data);
-				if(resultCode==RESULT_OK){
-					if(data.getBooleanExtra("valid",false)){
-						successCheck();
-					}else{
-						Toast.makeText(this,R.string.check_apk,Toast.LENGTH_LONG).show();
-					}
-				}else{
-					Toast.makeText(this,R.string.check_internal,Toast.LENGTH_LONG).show();
-				}
-				break;*/
 		}
 	}
 }
