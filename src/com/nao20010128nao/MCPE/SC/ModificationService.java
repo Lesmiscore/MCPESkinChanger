@@ -15,6 +15,7 @@ import java.util.*;
 import java.util.zip.*;
 import kellinwood.security.zipsigner.*;
 import android.widget.*;
+import java.lang.reflect.*;
 
 public class ModificationService extends ServiceX {
 	Map<String,URI> skins=ModificateActivity.skins;
@@ -157,6 +158,7 @@ public class ModificationService extends ServiceX {
 				}
 				/*Step5*/
 				publishProgress(4);
+				ModificateActivity.set(-1, -1, -1, 0, null);
 				try {
 					int count=countZipEntries(new ZipInputStream(openFileInput("signed.apk")));
 					if (count == -1) {
@@ -190,6 +192,18 @@ public class ModificationService extends ServiceX {
 				}else{
 					Log.d("apkCheck","toCheck.size() != 0");
 					Toast.makeText(ModificationService.this,R.string.check_apk,1).show();
+					Activity a=null;
+					if ((a=ModificateActivity.instance.get()) != null){
+						try {
+							findFinish().invoke(a);
+						} catch (InvocationTargetException e) {
+							
+						} catch (IllegalAccessException e) {
+							
+						} catch (IllegalArgumentException e) {
+							
+						}
+					}
 					return null;
 				}
 				/*Step6*/
@@ -272,6 +286,22 @@ public class ModificationService extends ServiceX {
 					default:
 						return null;
 				}
+			}
+			Method findFinish(){
+				Class actClas=Activity.class;
+				try{
+					return actClas.getDeclaredMethod("finishAndRemoveTask");
+				}catch(Throwable ex){
+					ex.printStackTrace();
+				}
+				try{
+					//finish() must be found
+					return actClas.getDeclaredMethod("finish");
+				}catch(Throwable ex){
+					//unreachable
+					ex.printStackTrace();
+				}
+				return null;//unreachable
 			}
 		}.execute();
 		return START_NOT_STICKY;
