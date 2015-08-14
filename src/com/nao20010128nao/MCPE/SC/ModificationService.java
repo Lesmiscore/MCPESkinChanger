@@ -195,15 +195,10 @@ public class ModificationService extends ServiceX {
 				/*Step6*/
 				publishProgress(5);
 				//ModificateActivity.set(-1,5,-1,-1,null);
-				if (ModificateActivity.instance.get() != null){
-					ModificateActivity.instance.get().runOnUiThread(new Thread(){
-							public void run(){
-								ModificateActivity.instance.get().finish();
-							}
-						});
-				}
-				Intent data=new Intent(ModificationService.this, ModificateActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("mode", "last");
-				startActivity(data);
+				if (ModificateActivity.instance.get() == null)
+					startActivity(new Intent(ModificationService.this, ModificateActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("mode", "last"));
+				else
+					ModificateActivity.instance.get().doLast();
 				stopForeground(true);
 				return null;
 			}
