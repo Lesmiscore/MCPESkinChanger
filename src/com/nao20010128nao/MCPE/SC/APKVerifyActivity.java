@@ -37,15 +37,22 @@ public class APKVerifyActivity extends Activity {
 		}
 		new AsyncTask<Void,Void,ReturnObject>(){
 			public int countZipEntries(File path) {
+				ZipInputStream zis=null;
 				try {
 					int count=0;
 					InputStream is=new FileInputStream(path);
-					ZipInputStream zis=new ZipInputStream(new BufferedInputStream(is));
+					zis=new ZipInputStream(new BufferedInputStream(is));
 					while (zis.getNextEntry() != null)
 						count++;
 					return count;
 				} catch (IOException e) {
 					return -1;
+				}finally{
+					try {
+						zis.close();
+					} catch (Throwable e) {
+						
+					}
 				}
 			}
 			public ReturnObject doInBackground(Void[] a){

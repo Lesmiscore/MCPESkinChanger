@@ -14,6 +14,7 @@ import java.net.*;
 import java.util.*;
 import java.util.zip.*;
 import kellinwood.security.zipsigner.*;
+import android.widget.*;
 
 public class ModificationService extends ServiceX {
 	Map<String,URI> skins=ModificateActivity.skins;
@@ -156,16 +157,52 @@ public class ModificationService extends ServiceX {
 				}
 				/*Step5*/
 				publishProgress(4);
+				try {
+					int count=countZipEntries(new ZipInputStream(openFileInput("signed.apk")));
+					if (count == -1) {
+						Log.d("apkCheck", "count == -1");
+					}
+					ModificateActivity.set(-1, -1, count, 0, null);
+				} catch (FileNotFoundException e) {
+					
+				}
+				int time=0;
+				try {
+					zis=new ZipInputStream(openFileInput("signed.apk"));
+					ZipEntry ze=null;
+					while((ze=zis.getNextEntry())!=null){
+						toCheck.remove(ze.getName());
+						ModificateActivity.set(-1,-1,-1,++time,null);
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+					
+				}finally{
+					try {
+						zis.close();
+					} catch (Throwable e) {
+
+					}
+				}
+				if(toCheck.size()==0){
+					Log.d("apkCheck","toCheck.size() == 0");
+					
+				}else{
+					Log.d("apkCheck","toCheck.size() != 0");
+					Toast.makeText(ModificationService.this,R.string.check_apk,1).show();
+					return null;
+				}
+				/*Step6*/
+				publishProgress(5);
 				//ModificateActivity.set(-1,5,-1,-1,null);
 				if (ModificateActivity.instance.get() != null){
 					ModificateActivity.instance.get().runOnUiThread(new Thread(){
-						public void run(){
-							ModificateActivity.instance.get().finish();
-						}
-					});
+							public void run(){
+								ModificateActivity.instance.get().finish();
+							}
+						});
 				}
 				Intent data=new Intent(ModificationService.this, ModificateActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("mode", "last");
-				APKVerifyActivity.putIntoIntent(toCheck,data);
 				startActivity(data);
 				stopForeground(true);
 				return null;
@@ -202,6 +239,22 @@ public class ModificationService extends ServiceX {
 				while (zis.getNextEntry() != null)
 					count++;
 				return count;
+			}
+			public int countZipEntries(ZipInputStream zis) {
+				try {
+					int count=0;
+					while (zis.getNextEntry() != null)
+						count++;
+					return count;
+				} catch (IOException e) {
+					return -1;
+				}finally{
+					try {
+						zis.close();
+					} catch (Throwable e) {
+
+					}
+				}
 			}
 			InputStream openAPK() throws IOException,PackageManager.NameNotFoundException {
 				switch (Tools.getSettings("input.mode", 0, ModificationService.this)) {

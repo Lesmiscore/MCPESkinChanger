@@ -48,10 +48,10 @@ public class ModificateActivity extends Activity {
 			}
 		};//.execute();
 	}
-	public void doLast(){
+	/*public void doLast(){
 		startActivityForResult(getIntent().setClass(this,APKVerifyActivity.class).putExtra("target",new File(getFilesDir(),"signed.apk").toString()),300);
-	}
-	public void successCheck() {
+	}*/
+	public void doLast() {
 		switch (Tools.getSettings("input.mode", 0, this)) {
 			case 0://installed
 				Intent intent = new Intent(Intent.ACTION_DELETE, Uri.fromParts("package", "com.mojang.minecraftpe", null));
@@ -115,7 +115,7 @@ public class ModificateActivity extends Activity {
 			case 200:
 				finish();
 				break;
-			case 300:
+			/*case 300:
 				Log.d("apkCheck","result="+resultCode+" data="+data);
 				if(resultCode==RESULT_OK){
 					if(data.getBooleanExtra("valid",false)){
@@ -126,7 +126,7 @@ public class ModificateActivity extends Activity {
 				}else{
 					Toast.makeText(this,R.string.check_internal,Toast.LENGTH_LONG).show();
 				}
-				break;
+				break;*/
 		}
 	}
 }
