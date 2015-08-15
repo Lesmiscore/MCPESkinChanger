@@ -35,7 +35,7 @@ public class AndroidPackage
 			parser = packageParser.newInstance();
 			packaGE = packageParser.getMethod("parseMonolithicPackage", File.class, inCl).invoke(parser, file, 0);
 			packageParser.getMethod("collectManifestDigest", packagE).invoke(parser, packaGE);
-			info = (PackageInfo)packageParser.getMethod("generatePackageInfo", packagE, int[].class, inCl, long.class, long.class, HashSet.class, packageUserState).invoke(null, packaGE, null, necessaryFlags, 0, 0, null, packageUserState.newInstance());
+			info = (PackageInfo)packageParser.getMethod("generatePackageInfo", packagE, int[].class, inCl, long.class, long.class, Class.forName("android.util.ArraySet"), packageUserState).invoke(null, packaGE, null, necessaryFlags, 0, 0, null, packageUserState.newInstance());
 		} catch (InvocationTargetException e) {
 			(ex=e).printStackTrace();
 		} catch (IllegalArgumentException e) {
@@ -45,6 +45,8 @@ public class AndroidPackage
 		} catch (IllegalAccessException e) {
 			(ex=e).printStackTrace();
 		} catch (NoSuchMethodException e) {
+			(ex=e).printStackTrace();
+		} catch (ClassNotFoundException e) {
 			(ex=e).printStackTrace();
 		}
 		if(info==null){
