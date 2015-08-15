@@ -163,6 +163,9 @@ public class ModificationService extends ServiceX {
 					int count=countZipEntries(new ZipInputStream(openFileInput("signed.apk")));
 					if (count == -1) {
 						Log.d("apkCheck", "count == -1");
+						Toast.makeText(ModificationService.this,R.string.check_apk,1).show();
+						finishForExit();
+						return null;
 					}
 					ModificateActivity.set(-1, -1, count, 0, null);
 				} catch (FileNotFoundException e) {
@@ -192,18 +195,7 @@ public class ModificationService extends ServiceX {
 				}else{
 					Log.d("apkCheck","toCheck.size() != 0");
 					Toast.makeText(ModificationService.this,R.string.check_apk,1).show();
-					Activity a=null;
-					if ((a=ModificateActivity.instance.get()) != null){
-						try {
-							findFinish().invoke(a);
-						} catch (InvocationTargetException e) {
-							
-						} catch (IllegalAccessException e) {
-							
-						} catch (IllegalArgumentException e) {
-							
-						}
-					}
+					finishForExit();
 					return null;
 				}
 				/*Step6*/
@@ -215,6 +207,17 @@ public class ModificationService extends ServiceX {
 					ModificateActivity.instance.get().doLast();
 				stopForeground(true);
 				return null;
+			}
+			public void finishForExit(){
+				Activity a=null;
+				if ((a=ModificateActivity.instance.get()) != null){
+					try {
+						findFinish().invoke(a);
+					} catch (InvocationTargetException e) {
+					} catch (IllegalAccessException e) {
+					} catch (IllegalArgumentException e) {
+					}
+				}
 			}
 			public InputStream tryOpen(String uri) throws IOException {
 				Log.d("dbg", "tryOpen:" + uri);
