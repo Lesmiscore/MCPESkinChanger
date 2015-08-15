@@ -3,6 +3,9 @@ import java.io.*;
 import android.content.pm.*;
 import java.util.*;
 import java.lang.reflect.*;
+import android.app.*;
+import android.content.res.*;
+import android.graphics.drawable.*;
 
 public class AndroidPackage
 {
@@ -31,7 +34,7 @@ public class AndroidPackage
 		try {
 			parser = packageParser.newInstance();
 			packaGE = packageParser.getMethod("parseMonolithicPackage", File.class, inCl).invoke(parser, file, 0);
-			packageParser.getMethod("collectManifestDigest", packagE).invoke(parser, packagE);
+			packageParser.getMethod("collectManifestDigest", packagE).invoke(parser, packaGE);
 			info = (PackageInfo)packageParser.getMethod("generatePackageInfo", packagE, int[].class, inCl, long.class, long.class, HashSet.class, packageUserState).invoke(null, packaGE, null, necessaryFlags, 0, 0, null, packageUserState.newInstance());
 		} catch (InvocationTargetException e) {
 			(ex=e).printStackTrace();
@@ -51,4 +54,68 @@ public class AndroidPackage
 	public PackageInfo getResult(){
 		return info;
 	}
+	
+	static public class AppSnippet {
+        CharSequence label;
+        Drawable icon;
+        public AppSnippet(CharSequence label, Drawable icon) {
+            this.label = label;
+            this.icon = icon;
+        }
+    }
+
+    /**
+     * Utility method to load application label
+     *
+     * @param pContext context of package that can load the resources
+     * @param appInfo ApplicationInfo object of package whose resources are to be loaded
+     * @param snippetId view id of app snippet view
+     */
+    public static AppSnippet getAppSnippet(
+		Activity pContext, ApplicationInfo appInfo, File sourceFile) {
+        final String archiveFilePath = sourceFile.getAbsolutePath();
+        Resources pRes = pContext.getResources();
+		AssetManager assmgr=null;
+        try {
+			assmgr = AssetManager.class.newInstance();
+			AssetManager.class.getMethod("addAssetPath", String.class).invoke(assmgr, archiveFilePath);
+		} catch (InvocationTargetException e) {
+			
+		} catch (IllegalArgumentException e) {
+			
+		} catch (InstantiationException e) {
+			
+		} catch (IllegalAccessException e) {
+			
+		} catch (NoSuchMethodException e) {
+			
+		}
+        Resources res = new Resources(assmgr, pRes.getDisplayMetrics(), pRes.getConfiguration());
+        CharSequence label = null;
+        // Try to load the label from the package's resources. If an app has not explicitly
+        // specified any label, just use the package name.
+        if (appInfo.labelRes != 0) {
+            try {
+                label = res.getText(appInfo.labelRes);
+            } catch (Resources.NotFoundException e) {
+            }
+        }
+        if (label == null) {
+            label = (appInfo.nonLocalizedLabel != null) ?
+				appInfo.nonLocalizedLabel : appInfo.packageName;
+        }
+        Drawable icon = null;
+        // Try to load the icon from the package's resources. If an app has not explicitly
+        // specified any resource, just use the default icon for now.
+        if (appInfo.icon != 0) {
+            try {
+                icon = res.getDrawable(appInfo.icon);
+            } catch (Resources.NotFoundException e) {
+            }
+        }
+        if (icon == null) {
+            icon = pContext.getPackageManager().getDefaultActivityIcon();
+        }
+        return new AppSnippet(label, icon);
+    }
 }

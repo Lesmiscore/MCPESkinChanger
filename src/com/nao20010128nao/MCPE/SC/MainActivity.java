@@ -209,11 +209,34 @@ public class MainActivity extends PreferenceActivity {
 			case 456:
 				if (resultCode == RESULT_OK) {
 					Tools.setSettings("input.where", data.getDataString(), this);
-					startActivityForResult(data.setClass(this, ContentFileLocalCopyActivity.class).putExtra("dest", new File(getFilesDir(), "mcpeCopy.apk") + ""), 4561);
+					startActivityForResult(data.setClass(this, ContentFileLocalCopyActivity.class).putExtra("dest", new File(getFilesDir(), "mcpeCopy_unchecked.apk") + ""), 4561);
 				} else if (Tools.getSettings("input.where", (String)null, this) == null)
 					Tools.setSettings("input.mode", 0, this);
 				break;
 			case 4561:
+				File unchecked=new File(data.getStringExtra("result"));
+				File checked=new File(getFilesDir(), "mcpeCopy.apk");
+				if(unchecked.exists()){
+					AndroidPackage pak=new AndroidPackage(unchecked);
+					PackageInfo info=pak.getResult();
+					if("com.mojang.minecraftpe".equals(info.packageName)){
+						unchecked.renameTo(checked);
+					}else{
+						ApplicationInfo appInfo=info.applicationInfo;
+						AndroidPackage.AppSnippet as=AndroidPackage.getAppSnippet(this,appInfo,unchecked);
+						CharSequence s=as.label;
+						String mes=getResources().getString(R.string.fakeapp).replace("@APP@",s);
+						new AlertDialog.Builder(this).
+							setMessage(mes).
+							setPositiveButton(android.R.string.ok,new DialogInterface.OnClickListener(){
+								public void onClick(DialogInterface a,int w){
+									a.cancel();
+								}
+							});
+					}
+				}else{
+					return;
+				}
 				Tools.setSettings("input.where", data.getStringExtra("result"), this);
 				break;
 			case 789:
