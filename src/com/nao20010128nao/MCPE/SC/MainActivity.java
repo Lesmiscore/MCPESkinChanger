@@ -214,7 +214,7 @@ public class MainActivity extends PreferenceActivity {
 					Tools.setSettings("input.mode", 0, this);
 				break;
 			case 4561:
-				File unchecked=new File(data.getStringExtra("result"));
+				final File unchecked=new File(data.getStringExtra("result"));
 				File checked=new File(getFilesDir(), "mcpeCopy.apk");
 				if(unchecked.exists()){
 					AndroidPackage pak=new AndroidPackage(unchecked);
@@ -231,8 +231,10 @@ public class MainActivity extends PreferenceActivity {
 							setPositiveButton(android.R.string.ok,new DialogInterface.OnClickListener(){
 								public void onClick(DialogInterface a,int w){
 									a.cancel();
+									unchecked.delete();
 								}
-							});
+							}).
+							show();
 					}
 				}else{
 					return;
