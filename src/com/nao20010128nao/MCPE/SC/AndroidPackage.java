@@ -7,6 +7,10 @@ import android.app.*;
 import android.content.res.*;
 import android.graphics.drawable.*;
 
+// quoted almost code from
+// https://github.com/android/platform_packages_apps_packageinstaller/blob/master/src/com/android/packageinstaller/PackageInstallerActivity.java
+// https://github.com/android/platform_packages_apps_packageinstaller/blob/master/src/com/android/packageinstaller/PackageUtil.java
+// https://github.com/android/platform_frameworks_base/blob/master/core/java/android/content/pm/PackageParser.java
 public class AndroidPackage
 {
 	static int necessaryFlags=PackageManager.GET_CONFIGURATIONS|PackageManager.GET_INSTRUMENTATION|PackageManager.GET_META_DATA|PackageManager.GET_SIGNATURES;
