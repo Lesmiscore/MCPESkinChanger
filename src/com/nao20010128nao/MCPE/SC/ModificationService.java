@@ -278,6 +278,29 @@ public class ModificationService extends ServiceX {
 						return null;
 				}
 			}
+			int calcLength(InputStream is){
+				int len=0,err=0;
+				try {
+					if (is.available() <= 1)
+						return is.available();
+				} catch (IOException e) {
+					
+				}
+				while(true){
+					try {
+						if (is.read() != -1)len++;
+						else{
+							is.close();
+							return len;
+						}
+					} catch (IOException e) {
+						err++;
+					}
+					if(err>10){
+						return -1;
+					}
+				}
+			}
 			OutputStream saveAPK() throws IOException {
 				switch (Tools.getSettings("input.mode", 0, ModificationService.this)) {
 					case 0://installed
