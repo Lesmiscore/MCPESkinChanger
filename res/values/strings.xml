@@ -18,7 +18,7 @@
 	<string name="wait">Please wait...</string>
 	
 	<string name="err_no_skins">Any Skins won\'t be changed.\nSelect more than one skin to change.</string>
-	<string name="wantUpdate">Want update? Tap here to open Google Play.</string>
+	<string name="wantUpdate">Want to update? Tap here to open Google Play.</string>
 	<string name="wantUpdate_desc">Tap [Uninstall] (-> [Yes]) -> [Install] to update.\nYou can change skin using this app again.</string>
 	<string name="selectSteve">Select Steve\'s skin(~0.10.5)</string>
 	<string name="selectSteveN">Select Steve\'s skin(0.11.0~)</string>
