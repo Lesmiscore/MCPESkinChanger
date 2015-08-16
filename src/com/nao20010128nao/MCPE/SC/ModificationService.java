@@ -47,7 +47,7 @@ public class ModificationService extends ServiceX {
 				publishProgress(0);
 				try {
 					int tmp=0;
-					ModificateActivity.set(-1, -1, (int)new File(createPackageContext("com.mojang.minecraftpe", CONTEXT_IGNORE_SECURITY).getPackageCodePath()).length(), 0, null);
+					ModificateActivity.set(-1, -1, calcLength(openAPK()), 0, null);
 					is = openAPK();
 					os = openFileOutput("vanilla.apk", MODE_MULTI_PROCESS | MODE_WORLD_READABLE);
 					byte[] buf=new byte[10000];
