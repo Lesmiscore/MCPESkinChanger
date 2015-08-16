@@ -18,16 +18,20 @@ public class CacheDeleteService extends Service {
 		// TODO: Implement this method
 		new AsyncTask<Void,Void,Void>(){
 			public Void doInBackground(Void... a) {
-				File cacheDir=new File(getFilesDir(), "cache");
-				for (String f:cacheDir.list()) {
-					File delFile=new File(cacheDir, f);
-					Log.d("cacheDeleter", delFile + "");
-					if(delFile==null)continue;
-					try{
-						delFile.delete();
-					}catch(Throwable e){
-						
+				try {
+					File cacheDir=new File(getFilesDir(), "cache");
+					for (String f:cacheDir.list()) {
+						File delFile=new File(cacheDir, f);
+						Log.d("cacheDeleter", delFile + "");
+						if (delFile == null)continue;
+						try {
+							delFile.delete();
+						} catch (Throwable e) {
+
+						}
 					}
+				} catch (Throwable ex) {
+
 				}
 				return null;
 			}
