@@ -66,13 +66,6 @@ public class AndroidPackage
         }
     }
 
-    /**
-     * Utility method to load application label
-     *
-     * @param pContext context of package that can load the resources
-     * @param appInfo ApplicationInfo object of package whose resources are to be loaded
-     * @param snippetId view id of app snippet view
-     */
     public static AppSnippet getAppSnippet(
 		Activity pContext, ApplicationInfo appInfo, File sourceFile) {
         final String archiveFilePath = sourceFile.getAbsolutePath();
@@ -94,8 +87,6 @@ public class AndroidPackage
 		}
         Resources res = new Resources(assmgr, pRes.getDisplayMetrics(), pRes.getConfiguration());
         CharSequence label = null;
-        // Try to load the label from the package's resources. If an app has not explicitly
-        // specified any label, just use the package name.
         if (appInfo.labelRes != 0) {
             try {
                 label = res.getText(appInfo.labelRes);
@@ -107,8 +98,6 @@ public class AndroidPackage
 				appInfo.nonLocalizedLabel : appInfo.packageName;
         }
         Drawable icon = null;
-        // Try to load the icon from the package's resources. If an app has not explicitly
-        // specified any resource, just use the default icon for now.
         if (appInfo.icon != 0) {
             try {
                 icon = res.getDrawable(appInfo.icon);
