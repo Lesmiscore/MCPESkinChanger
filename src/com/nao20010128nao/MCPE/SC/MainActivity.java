@@ -19,6 +19,7 @@ import java.util.*;
 
 public class MainActivity extends PreferenceActivity {
 	public static WeakReference<MainActivity> instance=new WeakReference<>(null);
+	static boolean preventStart=false;;
 	Map<String,URI> skins=ModificateActivity.skins;
 	String changeTmp=null;
     /** Called when the activity is first created. */
@@ -26,12 +27,10 @@ public class MainActivity extends PreferenceActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 		instance = new WeakReference<MainActivity>(this);
-		if (ModificationService.instance.get() != null) {
-			startActivity(new Intent(this, ModificateActivity.class).putExtra("mode", "noservice"));
+		if(preventStart){
 			finish();
-		} else
-			startActivity(new Intent(this, SupportCheckerActivity.class));
-		startService(new Intent(this, CacheDeleteService.class));
+			return;
+		}
        	addPreferencesFromResource(R.xml.pref_main);
 		sH("startChange", new OnClickListener(){
 				public void onClick(String p1, String p2, String p3) {
@@ -248,5 +247,8 @@ public class MainActivity extends PreferenceActivity {
 					Tools.setSettings("output.mode", 0, this);
 				break;
 		}
+	}
+	public static void preventStart(){
+		preventStart=true;
 	}
 }
