@@ -23,7 +23,11 @@ public class CacheDeleteService extends Service {
 					File delFile=new File(cacheDir, f);
 					Log.d("cacheDeleter", delFile + "");
 					if(delFile==null)continue;
-					delFile.delete();
+					try{
+						delFile.delete();
+					}catch(Throwable e){
+						
+					}
 				}
 				return null;
 			}
