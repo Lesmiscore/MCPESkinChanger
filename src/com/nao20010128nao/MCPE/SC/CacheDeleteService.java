@@ -20,16 +20,12 @@ public class CacheDeleteService extends Service {
 			public Void doInBackground(Void... a) {
 				try {
 					File cacheDir=new File(getFilesDir(), "cache");
-					for (String f:cacheDir.list()) {
-						File delFile=new File(cacheDir, f);
-						Log.d("cacheDeleter", delFile + "");
-						if (delFile == null)continue;
-						try {
-							delFile.delete();
-						} catch (Throwable e) {
-
-						}
-					}
+					cacheDir.mkdirs();
+					new ProcessBuilder().
+						command(new String[]{"/system/bin/rm","-rf",cacheDir.getAbsolutePath()}).
+						directory(cacheDir).
+						start().
+						waitFor();
 				} catch (Throwable ex) {
 
 				}
