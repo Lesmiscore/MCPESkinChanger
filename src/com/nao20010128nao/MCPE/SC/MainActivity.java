@@ -27,10 +27,11 @@ public class MainActivity extends PreferenceActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 		instance = new WeakReference<MainActivity>(this);
-		if(preventStart){
-			finish();
-			return;
-		}
+		if (ModificationService.instance.get() != null) {
+			startActivity(new Intent(this, ModificateActivity.class).putExtra("mode", "noservice"));
+			MainActivity.preventStart();
+		} else
+			startActivity(new Intent(this, SupportCheckerActivity.class));
        	addPreferencesFromResource(R.xml.pref_main);
 		sH("startChange", new OnClickListener(){
 				public void onClick(String p1, String p2, String p3) {

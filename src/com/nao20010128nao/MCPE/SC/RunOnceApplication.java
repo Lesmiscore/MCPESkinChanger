@@ -11,11 +11,6 @@ public class RunOnceApplication extends Application {
 		// TODO: Implement this method
 		super.onCreate();
 		instance = this;
-		if (ModificationService.instance.get() != null) {
-			startActivity(new Intent(this, ModificateActivity.class).putExtra("mode", "noservice"));
-			MainActivity.preventStart();
-		} else
-			startActivity(new Intent(this, SupportCheckerActivity.class));
 		startService(new Intent(this, CacheDeleteService.class));
 	}
 	public boolean isCheckedMCPE() {
