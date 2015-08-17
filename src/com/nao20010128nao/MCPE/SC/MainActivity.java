@@ -32,6 +32,10 @@ public class MainActivity extends PreferenceActivity {
 			MainActivity.preventStart();
 		} else
 			startActivity(new Intent(this, SupportCheckerActivity.class));
+		if(preventStart){
+			finish();
+			return;
+		}
        	addPreferencesFromResource(R.xml.pref_main);
 		sH("startChange", new OnClickListener(){
 				public void onClick(String p1, String p2, String p3) {
