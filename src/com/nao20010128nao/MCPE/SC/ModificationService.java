@@ -286,14 +286,17 @@ public class ModificationService extends ServiceX {
 				} catch (IOException e) {
 					
 				}
+				byte[] buf=new byte[10000];
+				int l=0;
 				while(true){
 					try {
-						if (is.read() != -1)len++;
+						if ((l=is.read(buf)) != -1)len+=l;
 						else{
 							is.close();
 							return len;
 						}
 					} catch (IOException e) {
+						e.printStackTrace();
 						err++;
 					}
 					if(err>10){
