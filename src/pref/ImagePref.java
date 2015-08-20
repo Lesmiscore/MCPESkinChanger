@@ -8,7 +8,7 @@ public class ImagePref extends StartPref
 {
 	public ImagePref(Context c,AttributeSet attrs){
 		super(c,attrs);
-		setLayoutResource(R.layout.imagepref);
+		//setLayoutResource(R.layout.imagepref);
 	}
 /*
 	@Override
