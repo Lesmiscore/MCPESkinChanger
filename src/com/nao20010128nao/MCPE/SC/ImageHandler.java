@@ -4,6 +4,9 @@ import java.util.*;
 import java.io.*;
 
 public class ImageHandler {
+	private ImageHandler(){
+		
+	}
 	static Map<String,HashSet<ImageHandlerReceiver>> objects=new HashMap<String,HashSet<ImageHandlerReceiver>>();
 	public static void registerReceiver(String tag, ImageHandlerReceiver receiver) {
 		if (tag == null)
