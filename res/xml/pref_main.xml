@@ -86,6 +86,22 @@
 				android:title="@string/selectSheep15"
 				android:key="selectSheep15"/>
 		</PreferenceScreen>
+		<pref.ImagePref
+			android:title="@string/selectGhastNormal"
+			android:key="selectGhastNormal"/>
+		<pref.ImagePref
+			android:title="@string/selectGhastShooting"
+			android:key="selectGhastShooting"/>
+		<pref.ImagePref
+			android:title="@string/selectSnowGolem"
+			android:key="selectSnowGolem"/>
+		<pref.ImagePref
+			android:title="@string/selectWolfNormal"
+			android:key="selectWolfNormal"/>
+		<pref.ImagePref
+			android:title="@string/selectWolfAngry"
+			android:key="selectWolfAngry"/>
+		
 		<pref.StartPref
 			android:title="@string/more"
 			android:enabled="false"/>

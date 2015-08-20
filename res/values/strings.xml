@@ -55,7 +55,14 @@
 	<string name="selectSheep14">Select Red Sheep skin</string>
 	<string name="selectSheep15">Select Black Sheep skin</string>
 	
-	<string name="more">Want change skins more? I\'m working on it...</string>
+	<string name="selectGhastNormal">Select Normal Ghast skin</string>
+	<string name="selectGhastShooting">Select Shooting Ghast skin</string>
+	<string name="selectSnowGolem">Select Snow Golem skin</string>
+	<string name="selectSquid">Select Squid skin</string>
+	<string name="selectWolfNormal">Select Normal Wolf skin</string>
+	<string name="selectWolfAngry">Select Angry Wolf skin</string>
+	
+	<string name="more">Want to change skins more? I\'m working on it...</string>
 	<string name="changeableSkins">Select skin to change</string>
 	<string name="checking">Checking some...</string>
 	<string name="changing">Changing skins...</string>
