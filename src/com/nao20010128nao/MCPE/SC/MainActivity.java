@@ -16,6 +16,7 @@ import java.io.*;
 import java.lang.ref.*;
 import java.net.*;
 import java.util.*;
+import android.content.pm.PackageManager.*;
 
 public class MainActivity extends PreferenceActivity {
 	public static WeakReference<MainActivity> instance=new WeakReference<>(null);
@@ -163,6 +164,11 @@ public class MainActivity extends PreferenceActivity {
 					startActivity(new Intent(MainActivity.this, ChangingListEditor.class));
 				}
 			});
+		try {
+			ImageLoader.startLoadImagesAsync(getApkPath());
+		} catch (PackageManager.NameNotFoundException e) {
+			
+		}
     }
 	void sH(Preference pref, HandledPreference.OnClickListener handler) {
 		if (!(pref instanceof HandledPreference))return;
@@ -263,5 +269,15 @@ public class MainActivity extends PreferenceActivity {
 	}
 	public static void preventStart(){
 		preventStart=true;
+	}
+	String getApkPath() throws PackageManager.NameNotFoundException {
+		switch (Tools.getSettings("input.mode", 0, this)) {
+			case 0://installed
+				return createPackageContext("com.mojang.minecraftpe", CONTEXT_IGNORE_SECURITY).getPackageCodePath();
+			case 1://select
+				return Tools.getSettings("input.where", "", this);
+			default:
+				return null;
+		}
 	}
 }
