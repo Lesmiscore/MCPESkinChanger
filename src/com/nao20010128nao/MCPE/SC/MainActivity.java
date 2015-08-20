@@ -91,6 +91,13 @@ public class MainActivity extends PreferenceActivity {
 		link("selectSheep13", "assets/images/mob/sheep_13.png");
 		link("selectSheep14", "assets/images/mob/sheep_14.png");
 		link("selectSheep15", "assets/images/mob/sheep_15.png");
+		
+		link("selectGhastNormal", "assets/images/mob/ghast.png");
+		link("selectGhastShooting", "assets/images/mob/ghast_shooting.png");
+		link("selectSnowGolem", "assets/images/mob/snow_golem.png");
+		link("selectWolfNormal", "assets/images/mob/wolf.png");
+		link("selectWolfAngry", "assets/images/mob/wolf_angry.png");
+		
 		sH("deleteCache", new OnClickListener(){
 				public void onClick(String p1, String p2, String p3) {
 					new File(Environment.getExternalStorageDirectory(), "games/com.mojang/minecraft/skinchanger").delete();
