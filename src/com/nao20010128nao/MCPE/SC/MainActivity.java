@@ -95,6 +95,7 @@ public class MainActivity extends PreferenceActivity {
 		link("selectGhastNormal", "assets/images/mob/ghast.png");
 		link("selectGhastShooting", "assets/images/mob/ghast_shooting.png");
 		link("selectSnowGolem", "assets/images/mob/snow_golem.png");
+		link("selectSquid", "assets/images/mob/squid.png");
 		link("selectWolfNormal", "assets/images/mob/wolf.png");
 		link("selectWolfAngry", "assets/images/mob/wolf_angry.png");
 		
