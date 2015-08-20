@@ -66,30 +66,30 @@ public class MainActivity extends PreferenceActivity {
 					}
 				}
 			});
-		sH("selectSteve", createListenerForPerf("assets/images/mob/char.png"));
-		sH("selectSteveN", createListenerForPerf("assets/images/mob/steve.png"));
-		sH("selectAlexN", createListenerForPerf("assets/images/mob/alex.png"));
-		sH("selectZombie", createListenerForPerf("assets/images/mob/zombie.png"));
-		sH("selectZombiePigman", createListenerForPerf("assets/images/mob/pigzombie.png"));
-		sH("selectCow", createListenerForPerf("assets/images/mob/cow.png"));
-		sH("selectCreeper", createListenerForPerf("assets/images/mob/creeper.png"));
-		sH("selectPig", createListenerForPerf("assets/images/mob/pig.png"));
-		sH("selectSheep0", createListenerForPerf("assets/images/mob/sheep_0.png"));
-		sH("selectSheep1", createListenerForPerf("assets/images/mob/sheep_1.png"));
-		sH("selectSheep2", createListenerForPerf("assets/images/mob/sheep_2.png"));
-		sH("selectSheep3", createListenerForPerf("assets/images/mob/sheep_3.png"));
-		sH("selectSheep4", createListenerForPerf("assets/images/mob/sheep_4.png"));
-		sH("selectSheep5", createListenerForPerf("assets/images/mob/sheep_5.png"));
-		sH("selectSheep6", createListenerForPerf("assets/images/mob/sheep_6.png"));
-		sH("selectSheep7", createListenerForPerf("assets/images/mob/sheep_7.png"));
-		sH("selectSheep8", createListenerForPerf("assets/images/mob/sheep_8.png"));
-		sH("selectSheep9", createListenerForPerf("assets/images/mob/sheep_9.png"));
-		sH("selectSheep10", createListenerForPerf("assets/images/mob/sheep_10.png"));
-		sH("selectSheep11", createListenerForPerf("assets/images/mob/sheep_11.png"));
-		sH("selectSheep12", createListenerForPerf("assets/images/mob/sheep_12.png"));
-		sH("selectSheep13", createListenerForPerf("assets/images/mob/sheep_13.png"));
-		sH("selectSheep14", createListenerForPerf("assets/images/mob/sheep_14.png"));
-		sH("selectSheep15", createListenerForPerf("assets/images/mob/sheep_15.png"));
+		link("selectSteve", "assets/images/mob/char.png");
+		link("selectSteveN", "assets/images/mob/steve.png");
+		link("selectAlexN", "assets/images/mob/alex.png");
+		link("selectZombie", "assets/images/mob/zombie.png");
+		link("selectZombiePigman", "assets/images/mob/pigzombie.png");
+		link("selectCow", "assets/images/mob/cow.png");
+		link("selectCreeper", "assets/images/mob/creeper.png");
+		link("selectPig", "assets/images/mob/pig.png");
+		link("selectSheep0", "assets/images/mob/sheep_0.png");
+		link("selectSheep1", "assets/images/mob/sheep_1.png");
+		link("selectSheep2", "assets/images/mob/sheep_2.png");
+		link("selectSheep3", "assets/images/mob/sheep_3.png");
+		link("selectSheep4", "assets/images/mob/sheep_4.png");
+		link("selectSheep5", "assets/images/mob/sheep_5.png");
+		link("selectSheep6", "assets/images/mob/sheep_6.png");
+		link("selectSheep7", "assets/images/mob/sheep_7.png");
+		link("selectSheep8", "assets/images/mob/sheep_8.png");
+		link("selectSheep9", "assets/images/mob/sheep_9.png");
+		link("selectSheep10", "assets/images/mob/sheep_10.png");
+		link("selectSheep11", "assets/images/mob/sheep_11.png");
+		link("selectSheep12", "assets/images/mob/sheep_12.png");
+		link("selectSheep13", "assets/images/mob/sheep_13.png");
+		link("selectSheep14", "assets/images/mob/sheep_14.png");
+		link("selectSheep15", "assets/images/mob/sheep_15.png");
 		sH("deleteCache", new OnClickListener(){
 				public void onClick(String p1, String p2, String p3) {
 					new File(Environment.getExternalStorageDirectory(), "games/com.mojang/minecraft/skinchanger").delete();
@@ -176,6 +176,14 @@ public class MainActivity extends PreferenceActivity {
 		intent.setType("image/png");
 		changeTmp = name;
 		startActivityForResult(intent, 123);
+	}
+	void link(String pref,String name){
+		sH(pref,createListenerForPerf(name));
+		Object data=findPreference(pref);
+		if(data instanceof ImageHandler.ImageHandlerReceiver){
+			String[] arr;
+			ImageHandler.registerReceiver((arr=name.split("¥¥/"))[arr.length-1],(ImageHandler.ImageHandlerReceiver)data);
+		}
 	}
 	OnClickListener createListenerForPerf(final String name){
 		return new OnClickListener(){
