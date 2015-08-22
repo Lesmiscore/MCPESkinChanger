@@ -22,20 +22,14 @@
 	<string name="selectSteve">Steve(スティーブ)のスキンを変更(~0.10.5)</string>
 	<string name="selectSteveN">Steve(スティーブ)のスキンを変更(0.11.0~)</string>
 	<string name="selectAlexN">Alex(アレックス)のスキンを変更(0.11.0~)</string>
-	<string name="selectSteve_desc">これは、Minecraft内の主人公です。(つまり君)</string>
 	<string name="selectZombie">ゾンビのスキンを変更</string>
-	<string name="selectZombie_desc">ウーとか鳴くあの敵。分かるよね?</string>
 	<string name="selectZombiePigman">ゾンビピッグマンのスキンを変更</string>
-	<string name="selectZombiePigman_desc">なんと言ったら良いんだろうか...分かんない</string>
 	
 	<string name="selectCow">牛のスキンを変更</string>
 	<string name="selectCow_desc">\"モーモー\"うるせえんだおい!!</string>
 	<string name="selectCreeper">クリーパーのスキンを変更</string>
-	<string name="selectCreeper_desc">え? どこ? あ ｼｭｰ 畜生め!</string>
 	<string name="selectPig">ブタのスキンを変更</string>
-	<string name="selectPig_desc">やったぁ! これはg...お宝だ!(おそらく嘘)</string>
 	<string name="selectSheep">羊のスキンを変更 (~0.11.1)</string>
-	<string name="selectSheep_desc">メェー... ん? やったぜ! 羊だぁ!</string>
 	
 	<string name="selectSheep0">白い羊のスキンを選択</string>
 	<string name="selectSheep1">オレンジ色の羊のスキンを選択</string>

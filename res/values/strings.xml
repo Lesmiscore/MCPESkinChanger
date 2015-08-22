@@ -23,20 +23,13 @@
 	<string name="selectSteve">Select Steve\'s skin(~0.10.5)</string>
 	<string name="selectSteveN">Select Steve\'s skin(0.11.0~)</string>
 	<string name="selectAlexN">Select Alex\'s skin(0.11.0~)</string>
-	<string name="selectSteve_desc">It is main character in Minecraft.</string>
 	<string name="selectZombie">Select Zombie\'s skin</string>
-	<string name="selectZombie_desc">It is popluar enemy in Minecraft.</string>
 	<string name="selectZombiePigman">Select Zombie Pigman\'s skin</string>
-	<string name="selectZombiePigman_desc">It is ... I don\'t know what to say...</string>
 	
 	<string name="selectCow">Select Cow\'s skin</string>
-	<string name="selectCow_desc">Cows are so loudly like \"Moo Moo\"! Ummm...</string>
 	<string name="selectCreeper">Select Crepeer\'s skin</string>
-	<string name="selectCreeper_desc">Um? Where? Oh, Shhhh... F***!</string>
 	<string name="selectPig">Select Pig\'s skin</string>
-	<string name="selectPig_desc">Yeah! It\'s a tr... treasure! (Maybe lied)</string>
 	<string name="selectSheep">Select Sheep\'s skin (~0.11.1)</string>
-	<string name="selectSheep_desc">Baa... Um? ... I did! It\'s a sheep! Hahaha...</string>
 	
 	<string name="selectSheep0">Select White Sheep skin</string>
 	<string name="selectSheep1">Select Orange Sheep skin</string>
