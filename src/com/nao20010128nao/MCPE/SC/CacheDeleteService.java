@@ -32,6 +32,6 @@ public class CacheDeleteService extends Service {
 				return null;
 			}
 		}.execute();
-		return START_STICKY;
+		return START_NOT_STICKY;
 	}
 }
