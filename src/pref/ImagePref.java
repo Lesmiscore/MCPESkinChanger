@@ -33,7 +33,7 @@ public class ImagePref extends StartPref implements ImageHandler.ImageHandlerRec
 	@Override
 	public void setImage(Bitmap bmp) {
 		// TODO: Implement this method
-		bmp=Bitmap.createScaledBitmap(bmp,bmp.getWidth()*30,bmp.getHeight()*30,true);
+		bmp=Bitmap.createScaledBitmap(bmp,bmp.getWidth()*20,bmp.getHeight()*20,true);
 		final Drawable draw=new BitmapDrawable(bmp);
 		Runnable r=new Runnable(){
 			public void run(){
