@@ -5,7 +5,6 @@
 		android:title="@string/changeableSkins">
 		<pref.ImagePref
 			android:title="@string/selectSteve"
-			android:summary="@string/selectSteve_desc"
 			android:key="selectSteve"/>
 		<pref.ImagePref
 			android:title="@string/selectSteveN"
@@ -16,33 +15,27 @@
 		
 		<pref.ImagePref
 			android:title="@string/selectZombie"
-			android:summary="@string/selectZombie_desc"
 			android:key="selectZombie"/>
 		<pref.ImagePref
 			android:title="@string/selectZombiePigman"
-			android:summary="@string/selectZombiePigman_desc"
 			android:key="selectZombiePigman"/>
 		<pref.ImagePref
 			android:title="@string/selectCow"
-			android:summary="@string/selectCow_desc"
 			android:key="selectCow"/>
 		<pref.ImagePref
 			android:title="@string/selectChicken"
 			android:key="selectChicken"/>
 		<pref.ImagePref
 			android:title="@string/selectCreeper"
-			android:summary="@string/selectCreeper_desc"
 			android:key="selectCreeper"/>
 		<pref.ImagePref
 			android:title="@string/selectCreeperArmor"
 			android:key="selectCreeperArmor"/>
 		<pref.ImagePref
 			android:title="@string/selectPig"
-			android:summary="@string/selectPig_desc"
 			android:key="selectPig"/>
 		<PreferenceScreen
-			android:title="@string/selectSheep"
-			android:summary="@string/selectSheep_desc">
+			android:title="@string/selectSheep">
 			<pref.ImagePref
 				android:title="@string/selectSheep0"
 				android:key="selectSheep0"/>
