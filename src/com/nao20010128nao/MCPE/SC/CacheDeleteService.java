@@ -29,6 +29,14 @@ public class CacheDeleteService extends Service {
 				} catch (Throwable ex) {
 
 				}
+				try{
+					new File(Environment.getExternalStorageDirectory(), "games/com.mojang/minecraft/skinchanger").delete();
+					new File(getFilesDir(), "vanilla.apk").delete();
+					new File(getFilesDir(), "modded.apk").delete();
+					new File(getFilesDir(), "signed.apk").delete();
+				}catch(Throwable e){
+					
+				}
 				return null;
 			}
 		}.execute();

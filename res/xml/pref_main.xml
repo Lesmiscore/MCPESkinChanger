@@ -139,9 +139,6 @@
 		android:title="@string/startChange"
 		android:key="startChange"/>
 	<pref.StartPref
-		android:title="@string/deleteCache"
-		android:key="deleteCache"/>
-	<pref.StartPref
 		android:title="@string/chgList"
 		android:key="chgList"/>
 	<pref.StartPref

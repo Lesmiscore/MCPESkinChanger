@@ -105,15 +105,6 @@ public class MainActivity extends PreferenceActivity {
 		link("selectMooshroom", "assets/images/mob/mooshroom.png");
 		link("selectMagmaCube", "assets/images/mob/magmacube.png");
 		
-		sH("deleteCache", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					new File(Environment.getExternalStorageDirectory(), "games/com.mojang/minecraft/skinchanger").delete();
-					new File(getFilesDir(), "vanilla.apk").delete();
-					new File(getFilesDir(), "modded.apk").delete();
-					new File(getFilesDir(), "signed.apk").delete();
-					Toast.makeText(MainActivity.this, R.string.deletedCache, Toast.LENGTH_LONG).show();
-				}
-			});
 		sH("inputFrom", new OnClickListener(){
 				public void onClick(String p1, String p2, String p3) {
 					final int revert=Tools.getSettings("input.mode", 0, MainActivity.this);
