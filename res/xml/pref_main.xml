@@ -28,7 +28,6 @@
 			android:key="selectCow"/>
 		<pref.ImagePref
 			android:title="@string/selectChicken"
-			android:summary="@string/selectChicken_desc"
 			android:key="selectChicken"/>
 		<pref.ImagePref
 			android:title="@string/selectCreeper"
@@ -36,7 +35,6 @@
 			android:key="selectCreeper"/>
 		<pref.ImagePref
 			android:title="@string/selectCreeperArmor"
-			android:summary="@string/selectCreeperArmor_desc"
 			android:key="selectCreeperArmor"/>
 		<pref.ImagePref
 			android:title="@string/selectPig"
