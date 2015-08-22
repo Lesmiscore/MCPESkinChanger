@@ -125,10 +125,6 @@
 		<pref.ImagePref
 			android:title="@string/selectWitherSkeleton"
 			android:key="selectWitherSkeleton"/>
-		
-		<pref.StartPref
-			android:title="@string/more"
-			android:enabled="false"/>
 	</PreferenceScreen>
 	<PreferenceScreen
 		android:title="@string/options">
