@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.nao20010128nao.MC_PE.SkinChanger"
     android:versionCode="14"
-    android:versionName="0.4.0" >
+    android:versionName="0.4.0 beta build 1" >
     <uses-sdk 
         android:minSdkVersion="8" 
         android:targetSdkVersion="21" />
