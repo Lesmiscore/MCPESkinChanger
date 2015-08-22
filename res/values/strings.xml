@@ -61,6 +61,13 @@
 	<string name="selectSquid">Select Squid skin</string>
 	<string name="selectWolfNormal">Select Normal Wolf skin</string>
 	<string name="selectWolfAngry">Select Angry Wolf skin</string>
+	<string name="selectChicken">Select Normal Ghast skin</string>
+	<string name="selectCreeperArmor">Select Snow Golem skin</string>
+	<string name="selectIronGolem">Select Squid skin</string>
+	<string name="selectBat">Select Normal Wolf skin</string>
+	<string name="selectBlaze">Select Angry Wolf skin</string>
+	<string name="selectMooshroom">Select Normal Ghast skin</string>
+	<string name="selectMagmaCube">Select Shooting Ghast skin</string>
 	
 	<string name="more">Want to change skins more? I\'m working on it...</string>
 	<string name="changeableSkins">Select skin to change</string>
