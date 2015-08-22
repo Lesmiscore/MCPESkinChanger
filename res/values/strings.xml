@@ -54,16 +54,16 @@
 	<string name="selectSquid">Select Squid skin</string>
 	<string name="selectWolfNormal">Select Normal Wolf skin</string>
 	<string name="selectWolfAngry">Select Angry Wolf skin</string>
-	<string name="selectChicken">Select Normal Ghast skin</string>
-	<string name="selectCreeperArmor">Select Snow Golem skin</string>
-	<string name="selectIronGolem">Select Squid skin</string>
-	<string name="selectBat">Select Normal Wolf skin</string>
-	<string name="selectBlaze">Select Angry Wolf skin</string>
-	<string name="selectMooshroom">Select Normal Ghast skin</string>
-	<string name="selectMagmaCube">Select Shooting Ghast skin</string>
-	<string name="selectSilverFish">Select Angry Wolf skin</string>
-	<string name="selectSlime">Select Normal Ghast skin</string>
-	<string name="selectWitherSkeleton">Select Shooting Ghast skin</string>
+	<string name="selectChicken">Select Chicken skin</string>
+	<string name="selectCreeperArmor">Select Powered Creeper \"Armor\" skin</string>
+	<string name="selectIronGolem">Select Iron Golem skin</string>
+	<string name="selectBat">Select Bat skin</string>
+	<string name="selectBlaze">Select Blaze skin</string>
+	<string name="selectMooshroom">Select Mooshroom skin</string>
+	<string name="selectMagmaCube">Select Magmacube skin</string>
+	<string name="selectSilverFish">Select Silver Fish skin</string>
+	<string name="selectSlime">Select Slime skin</string>
+	<string name="selectWitherSkeleton">Select Wither Skeleton skin</string>
 	
 	<string name="changeableSkins">Select skin to change</string>
 	<string name="checking">Checking some...</string>
