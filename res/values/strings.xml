@@ -61,6 +61,9 @@
 	<string name="selectBlaze">Select Angry Wolf skin</string>
 	<string name="selectMooshroom">Select Normal Ghast skin</string>
 	<string name="selectMagmaCube">Select Shooting Ghast skin</string>
+	<string name="selectSilverFish">Select Angry Wolf skin</string>
+	<string name="selectSlime">Select Normal Ghast skin</string>
+	<string name="selectWitherSkeleton">Select Shooting Ghast skin</string>
 	
 	<string name="more">Want to change skins more? I\'m working on it...</string>
 	<string name="changeableSkins">Select skin to change</string>

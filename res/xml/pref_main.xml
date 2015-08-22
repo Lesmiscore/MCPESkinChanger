@@ -116,6 +116,15 @@
 		<pref.ImagePref
 			android:title="@string/selectMagmaCube"
 			android:key="selectMagmaCube"/>
+		<pref.ImagePref
+			android:title="@string/selectSilverFish"
+			android:key="selectSiverFish"/>
+		<pref.ImagePref
+			android:title="@string/selectSlime"
+			android:key="selectSlime"/>
+		<pref.ImagePref
+			android:title="@string/selectWitherSkeleton"
+			android:key="selectWitherSkeleton"/>
 		
 		<pref.StartPref
 			android:title="@string/more"
