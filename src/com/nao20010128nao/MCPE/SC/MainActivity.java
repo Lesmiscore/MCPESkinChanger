@@ -104,6 +104,9 @@ public class MainActivity extends PreferenceActivity {
 		link("selectChicken", "assets/images/mob/chicken.png");
 		link("selectMooshroom", "assets/images/mob/mooshroom.png");
 		link("selectMagmaCube", "assets/images/mob/magmacube.png");
+		link("selectSilverFish", "assets/images/mob/silverfish.png");
+		link("selectSlime", "assets/images/mob/slime.png");
+		link("selectWitherSkeleton", "assets/images/mob/wither_skeleton.png");
 		
 		sH("inputFrom", new OnClickListener(){
 				public void onClick(String p1, String p2, String p3) {
