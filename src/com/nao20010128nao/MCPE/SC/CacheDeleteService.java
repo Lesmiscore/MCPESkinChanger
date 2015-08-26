@@ -30,7 +30,13 @@ public class CacheDeleteService extends Service {
 
 				}
 				try{
-					new File(Environment.getExternalStorageDirectory(), "games/com.mojang/minecraft/skinchanger").delete();
+					File sco=new File(Environment.getExternalStorageDirectory(), "games/com.mojang/minecraft/skinchanger");
+					new ProcessBuilder().
+						command(new String[]{"/system/bin/rm","-rf",sco.getAbsolutePath()}).
+						directory(sco).
+						start().
+						waitFor();
+					sco.delete();
 					new File(getFilesDir(), "vanilla.apk").delete();
 					new File(getFilesDir(), "modded.apk").delete();
 					new File(getFilesDir(), "signed.apk").delete();
