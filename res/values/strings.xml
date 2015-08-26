@@ -75,6 +75,9 @@
 	<string name="check_apk">An error occured while checking the APK: Some files are missing. It is caused by this app. Report it to the developer!</string>
 	<string name="check_success">Generated APK has no problem!</string>
 
+	<string name="another">Another Tools</string>
+	<string name="about">About this app</string>
+	
 	<string-array name="checkName">
 		<item>Checking Minecraft PE is installed...</item>
 		<item>Checking Minecraft PE can be copied...</item>

@@ -58,6 +58,9 @@
 	<string name="check_apk">APKのチェック中に問題が発生しました: APKの中身が足りないようです。開発者に連絡してください!</string>
 	<string name="check_success">生成されたAPKには何の異常もないようです。</string>
 
+	<string name="another">その他の機能</string>
+	<string name="about">このアプリについて</string>
+	
 	<string-array name="checkName">
 		<item>Minecraft PEがインストールされているかを調べています...</item>
 		<item>Minecraft PEのAPKファイルがコピー可能かを調べています...</item>

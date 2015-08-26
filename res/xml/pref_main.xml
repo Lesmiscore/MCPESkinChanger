@@ -145,4 +145,10 @@
 		android:title="@string/wantUpdate"
 		android:summary="@string/wantUpdate_desc"
 		android:key="wantUpdate"/>
+	<PreferenceScreen
+		android:title="@string/another">
+	</PreferenceScreen>
+	<PreferenceScreen
+		android:title="@string/about">
+	</PreferenceScreen>
 </PreferenceScreen>
