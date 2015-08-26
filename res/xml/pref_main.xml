@@ -150,5 +150,13 @@
 	</PreferenceScreen>
 	<PreferenceScreen
 		android:title="@string/about">
+		<pref.StartPref
+			android:title="@string/version"
+			android:summary=""
+			android:key="version"/>
+		<pref.StartPref
+			android:title="@string/beta"
+			android:summary=""
+			android:key="betabuild"/>
 	</PreferenceScreen>
 </PreferenceScreen>
