@@ -172,6 +172,8 @@ public class MainActivity extends PreferenceActivity {
 					startActivity(new Intent(MainActivity.this, ChangingListEditor.class));
 				}
 			});
+		findPreference("version").setSummary(Utils.getVersionName(this));
+		findPreference("betabuild").setSummary(Utils.getBetaVersion(this));
 		try {
 			ImageLoader.startLoadImagesAsync(getApkPath());
 		} catch (PackageManager.NameNotFoundException e) {
