@@ -158,5 +158,8 @@
 			android:title="@string/beta"
 			android:summary=""
 			android:key="betabuild"/>
+		<pref.StartPref
+			android:title="@string/openPlayStore"
+			android:key="openPlayStore"/>
 	</PreferenceScreen>
 </PreferenceScreen>

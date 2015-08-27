@@ -172,8 +172,16 @@ public class MainActivity extends PreferenceActivity {
 					startActivity(new Intent(MainActivity.this, ChangingListEditor.class));
 				}
 			});
-		findPreference("version").setSummary(Utils.getVersionName(this));
-		findPreference("betabuild").setSummary(Utils.getBetaVersion(this));
+		Preference p;
+		(p=findPreference("version")).setSummary(Utils.getVersionName(this));
+		p.setEnabled(false);
+		(p=findPreference("betabuild")).setSummary(Utils.getBetaVersion(this));
+		p.setEnabled(false);
+		sH("openPlayStore",new OnClickListener(){
+				public void onClick(String p1, String p2, String p3) {
+					startActivity(Intent.createChooser(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("http://play.google.com/store/apps/details?id="+getPackageName())),getResources().getString(R.string.openPlayStore)));
+				}
+			});
 		try {
 			ImageLoader.startLoadImagesAsync(getApkPath());
 		} catch (PackageManager.NameNotFoundException e) {
