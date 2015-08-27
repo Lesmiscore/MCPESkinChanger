@@ -25,7 +25,7 @@
 			android:label="@string/checking"
 			android:name="com.nao20010128nao.MCPE.SC.SupportCheckerActivity"
 			android:exported="false"
-			android:theme="@style/AppDialog" >
+			android:theme="@style/AppTheme" >
         </activity>
 		<activity
             android:label="@string/changing"

@@ -13,6 +13,12 @@
 		android:layout_width="wrap_content"
 		android:src="@drawable/ic_launcher"/>
 
+	<View
+		android:background="#00FFFFFF"
+		android:layout_height="1dp"
+		android:layout_width="match_parent"
+		android:visibility="invisible"/>
+
 	<TextView
 		android:layout_height="wrap_content"
 		android:textAppearance="?android:attr/textAppearanceLarge"
@@ -24,12 +30,26 @@
 	<View
 		android:background="#00FFFFFF"
 		android:layout_height="1dp"
-		android:layout_width="match_parent"/>
+		android:layout_width="match_parent"
+		android:visibility="invisible"/>
 
 	<ProgressBar
 		style="?android:attr/progressBarStyleHorizontal"
 		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"/>
+		android:layout_width="match_parent"
+		android:id="@+id/pbProgress"/>
+
+	<View
+		android:background="#00FFFFFF"
+		android:layout_height="1dp"
+		android:layout_width="match_parent"
+		android:visibility="invisible"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="wrap_content"
+		android:id="@+id/tvState"/>
 
 </LinearLayout>
 

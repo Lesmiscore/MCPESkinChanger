@@ -17,7 +17,7 @@ public class SupportCheckerActivity extends Activity {
 			finish();
 			return;
 		}
-		setContentView(R.layout.checker);
+		setContentView(R.layout.splash);
 		final ProgressBar progress=(ProgressBar)findViewById(R.id.pbProgress);
 		final TextView state=(TextView)findViewById(R.id.tvState);
 		new AsyncTask<Void,Void,Void>(){
