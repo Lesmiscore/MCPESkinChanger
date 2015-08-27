@@ -8,7 +8,7 @@ import android.widget.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 import java.io.*;
 
-public class SupportCheckerActivity extends Activity {
+public class SplashActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO: Implement this method
@@ -45,7 +45,7 @@ public class SupportCheckerActivity extends Activity {
 							}
 						});
 				} else {
-					new AlertDialog.Builder(SupportCheckerActivity.this)
+					new AlertDialog.Builder(SplashActivity.this)
 						.setTitle(R.string.err_title)
 						.setCancelable(false)
 						.setMessage(getResources().getStringArray(R.array.errors)[0])
@@ -87,7 +87,7 @@ public class SupportCheckerActivity extends Activity {
 							}
 						});
 				} else {
-					new AlertDialog.Builder(SupportCheckerActivity.this)
+					new AlertDialog.Builder(SplashActivity.this)
 						.setTitle(R.string.err_title)
 						.setCancelable(false)
 						.setMessage(getResources().getStringArray(R.array.errors)[1])

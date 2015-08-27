@@ -32,7 +32,7 @@ public class MainActivity extends PreferenceActivity {
 			startActivity(new Intent(this, ModificateActivity.class).putExtra("mode", "noservice"));
 			MainActivity.preventStart();
 		} else
-			startActivity(new Intent(this, SupportCheckerActivity.class));
+			startActivity(new Intent(this, SplashActivity.class));
 		if(preventStart){
 			finish();
 			return;
@@ -127,7 +127,7 @@ public class MainActivity extends PreferenceActivity {
 							public void onClick(DialogInterface di, int where) {
 								switch (Tools.getSettings("input.mode", 0, MainActivity.this)) {
 									case 0://installed
-										startActivity(new Intent(MainActivity.this, SupportCheckerActivity.class));
+										startActivity(new Intent(MainActivity.this, SplashActivity.class));
 										break;
 									case 1://select
 										startActivityForResult(new Intent(Intent.ACTION_GET_CONTENT).setType("application/vnd.android.package-archive"), 456);

@@ -23,7 +23,7 @@
         </activity>
 		<activity
 			android:label="@string/checking"
-			android:name="com.nao20010128nao.MCPE.SC.SupportCheckerActivity"
+			android:name="com.nao20010128nao.MCPE.SC.SplashActivity"
 			android:exported="false"
 			android:theme="@style/AppTheme" >
         </activity>
