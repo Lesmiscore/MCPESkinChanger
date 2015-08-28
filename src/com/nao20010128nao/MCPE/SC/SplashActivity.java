@@ -93,6 +93,33 @@ public class SplashActivity extends Activity {
 						.show();
 					return null;
 				}
+				{
+					try {
+						File cacheDir=new File(getFilesDir(), "cache");
+						cacheDir.mkdirs();
+						new ProcessBuilder().
+							command(new String[]{"/system/bin/rm","-rf",cacheDir.getAbsolutePath()}).
+							directory(cacheDir).
+							start().
+							waitFor();
+					} catch (Throwable ex) {
+
+					}
+					try{
+						File sco=new File(Environment.getExternalStorageDirectory(), "games/com.mojang/minecraft/skinchanger");
+						new ProcessBuilder().
+							command(new String[]{"/system/bin/rm","-rf",sco.getAbsolutePath()}).
+							directory(sco).
+							start().
+							waitFor();
+						sco.delete();
+						new File(getFilesDir(), "vanilla.apk").delete();
+						new File(getFilesDir(), "modded.apk").delete();
+						new File(getFilesDir(), "signed.apk").delete();
+					}catch(Throwable e){
+
+					}
+				}
 				RunOnceApplication.instance.completeCheckMCPE();
 				return null;
 			}
