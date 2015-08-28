@@ -128,4 +128,9 @@ public class SplashActivity extends Activity {
 			}
 		}.execute();
 	}
+
+	@Override
+	public void onBackPressed() {
+		
+	}
 }
