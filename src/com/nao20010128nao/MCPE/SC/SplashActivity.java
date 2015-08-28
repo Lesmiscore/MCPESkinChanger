@@ -18,16 +18,8 @@ public class SplashActivity extends Activity {
 			return;
 		}
 		setContentView(R.layout.splash);
-		final ProgressBar progress=(ProgressBar)findViewById(R.id.pbProgress);
-		final TextView state=(TextView)findViewById(R.id.tvState);
 		new AsyncTask<Void,Void,Void>(){
 			public Void doInBackground(Void[] p) {
-				runOnUiThread(new Runnable(){
-						public void run() {
-							progress.setMax(2);
-							state.setText(getResources().getStringArray(R.array.checkName)[0]);
-						}
-					});
 				boolean ok=false;
 				/*Step 1*/
 				for (PackageInfo i:getPackageManager().getInstalledPackages(PackageManager.GET_ACTIVITIES | PackageManager.GET_CONFIGURATIONS)) {
