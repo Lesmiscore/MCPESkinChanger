@@ -11,7 +11,7 @@
 	<ImageView
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
-		android:src="@drawable/ic_launcher"/>
+		android:src="@drawable/maxlogo"/>
 
 	<View
 		android:background="#00FFFFFF"
@@ -37,19 +37,22 @@
 		style="?android:attr/progressBarStyleHorizontal"
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
-		android:id="@+id/pbProgress"/>
+		android:id="@+id/pbProgress"
+		android:visibility="gone"/>
 
 	<View
 		android:background="#00FFFFFF"
 		android:layout_height="1dp"
 		android:layout_width="match_parent"
-		android:visibility="invisible"/>
+		android:visibility="gone"
+		android:id="@+id/split"/>
 
 	<TextView
 		android:layout_height="wrap_content"
 		android:textAppearance="?android:attr/textAppearanceMedium"
 		android:layout_width="wrap_content"
-		android:id="@+id/tvState"/>
+		android:id="@+id/tvState"
+		android:visibility="gone"/>
 
 </LinearLayout>
 
