@@ -11,7 +11,6 @@ public class RunOnceApplication extends Application {
 		// TODO: Implement this method
 		super.onCreate();
 		instance = this;
-		startService(new Intent(this, CacheDeleteService.class));
 	}
 	public boolean isCheckedMCPE() {
 		return isCheckedMCPE;
