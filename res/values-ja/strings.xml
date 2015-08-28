@@ -47,6 +47,23 @@
   <string name="selectSheep14">赤色の羊のスキンを選択</string>
   <string name="selectSheep15">黒色の羊のスキンを選択</string>
 
+  <string name="selectGhastNormal">Select Normal Ghast skin</string>
+  <string name="selectGhastShooting">Select Shooting Ghast skin</string>
+  <string name="selectSnowGolem">Select Snow Golem skin</string>
+  <string name="selectSquid">Select Squid skin</string>
+  <string name="selectWolfNormal">Select Normal Wolf skin</string>
+  <string name="selectWolfAngry">Select Angry Wolf skin</string>
+  <string name="selectChicken">Select Chicken skin</string>
+  <string name="selectCreeperArmor">Select Powered Creeper \"Armor\" skin</string>
+  <string name="selectIronGolem">Select Iron Golem skin</string>
+  <string name="selectBat">Select Bat skin</string>
+  <string name="selectBlaze">Select Blaze skin</string>
+  <string name="selectMooshroom">Select Mooshroom skin</string>
+  <string name="selectMagmaCube">Select Magmacube skin</string>
+  <string name="selectSilverFish">Select Silver Fish skin</string>
+  <string name="selectSlime">Select Slime skin</string>
+  <string name="selectWitherSkeleton">Select Wither Skeleton skin</string>
+  
   <string name="changeableSkins">変更スキンを指定</string>
   <string name="checking">いくつかの項目を調べています...</string>
   <string name="changing">スキンを変更しています...</string>
@@ -59,6 +76,11 @@
 
   <string name="another">その他の機能</string>
   <string name="about">このアプリについて</string>
+  <string name="version">Version</string>
+  <string name="beta">Beta Build</string>
+  <string name="notbeta">This version is not a beta build</string>
+  <string name="onbeta">Build @BETA@</string>
+  <string name="openPlayStore">Open Play Store for this app</string>
 
   <string-array name="checkName">
     <item>Minecraft PEがインストールされているかを調べています...</item>
