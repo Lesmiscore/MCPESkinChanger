@@ -1,110 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MCPE Skin Changer</string>
-	<string name="err_title">Error</string>
-	<string name="startChange">Start Changing</string>
-	
-	<string name="options">Options</string>
-	<string name="deleteCache">Delete cache</string>
-	<string name="deletedCache">Deleted cache</string>
-	<string name="inputFrom">Load the MCPE APK from</string>
-	<string name="outputTo">Save modded MCPE APK to</string>
-	<string name="changeDeleteConfirm">What will you do for @KEY@?</string>
-	<string name="confirm">Confirm</string>
-	<string name="chgList">Check the chage files</string>
-	<string name="nodata">No change files.</string>
-	<string name="select">Select</string>
-	<string name="delete">Delete</string>
-	<string name="wait">Please wait...</string>
-	
-	<string name="err_no_skins">Any Skins won\'t be changed.\nSelect more than one skin to change.</string>
-	<string name="wantUpdate">Want to update? Tap here to open Google Play.</string>
-	<string name="wantUpdate_desc">Tap [Uninstall] (-> [Yes]) -> [Install] to update.\nYou can change skin using this app again.</string>
-	<string name="selectSteve">Select Steve\'s skin(~0.10.5)</string>
-	<string name="selectSteveN">Select Steve\'s skin(0.11.0~)</string>
-	<string name="selectAlexN">Select Alex\'s skin(0.11.0~)</string>
-	<string name="selectZombie">Select Zombie\'s skin</string>
-	<string name="selectZombiePigman">Select Zombie Pigman\'s skin</string>
-	
-	<string name="selectCow">Select Cow\'s skin</string>
-	<string name="selectCreeper">Select Crepeer\'s skin</string>
-	<string name="selectPig">Select Pig\'s skin</string>
-	<string name="selectSheep">Select Sheep\'s skin (~0.11.1)</string>
-	
-	<string name="selectSheep0">Select White Sheep skin</string>
-	<string name="selectSheep1">Select Orange Sheep skin</string>
-	<string name="selectSheep2">Select Light Purple Sheep skin</string>
-	<string name="selectSheep3">Select Light Blue Sheep skin</string>
-	<string name="selectSheep4">Select Yellow Sheep skin</string>
-	<string name="selectSheep5">Select Lime Sheep skin</string>
-	<string name="selectSheep6">Select Pink Sheep skin</string>
-	<string name="selectSheep7">Select Dark Gray Sheep skin</string>
-	<string name="selectSheep8">Select Gray Sheep skin</string>
-	<string name="selectSheep9">Select Cyan Sheep skin</string>
-	<string name="selectSheep10">Select Purple Sheep skin</string>
-	<string name="selectSheep11">Select Blue Sheep skin</string>
-	<string name="selectSheep12">Select Brown Sheep skin</string>
-	<string name="selectSheep13">Select Green Sheep skin</string>
-	<string name="selectSheep14">Select Red Sheep skin</string>
-	<string name="selectSheep15">Select Black Sheep skin</string>
-	
-	<string name="selectGhastNormal">Select Normal Ghast skin</string>
-	<string name="selectGhastShooting">Select Shooting Ghast skin</string>
-	<string name="selectSnowGolem">Select Snow Golem skin</string>
-	<string name="selectSquid">Select Squid skin</string>
-	<string name="selectWolfNormal">Select Normal Wolf skin</string>
-	<string name="selectWolfAngry">Select Angry Wolf skin</string>
-	<string name="selectChicken">Select Chicken skin</string>
-	<string name="selectCreeperArmor">Select Powered Creeper \"Armor\" skin</string>
-	<string name="selectIronGolem">Select Iron Golem skin</string>
-	<string name="selectBat">Select Bat skin</string>
-	<string name="selectBlaze">Select Blaze skin</string>
-	<string name="selectMooshroom">Select Mooshroom skin</string>
-	<string name="selectMagmaCube">Select Magmacube skin</string>
-	<string name="selectSilverFish">Select Silver Fish skin</string>
-	<string name="selectSlime">Select Slime skin</string>
-	<string name="selectWitherSkeleton">Select Wither Skeleton skin</string>
-	
-	<string name="changeableSkins">Select skin to change</string>
-	<string name="checking">Checking some...</string>
-	<string name="changing">Changing skins...</string>
-	<string name="verifying">Verifying the APK...</string>
-	<string name="fakeapp">You tried to use \"@APP@\" as Minecraft:PE? You can\'t!\nUse correctly Minecraft:PE\'s APK!</string>
+  <string name="app_name">MCPE Skin Changer</string>
+  <string name="err_title">Error</string>
+  <string name="startChange">Start Changing</string>
 
-	<string name="check_internal">An error occured while checking the APK: Maybe an internal error, or called from out of the app.</string>
-	<string name="check_apk">An error occured while checking the APK: Some files are missing. It is caused by this app. Report it to the developer!</string>
-	<string name="check_success">Generated APK has no problem!</string>
+  <string name="options">Options</string>
+  <string name="deleteCache">Delete cache</string>
+  <string name="deletedCache">Deleted cache</string>
+  <string name="inputFrom">Load the MCPE APK from</string>
+  <string name="outputTo">Save modded MCPE APK to</string>
+  <string name="changeDeleteConfirm">What will you do for @KEY@?</string>
+  <string name="confirm">Confirm</string>
+  <string name="chgList">Check the chage files</string>
+  <string name="nodata">No change files.</string>
+  <string name="select">Select</string>
+  <string name="delete">Delete</string>
+  <string name="wait">Please wait...</string>
 
-	<string name="another">Another Tools</string>
-	<string name="about">About this app</string>
-	<string name="version">Version</string>
-	<string name="beta">Beta Build</string>
-	<string name="notbeta">This version is not a beta build</string>
-	<string name="onbeta">Build @BETA@</string>
-	<string name="openPlayStore">Open Play Store for this app</string>
-	
-	<string-array name="checkName">
-		<item>Checking Minecraft PE is installed...</item>
-		<item>Checking Minecraft PE can be copied...</item>
-	</string-array>
-	<string-array name="errors">
-		<item>Minecraft PE is not installed. Install it and start this app again.</item>
-		<item>Minecraft PE\'s APK file cannot be copied.\nIf you are using Android 4.4(KitKat), update to 5.0(Lollipop) or downgrade the version.\nAndroid 4.4 doesn\'t allow to copy non-free app.</item>
-	</string-array>
-	<string-array name="modSteps">
-		<item>Copying a Minecraft PE APK to working folder...</item>
-		<item>Replacing target files...</item>
-		<item>Signing a changed APK...</item>
-		<item>Copying a changed APK to External Storage...</item>
-		<item>@string/verifying</item>
-		<item>Complete! Install it and have fun!</item>
-	</string-array>
-	<string-array name="inputList">
-		<item>Installed APK</item>
-		<item>Select APK file</item>
-	</string-array>
-	<string-array name="outputList">
-		<item>Install</item>
-		<item>Select output at</item>
-	</string-array>
+  <string name="err_no_skins">Any Skins won\'t be changed.\nSelect more than one skin to change.</string>
+  <string name="wantUpdate">Want to update? Tap here to open Google Play.</string>
+  <string name="wantUpdate_desc">Tap [Uninstall] (-> [Yes]) -> [Install] to update.\nYou can change skin using this app again.</string>
+  <string name="selectSteve">Select Steve\'s skin(~0.10.5)</string>
+  <string name="selectSteveN">Select Steve\'s skin(0.11.0~)</string>
+  <string name="selectAlexN">Select Alex\'s skin(0.11.0~)</string>
+  <string name="selectZombie">Select Zombie\'s skin</string>
+  <string name="selectZombiePigman">Select Zombie Pigman\'s skin</string>
+
+  <string name="selectCow">Select Cow\'s skin</string>
+  <string name="selectCreeper">Select Crepeer\'s skin</string>
+  <string name="selectPig">Select Pig\'s skin</string>
+  <string name="selectSheep">Select Sheep\'s skin (~0.11.1)</string>
+
+  <string name="selectSheep0">Select White Sheep skin</string>
+  <string name="selectSheep1">Select Orange Sheep skin</string>
+  <string name="selectSheep2">Select Light Purple Sheep skin</string>
+  <string name="selectSheep3">Select Light Blue Sheep skin</string>
+  <string name="selectSheep4">Select Yellow Sheep skin</string>
+  <string name="selectSheep5">Select Lime Sheep skin</string>
+  <string name="selectSheep6">Select Pink Sheep skin</string>
+  <string name="selectSheep7">Select Dark Gray Sheep skin</string>
+  <string name="selectSheep8">Select Gray Sheep skin</string>
+  <string name="selectSheep9">Select Cyan Sheep skin</string>
+  <string name="selectSheep10">Select Purple Sheep skin</string>
+  <string name="selectSheep11">Select Blue Sheep skin</string>
+  <string name="selectSheep12">Select Brown Sheep skin</string>
+  <string name="selectSheep13">Select Green Sheep skin</string>
+  <string name="selectSheep14">Select Red Sheep skin</string>
+  <string name="selectSheep15">Select Black Sheep skin</string>
+
+  <string name="selectGhastNormal">Select Normal Ghast skin</string>
+  <string name="selectGhastShooting">Select Shooting Ghast skin</string>
+  <string name="selectSnowGolem">Select Snow Golem skin</string>
+  <string name="selectSquid">Select Squid skin</string>
+  <string name="selectWolfNormal">Select Normal Wolf skin</string>
+  <string name="selectWolfAngry">Select Angry Wolf skin</string>
+  <string name="selectChicken">Select Chicken skin</string>
+  <string name="selectCreeperArmor">Select Powered Creeper \"Armor\" skin</string>
+  <string name="selectIronGolem">Select Iron Golem skin</string>
+  <string name="selectBat">Select Bat skin</string>
+  <string name="selectBlaze">Select Blaze skin</string>
+  <string name="selectMooshroom">Select Mooshroom skin</string>
+  <string name="selectMagmaCube">Select Magmacube skin</string>
+  <string name="selectSilverFish">Select Silver Fish skin</string>
+  <string name="selectSlime">Select Slime skin</string>
+  <string name="selectWitherSkeleton">Select Wither Skeleton skin</string>
+
+  <string name="changeableSkins">Select skin to change</string>
+  <string name="checking">Checking some...</string>
+  <string name="changing">Changing skins...</string>
+  <string name="verifying">Verifying the APK...</string>
+  <string name="fakeapp">You tried to use \"@APP@\" as Minecraft:PE? You can\'t!\nUse correctly Minecraft:PE\'s APK!</string>
+
+  <string name="check_internal">An error occured while checking the APK: Maybe an internal error, or called from out of the app.</string>
+  <string name="check_apk">An error occured while checking the APK: Some files are missing. It is caused by this app. Report it to the developer!</string>
+  <string name="check_success">Generated APK has no problem!</string>
+
+  <string name="another">Another Tools</string>
+  <string name="about">About this app</string>
+  <string name="version">Version</string>
+  <string name="beta">Beta Build</string>
+  <string name="notbeta">This version is not a beta build</string>
+  <string name="onbeta">Build @BETA@</string>
+  <string name="openPlayStore">Open Play Store for this app</string>
+
+  <string-array name="checkName">
+    <item>Checking Minecraft PE is installed...</item>
+    <item>Checking Minecraft PE can be copied...</item>
+  </string-array>
+  <string-array name="errors">
+    <item>Minecraft PE is not installed. Install it and start this app again.</item>
+    <item>Minecraft PE\'s APK file cannot be copied.\nIf you are using Android 4.4(KitKat), update to 5.0(Lollipop) or downgrade the version.\nAndroid 4.4 doesn\'t allow to copy non-free app.</item>
+  </string-array>
+  <string-array name="modSteps">
+    <item>Copying a Minecraft PE APK to working folder...</item>
+    <item>Replacing target files...</item>
+    <item>Signing a changed APK...</item>
+    <item>Copying a changed APK to External Storage...</item>
+    <item>@string/verifying</item>
+    <item>Complete! Install it and have fun!</item>
+  </string-array>
+  <string-array name="inputList">
+    <item>Installed APK</item>
+    <item>Select APK file</item>
+  </string-array>
+  <string-array name="outputList">
+    <item>Install</item>
+    <item>Select output at</item>
+  </string-array>
 </resources>
