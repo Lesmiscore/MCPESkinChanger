@@ -37,14 +37,7 @@ public class SplashActivity extends Activity {
 					}
 					Log.d("dbg_sca", i.packageName);
 				}
-				if (ok) {
-					runOnUiThread(new Runnable(){
-							public void run() {
-								progress.setProgress(1);
-								state.setText(getResources().getStringArray(R.array.checkName)[1]);
-							}
-						});
-				} else {
+				if (!ok) {
 					new AlertDialog.Builder(SplashActivity.this)
 						.setTitle(R.string.err_title)
 						.setCancelable(false)
@@ -80,13 +73,7 @@ public class SplashActivity extends Activity {
 				} catch (IOException err) {
 					err.printStackTrace(System.out);
 				}
-				if (ok) {
-					runOnUiThread(new Runnable(){
-							public void run() {
-								progress.setProgress(2);
-							}
-						});
-				} else {
+				if (!ok) {
 					new AlertDialog.Builder(SplashActivity.this)
 						.setTitle(R.string.err_title)
 						.setCancelable(false)
