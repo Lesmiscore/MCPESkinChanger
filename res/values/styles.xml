@@ -4,4 +4,6 @@
     </style>
     <style name="AppDialog" parent="@android:style/Theme.Dialog">
     </style>
+    <style name="AppTheme.NoTitle" parent="@android:style/Theme.NoTitleBar">
+    </style>
 </resources>

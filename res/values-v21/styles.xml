@@ -4,4 +4,7 @@
     </style>
     <style name="AppDialog" parent="@android:style/Theme.Material.Light.Dialog">
     </style>
+    <style name="AppTheme.NoTitle" parent="@android:style/Theme.Material.Light">
+        <item name="android:windowActionBar">false</item>
+    </style>
 </resources>
