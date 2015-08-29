@@ -26,14 +26,17 @@
 			android:title="@string/selectChicken"
 			android:key="selectChicken"/>
 		<pref.ImagePref
+			android:title="@string/selectPig"
+			android:key="selectPig"/>
+		<pref.ImagePref
 			android:title="@string/selectCreeper"
 			android:key="selectCreeper"/>
 		<pref.ImagePref
 			android:title="@string/selectCreeperArmor"
 			android:key="selectCreeperArmor"/>
 		<pref.ImagePref
-			android:title="@string/selectPig"
-			android:key="selectPig"/>
+			android:title="@string/selectSkeleton"
+			android:key="selectSkeleton"/>
 		<PreferenceScreen
 			android:title="@string/selectSheep">
 			<pref.ImagePref

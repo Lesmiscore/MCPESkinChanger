@@ -75,6 +75,7 @@ public class MainActivity extends PreferenceActivity {
 		link("selectCow", "assets/images/mob/cow.png");
 		link("selectCreeper", "assets/images/mob/creeper.png");
 		link("selectPig", "assets/images/mob/pig.png");
+		link("selectSkeleton", "assets/images/mob/skeleton.png");
 		link("selectSheep0", "assets/images/mob/sheep_0.png");
 		link("selectSheep1", "assets/images/mob/sheep_1.png");
 		link("selectSheep2", "assets/images/mob/sheep_2.png");

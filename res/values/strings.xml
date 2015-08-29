@@ -64,7 +64,8 @@
   <string name="selectSilverFish">Select Silver Fish skin</string>
   <string name="selectSlime">Select Slime skin</string>
   <string name="selectWitherSkeleton">Select Wither Skeleton skin</string>
-
+  <string name="selectSkeleton">Select Skeleton skin</string>
+	
   <string name="changeableSkins">Select skin to change</string>
   <string name="checking">Checking some...</string>
   <string name="changing">Changing skins...</string>

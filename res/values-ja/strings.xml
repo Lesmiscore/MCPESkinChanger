@@ -63,7 +63,8 @@
   <string name="selectSilverFish">シルバーフィッシュのスキンを選択</string>
   <string name="selectSlime">スライムのスキンを選択</string>
   <string name="selectWitherSkeleton">ウィザースケルトンのスキンを選択</string>
-  
+  <string name="selectSkeleton">スケルトンのスキンを選択</string>
+	
   <string name="changeableSkins">変更スキンを指定</string>
   <string name="checking">いくつかの項目を調べています...</string>
   <string name="changing">スキンを変更しています...</string>
