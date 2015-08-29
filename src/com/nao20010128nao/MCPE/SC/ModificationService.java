@@ -80,6 +80,7 @@ public class ModificationService extends ServiceX {
 					os = openFileOutput("modded.apk", MODE_MULTI_PROCESS | MODE_WORLD_READABLE);
 					zos = new ZipOutputStream(new BufferedOutputStream(os));
 					zis = new ZipInputStream(new BufferedInputStream(is));
+					zos.setLevel(8);
 					ZipEntry ze;
 					int tmp=0;
 					byte[] buf=new byte[10000];
