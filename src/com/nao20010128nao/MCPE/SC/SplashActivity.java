@@ -7,6 +7,7 @@ import android.util.*;
 import android.widget.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 import java.io.*;
+import java.lang.reflect.*;
 
 public class SplashActivity extends Activity {
 	@Override
@@ -18,6 +19,7 @@ public class SplashActivity extends Activity {
 			return;
 		}
 		setContentView(R.layout.splash);
+		hideActionbar();
 		new AsyncTask<Void,Void,Void>(){
 			public Void doInBackground(Void[] p) {
 				boolean ok=false;
@@ -124,5 +126,21 @@ public class SplashActivity extends Activity {
 	@Override
 	public void onBackPressed() {
 		
+	}
+	
+	public void hideActionbar(){
+		/*It can be called by 1.x and 2.x, but it won't do anything.*/
+		try {
+			Object actbar=getClass().getMethod("getActionBar").invoke(this);
+			actbar.getClass().getMethod("hide").invoke(actbar);
+		} catch (IllegalAccessException e) {
+			
+		} catch (InvocationTargetException e) {
+			
+		} catch (NoSuchMethodException e) {
+			
+		} catch (IllegalArgumentException e) {
+			
+		}
 	}
 }
