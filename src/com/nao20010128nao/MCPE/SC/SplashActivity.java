@@ -133,13 +133,7 @@ public class SplashActivity extends Activity {
 		try {
 			Object actbar=getClass().getMethod("getActionBar").invoke(this);
 			actbar.getClass().getMethod("hide").invoke(actbar);
-		} catch (IllegalAccessException e) {
-			
-		} catch (InvocationTargetException e) {
-			
-		} catch (NoSuchMethodException e) {
-			
-		} catch (IllegalArgumentException e) {
+		} catch (Throwable e) {
 			
 		}
 	}
