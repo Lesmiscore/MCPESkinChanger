@@ -1,110 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="err_title">エラー</string>
-  <string name="startChange">変更開始</string>
-  <string name="options">オプション</string>
+    <string name="err_title">エラー</string>
+    <string name="startChange">変更開始</string>
+    <string name="options">オプション</string>
 
-  <string name="deleteCache">キャッシュを消去</string>
-  <string name="deletedCache">キャッシュを消去しました。</string>
-  <string name="inputFrom">MCPEのAPKの読み込み元</string>
-  <string name="outputTo">MCPEのAPKの出力先</string>
-  <string name="changeDeleteConfirm">"@KEY@に対して、何をしますか?"</string>
-  <string name="confirm">確認</string>
-  <string name="chgList">変更ファイルを確認</string>
-  <string name="nodata">変更ファイルはありません</string>
-  <string name="select">選択</string>
-  <string name="delete">削除</string>
-  <string name="wait">お待ち下さい...</string>
+    <string name="deleteCache">キャッシュを消去</string>
+    <string name="deletedCache">キャッシュを消去しました。</string>
+    <string name="inputFrom">MCPEのAPKの読み込み元</string>
+    <string name="outputTo">MCPEのAPKの出力先</string>
+    <string name="changeDeleteConfirm">"@KEY@に対して、何をしますか?"</string>
+    <string name="confirm">確認</string>
+    <string name="chgList">変更ファイルを確認</string>
+    <string name="nodata">変更ファイルはありません</string>
+    <string name="select">選択</string>
+    <string name="delete">削除</string>
+    <string name="wait">お待ち下さい...</string>
 
-  <string name="err_no_skins">どのスキンも変更されません。\n変更したいスキンを1つ以上選択してください。</string>
-  <string name="wantUpdate">アップデートしたい? ここをタッチしてGoogle Playに移動します。</string>
-  <string name="wantUpdate_desc">[アンインストール] (-> [はい]) -> [インストール]の順番でタッチするとアップデートできます。\nスキン変更は何度でもできます。</string>
-  <string name="selectSteve">Steve(スティーブ)のスキンを変更(~0.10.5)</string>
-  <string name="selectSteveN">Steve(スティーブ)のスキンを変更(0.11.0~)</string>
-  <string name="selectAlexN">Alex(アレックス)のスキンを変更(0.11.0~)</string>
-  <string name="selectZombie">ゾンビのスキンを変更</string>
-  <string name="selectZombiePigman">ゾンビピッグマンのスキンを変更</string>
+    <string name="err_no_skins">どのスキンも変更されません。\n変更したいスキンを1つ以上選択してください。</string>
+    <string name="wantUpdate">アップデートしたい? ここをタッチしてGoogle Playに移動します。</string>
+    <string name="wantUpdate_desc">[アンインストール] (-> [はい]) -> [インストール]の順番でタッチするとアップデートできます。\nスキン変更は何度でもできます。</string>
+    <string name="selectSteve">Steve(スティーブ)のスキンを変更(~0.10.5)</string>
+    <string name="selectSteveN">Steve(スティーブ)のスキンを変更(0.11.0~)</string>
+    <string name="selectAlexN">Alex(アレックス)のスキンを変更(0.11.0~)</string>
+    <string name="selectZombie">ゾンビのスキンを変更</string>
+    <string name="selectZombiePigman">ゾンビピッグマンのスキンを変更</string>
 
-  <string name="selectCow">牛のスキンを変更</string>
-  <string name="selectCreeper">クリーパーのスキンを変更</string>
-  <string name="selectPig">ブタのスキンを変更</string>
-  <string name="selectSheep">羊のスキンを変更 (~0.11.1)</string>
+    <string name="selectCow">牛のスキンを変更</string>
+    <string name="selectCreeper">クリーパーのスキンを変更</string>
+    <string name="selectPig">ブタのスキンを変更</string>
+    <string name="selectSheep">羊のスキンを変更 (~0.11.1)</string>
 
-  <string name="selectSheep0">白い羊のスキンを選択</string>
-  <string name="selectSheep1">オレンジ色の羊のスキンを選択</string>
-  <string name="selectSheep2">明るい紫色の羊のスキンを選択</string>
-  <string name="selectSheep3">明るい青色の羊のスキンを選択</string>
-  <string name="selectSheep4">黄色の羊のスキンを選択</string>
-  <string name="selectSheep5">ライム色の羊のスキンを選択</string>
-  <string name="selectSheep6">ピンク色の羊のスキンを選択</string>
-  <string name="selectSheep7">暗いグレーの羊のスキンを選択</string>
-  <string name="selectSheep8">グレーの羊のスキンを選択</string>
-  <string name="selectSheep9">シアン色の羊のスキンを選択</string>
-  <string name="selectSheep10">紫色の羊のスキンを選択</string>
-  <string name="selectSheep11">青色の羊のスキンを選択</string>
-  <string name="selectSheep12">茶色の羊のスキンを選択</string>
-  <string name="selectSheep13">緑色の羊のスキンを選択</string>
-  <string name="selectSheep14">赤色の羊のスキンを選択</string>
-  <string name="selectSheep15">黒色の羊のスキンを選択</string>
+    <string name="selectSheep0">白い羊のスキンを選択</string>
+    <string name="selectSheep1">オレンジ色の羊のスキンを選択</string>
+    <string name="selectSheep2">明るい紫色の羊のスキンを選択</string>
+    <string name="selectSheep3">明るい青色の羊のスキンを選択</string>
+    <string name="selectSheep4">黄色の羊のスキンを選択</string>
+    <string name="selectSheep5">ライム色の羊のスキンを選択</string>
+    <string name="selectSheep6">ピンク色の羊のスキンを選択</string>
+    <string name="selectSheep7">暗いグレーの羊のスキンを選択</string>
+    <string name="selectSheep8">グレーの羊のスキンを選択</string>
+    <string name="selectSheep9">シアン色の羊のスキンを選択</string>
+    <string name="selectSheep10">紫色の羊のスキンを選択</string>
+    <string name="selectSheep11">青色の羊のスキンを選択</string>
+    <string name="selectSheep12">茶色の羊のスキンを選択</string>
+    <string name="selectSheep13">緑色の羊のスキンを選択</string>
+    <string name="selectSheep14">赤色の羊のスキンを選択</string>
+    <string name="selectSheep15">黒色の羊のスキンを選択</string>
 
-  <string name="selectGhastNormal">通常のガストのスキンを選択</string>
-  <string name="selectGhastShooting">狙撃中のガストのスキンを選択</string>
-  <string name="selectSnowGolem">スノーゴーレムのスキンを選択</string>
-  <string name="selectSquid">イカのスキンを選択</string>
-  <string name="selectWolfNormal">通常の狼のスキンを選択</string>
-  <string name="selectWolfAngry">怒った狼のスキンを選択</string>
-  <string name="selectChicken">鶏のスキンを選択</string>
-  <string name="selectCreeperArmor">帯電クリーパーの\"外側\"のスキンを選択</string>
-  <string name="selectIronGolem">アイアンゴーレムのスキンを選択</string>
-  <string name="selectBat">コウモリのスキンを選択</string>
-  <string name="selectBlaze">ブレイズのスキンを選択</string>
-  <string name="selectMooshroom">ムーシュルームのスキンを選択</string>
-  <string name="selectMagmaCube">マグマキューブのスキンを選択</string>
-  <string name="selectSilverFish">シルバーフィッシュのスキンを選択</string>
-  <string name="selectSlime">スライムのスキンを選択</string>
-  <string name="selectWitherSkeleton">ウィザースケルトンのスキンを選択</string>
-  <string name="selectSkeleton">スケルトンのスキンを選択</string>
-	
-  <string name="changeableSkins">変更スキンを指定</string>
-  <string name="checking">いくつかの項目を調べています...</string>
-  <string name="changing">スキンを変更しています...</string>
-  <string name="verifying">APKを検証しています...</string>
-  <string name="fakeapp">\"@APP@\"をMinecraft:PEとして使用しようとしましたね? それはできません。\n正しいMinecraft:PEのAPKを使用して下さい。</string>
+    <string name="selectGhastNormal">通常のガストのスキンを選択</string>
+    <string name="selectGhastShooting">狙撃中のガストのスキンを選択</string>
+    <string name="selectSnowGolem">スノーゴーレムのスキンを選択</string>
+    <string name="selectSquid">イカのスキンを選択</string>
+    <string name="selectWolfNormal">通常の狼のスキンを選択</string>
+    <string name="selectWolfAngry">怒った狼のスキンを選択</string>
+    <string name="selectChicken">鶏のスキンを選択</string>
+    <string name="selectCreeperArmor">帯電クリーパーの\"外側\"のスキンを選択</string>
+    <string name="selectIronGolem">アイアンゴーレムのスキンを選択</string>
+    <string name="selectBat">コウモリのスキンを選択</string>
+    <string name="selectBlaze">ブレイズのスキンを選択</string>
+    <string name="selectMooshroom">ムーシュルームのスキンを選択</string>
+    <string name="selectMagmaCube">マグマキューブのスキンを選択</string>
+    <string name="selectSilverFish">シルバーフィッシュのスキンを選択</string>
+    <string name="selectSlime">スライムのスキンを選択</string>
+    <string name="selectWitherSkeleton">ウィザースケルトンのスキンを選択</string>
+    <string name="selectSkeleton">スケルトンのスキンを選択</string>
 
-  <string name="check_internal">APKのチェック中に問題が発生しました: 内部的なエラー、もしくは外部からの呼び出しの可能性があります。</string>
-  <string name="check_apk">APKのチェック中に問題が発生しました: APKの中身が足りないようです。開発者に連絡してください!</string>
-  <string name="check_success">生成されたAPKには何の異常もないようです。</string>
+    <string name="changeableSkins">変更スキンを指定</string>
+    <string name="checking">いくつかの項目を調べています...</string>
+    <string name="changing">スキンを変更しています...</string>
+    <string name="verifying">APKを検証しています...</string>
+    <string name="fakeapp">\"@APP@\"をMinecraft:PEとして使用しようとしましたね? それはできません。\n正しいMinecraft:PEのAPKを使用して下さい。</string>
 
-  <string name="another">その他の機能</string>
-  <string name="about">このアプリについて</string>
-  <string name="version">バージョン</string>
-  <string name="beta">ベータビルド</string>
-  <string name="notbeta">このバージョンはベータビルドではありません。</string>
-  <string name="onbeta">ビルド @BETA@</string>
-  <string name="openPlayStore">Playストアでこのアプリを見る</string>
+    <string name="check_internal">APKのチェック中に問題が発生しました: 内部的なエラー、もしくは外部からの呼び出しの可能性があります。</string>
+    <string name="check_apk">APKのチェック中に問題が発生しました: APKの中身が足りないようです。開発者に連絡してください!</string>
+    <string name="check_success">生成されたAPKには何の異常もないようです。</string>
 
-  <string-array name="checkName">
-    <item>Minecraft PEがインストールされているかを調べています...</item>
-    <item>Minecraft PEのAPKファイルがコピー可能かを調べています...</item>
-  </string-array>
-  <string-array name="errors">
-    <item>Minecraft PEがインストールされていません。インストールしてからもう一度起動して下さい。(BlockLauncherではダメです。)</item>
-    <item>Minecraft PEのAPKファイルをコピーできません。\nもし、Android 4.4(KitKat)を使っているなら、5.0(Lollipop)にアップデートするか、バージョンを下げて下さい。\nAndroid 4.4は有料アプリのコピーを禁止しているようです。</item>
-  </string-array>
-  <string-array name="modSteps">
-    <item>Minecraft PEのAPKを作業用フォルダにコピーしています...</item>
-    <item>APKファイルを加工しています...</item>
-    <item>加工したAPKファイルに署名しています...</item>
-    <item>署名したAPKファイルを外部ストレージにコピーしています...</item>
-    <item>@string/verifying</item>
-    <item>完了!インストールしてお楽しみ下さい。</item>
-  </string-array>
-  <string-array name="inputList">
-    <item>インストールされたAPK</item>
-    <item>APKファイルを選択</item>
-  </string-array>
-  <string-array name="outputList">
-    <item>インストール</item>
-    <item>出力先を選択</item>
-  </string-array>
+    <string name="another">その他の機能</string>
+    <string name="about">このアプリについて</string>
+    <string name="version">バージョン</string>
+    <string name="beta">ベータビルド</string>
+    <string name="notbeta">このバージョンはベータビルドではありません。</string>
+    <string name="onbeta">ビルド @BETA@</string>
+    <string name="openPlayStore">Playストアでこのアプリを見る</string>
+
+    <string-array name="checkName">
+        <item>Minecraft PEがインストールされているかを調べています...</item>
+        <item>Minecraft PEのAPKファイルがコピー可能かを調べています...</item>
+    </string-array>
+    <string-array name="errors">
+        <item>Minecraft PEがインストールされていません。インストールしてからもう一度起動して下さい。(BlockLauncherではダメです。)</item>
+        <item>Minecraft PEのAPKファイルをコピーできません。\nもし、Android 4.4(KitKat)を使っているなら、5.0(Lollipop)にアップデートするか、バージョンを下げて下さい。\nAndroid 4.4は有料アプリのコピーを禁止しているようです。</item>
+    </string-array>
+    <string-array name="modSteps">
+        <item>Minecraft PEのAPKを作業用フォルダにコピーしています...</item>
+        <item>APKファイルを加工しています...</item>
+        <item>加工したAPKファイルに署名しています...</item>
+        <item>署名したAPKファイルを外部ストレージにコピーしています...</item>
+        <item>@string/verifying</item>
+        <item>完了!インストールしてお楽しみ下さい。</item>
+    </string-array>
+    <string-array name="inputList">
+        <item>インストールされたAPK</item>
+        <item>APKファイルを選択</item>
+    </string-array>
+    <string-array name="outputList">
+        <item>インストール</item>
+        <item>出力先を選択</item>
+    </string-array>
 </resources>
