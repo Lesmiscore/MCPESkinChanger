@@ -79,7 +79,7 @@ public class FilteredMap extends HashMap<String,URI> {
 					result=false;
 				}
 			}
-			return false;
+			return result;
 		}
 
 		@Override
@@ -104,7 +104,7 @@ public class FilteredMap extends HashMap<String,URI> {
 					result=false;
 				}
 			}
-			return false;
+			return result;
 		}
 	}
 }
