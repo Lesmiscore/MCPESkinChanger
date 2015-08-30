@@ -14,10 +14,13 @@ public class FilteredMap extends HashMap<String,URI> {
 	boolean quickDel;
 	Set<String> banned;
 	public FilteredMap(){
-		this(false);
+		this(false,defaultBans);
 	}
 	public FilteredMap(boolean qd){
-		quickDel=qd;
+		this(qd,defaultBans);
+	}
+	public FilteredMap(Set<String> bans){
+		this(false,bans);
 	}
 	public FilteredMap(boolean qd,Set<String> bans){
 		quickDel=qd;
