@@ -43,7 +43,7 @@ public class Utils
 	}
 	
 	public static class MobNames{
-		private static final Map<String,Integer> fromFileName=new HashMap<>();
+		private static final Map<String,Integer> fromFileName;
 		static{
 			Map<Integer,String> temp=new HashMap<>();
 			temp.put(R.string.Steve, "assets/images/mob/char.png");
@@ -88,6 +88,20 @@ public class Utils
 			temp.put(R.string.Slime, "assets/images/mob/slime.png");
 			temp.put(R.string.WitherSkeleton, "assets/images/mob/wither_skeleton.png");
 			
+			fromFileName=swapMap(temp);
+		}
+		private static <K,V> Map<K,V> swapMap(Map<V,K> from){
+			Map<K,V> toReturn=new HashMap<>(from.size());
+			for(V key:from.keySet()){
+				toReturn.put(from.get(key),key);
+			}
+			return toReturn;
+		}
+		public static int getResourceIdFromFileName(String s){
+			return fromFileName.get(s);
+		}
+		public static String localizeMobNameFromFileName(String s,Context ctx){
+			return ctx.getResources().getString(getResourceIdFromFileName(s));
 		}
 	}
 }
