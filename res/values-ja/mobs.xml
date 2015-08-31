@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="Steve">スティーブ</string>
+    <string name="SteveN">スティーブ</string>
+    <string name="AlexN">アレックス</string>
+    <string name="Zombie">ゾンビ</string>
+    <string name="ZombiePigman">ゾンビピッグマン</string>
+
+    <string name="Cow">牛</string>
+    <string name="Creeper">クリーパー</string>
+    <string name="Pig">ブタ</string>
+    <string name="Sheep">羊</string>
+
+    <string name="Sheep0">白い羊</string>
+    <string name="Sheep1">オレンジ色の羊</string>
+    <string name="Sheep2">明るい紫色の羊</string>
+    <string name="Sheep3">明るい青色の羊</string>
+    <string name="Sheep4">黄色の羊</string>
+    <string name="Sheep5">ライム色の羊</string>
+    <string name="Sheep6">ピンク色の羊</string>
+    <string name="Sheep7">暗いグレーの羊</string>
+    <string name="Sheep8">グレーの羊</string>
+    <string name="Sheep9">シアン色の羊</string>
+    <string name="Sheep10">紫色の羊</string>
+    <string name="Sheep11">青色の羊</string>
+    <string name="Sheep12">茶色の羊</string>
+    <string name="Sheep13">緑色の羊</string>
+    <string name="Sheep14">赤色の羊</string>
+    <string name="Sheep15">黒色の羊</string>
+
+    <string name="GhastNormal">通常のガスト</string>
+    <string name="GhastShooting">狙撃中のガスト</string>
+    <string name="SnowGolem">スノーゴーレム</string>
+    <string name="Squid">イカ</string>
+    <string name="WolfNormal">通常の狼</string>
+    <string name="WolfAngry">怒った狼</string>
+    <string name="Chicken">鶏</string>
+    <string name="CreeperArmor">帯電クリーパーの\"外側\"</string>
+    <string name="IronGolem">アイアンゴーレム</string>
+    <string name="Bat">コウモリ</string>
+    <string name="Blaze">ブレイズ</string>
+    <string name="Mooshroom">ムーシュルーム</string>
+    <string name="MagmaCube">マグマキューブ</string>
+    <string name="SilverFish">シルバーフィッシュ</string>
+    <string name="Slime">スライム</string>
+    <string name="WitherSkeleton">ウィザースケルトン</string>
+    <string name="Skeleton">スケルトン</string>
+</resources>
