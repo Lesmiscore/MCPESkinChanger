@@ -12,13 +12,16 @@ public abstract class SmartFindViewActivity extends Activity {
 	public <T extends View> T find(String id) {
 		// TODO: Implement this method
 		try {
-			return find((int)R.id.class.getField(id).get(null));
+			return find((int)Class.forName(getPackageName() + ".R$id").getField(id).get(null));
+		} catch (ClassNotFoundException e) {
+			
 		} catch (NoSuchFieldException e) {
-			return null;
+			
 		} catch (IllegalAccessException e) {
-			return null;
+			
 		} catch (IllegalArgumentException e) {
-			return null;
+			
 		}
+		return null;
 	}
 }
