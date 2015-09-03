@@ -20,7 +20,7 @@ public class ChangingListEditor extends ListActivity {
 		getListView().setOnItemClickListener(new AdapterView.OnItemClickListener(){
 				public void onItemClick(AdapterView view, View v, int i, long l) {
 					Map.Entry<String,URI> entry=(Map.Entry<String,URI>)v.getTag();
-					String key=entry.getKey();
+					final String key=entry.getKey();
 					final String show;
 					if(Utils.MobNames.isNameAvaliable(key)){
 						show=Utils.MobNames.localizeMobNameFromFileName(key,ChangingListEditor.this);
@@ -32,7 +32,7 @@ public class ChangingListEditor extends ListActivity {
 						setMessage(getResources().getString(R.string.changeDeleteConfirm).replace("@KEY@", show)).
 						setPositiveButton(R.string.delete, new DialogInterface.OnClickListener(){
 							public void onClick(DialogInterface di, int w) {
-								ModificateActivity.skins.remove(show);
+								ModificateActivity.skins.remove(key);
 								getListView().setAdapter(new InternalListAdapter());
 							}
 						}).
@@ -40,7 +40,7 @@ public class ChangingListEditor extends ListActivity {
 							public void onClick(DialogInterface di, int w) {
 								Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 								intent.setType("image/png");
-								changeTmp = show;
+								changeTmp = key;
 								startActivityForResult(intent, 123);
 							}
 						}).
