@@ -29,7 +29,7 @@ public class ChangingListEditor extends ListActivity {
 					}
 					new AlertDialog.Builder(ChangingListEditor.this).
 						setTitle(R.string.confirm).
-						setMessage(getResources().getString(R.string.changeDeleteConfirm).replace("@KEY@", key)).
+						setMessage(getResources().getString(R.string.changeDeleteConfirm).replace("@KEY@", show)).
 						setPositiveButton(R.string.delete, new DialogInterface.OnClickListener(){
 							public void onClick(DialogInterface di, int w) {
 								ModificateActivity.skins.remove(show);
