@@ -103,5 +103,8 @@ public class Utils
 		public static String localizeMobNameFromFileName(String s,Context ctx){
 			return ctx.getResources().getString(getResourceIdFromFileName(s));
 		}
+		public static boolean isNameAvaliable(String s){
+			return fromFileName.containsKey(s);
+		}
 	}
 }
