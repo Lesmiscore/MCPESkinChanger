@@ -17,6 +17,7 @@ import java.lang.ref.*;
 import java.net.*;
 import java.util.*;
 import android.content.pm.PackageManager.*;
+import android.content.res.Resources.*;
 
 public class MainActivity extends PreferenceActivity {
 	public static WeakReference<MainActivity> instance=new WeakReference<>(null);
@@ -254,26 +255,38 @@ public class MainActivity extends PreferenceActivity {
 				final File unchecked=new File(data.getStringExtra("result"));
 				File checked=new File(getFilesDir(), "mcpeCopy.apk");
 				if(unchecked.exists()){
-					AndroidPackage pak=new AndroidPackage(unchecked);
-					PackageInfo info=pak.getResult();
-					if("com.mojang.minecraftpe".equals(info.packageName)){
-						unchecked.renameTo(checked);
-					}else{
-						ApplicationInfo appInfo=info.applicationInfo;
-						AndroidPackage.AppSnippet as=AndroidPackage.getAppSnippet(this,appInfo,unchecked);
-						CharSequence s=as.label;
-						String mes=getResources().getString(R.string.fakeapp).replace("@APP@",s);
+					try {
+						AndroidPackage pak=new AndroidPackage(unchecked);
+						PackageInfo info=pak.getResult();
+						if ("com.mojang.minecraftpe".equals(info.packageName)) {
+							unchecked.renameTo(checked);
+						} else {
+							ApplicationInfo appInfo=info.applicationInfo;
+							AndroidPackage.AppSnippet as=AndroidPackage.getAppSnippet(this, appInfo, unchecked);
+							CharSequence s=as.label;
+							String mes=getResources().getString(R.string.fakeapp).replace("@APP@", s);
+							new AlertDialog.Builder(this).
+								setMessage(mes).
+								setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener(){
+									public void onClick(DialogInterface a, int w) {
+										a.cancel();
+										unchecked.delete();
+									}
+								}).
+								show();
+						}
+					} catch (Throwable e) {
 						new AlertDialog.Builder(this).
-							setMessage(mes).
-							setPositiveButton(android.R.string.ok,new DialogInterface.OnClickListener(){
-								public void onClick(DialogInterface a,int w){
+							setMessage(R.string.badapk).
+							setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener(){
+								public void onClick(DialogInterface a, int w) {
 									a.cancel();
 									unchecked.delete();
 								}
 							}).
 							show();
 					}
-				}else{
+				} else {
 					return;
 				}
 				Tools.setSettings("input.where", data.getStringExtra("result"), this);

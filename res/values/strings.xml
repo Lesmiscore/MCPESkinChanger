@@ -71,11 +71,12 @@
     <string name="changing">Changing skins...</string>
     <string name="verifying">Verifying the APK...</string>
     <string name="fakeapp">You tried to use \"@APP@\" as Minecraft:PE? You can\'t!\nUse correctly Minecraft:PE\'s APK!</string>
-
+	<string name="badapk">Failed to check the APK. Maybe it is broken or incorrect format. Please check that it is correct.</string>
+	
     <string name="check_internal">An error occured while checking the APK: Maybe an internal error, or called from out of the app.</string>
     <string name="check_apk">An error occured while checking the APK: Some files are missing. It is caused by this app. Report it to the developer!</string>
     <string name="check_success">Generated APK has no problem!</string>
-
+	
     <string name="another">Another Tools</string>
     <string name="about">About this app</string>
     <string name="version">Version</string>

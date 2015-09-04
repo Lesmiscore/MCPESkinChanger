@@ -70,7 +70,8 @@
     <string name="changing">スキンを変更しています...</string>
     <string name="verifying">APKを検証しています...</string>
     <string name="fakeapp">\"@APP@\"をMinecraft:PEとして使用しようとしましたね? それはできません。\n正しいMinecraft:PEのAPKを使用して下さい。</string>
-
+	<string name="badapp">APKの検証に失敗しました。ファイルが壊れているか、不正なフォーマットの可能性があります。ファイルが正しいかをご確認下さい。</string>
+	
     <string name="check_internal">APKのチェック中に問題が発生しました: 内部的なエラー、もしくは外部からの呼び出しの可能性があります。</string>
     <string name="check_apk">APKのチェック中に問題が発生しました: APKの中身が足りないようです。開発者に連絡してください!</string>
     <string name="check_success">生成されたAPKには何の異常もないようです。</string>
