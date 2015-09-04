@@ -8,6 +8,7 @@ import android.widget.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 import java.io.*;
 import java.lang.reflect.*;
+import com.nao20010128nao.SpoofBrowser.classes.*;
 
 public class SplashActivity extends Activity {
 	@Override
@@ -112,6 +113,14 @@ public class SplashActivity extends Activity {
 						new File(getFilesDir(), "signed.apk").delete();
 					}catch(Throwable e){
 
+					}
+					try{
+						new File(getFilesDir(),"mcpeCopy_unchecked.apk").delete();
+						if(Tools.getSettings("input.mode", 0, SplashActivity.this)==0){
+							new File(getFilesDir(),"mcpeCopy.apk").delete();
+						}
+					}catch(Throwable e){
+						
 					}
 				}
 				RunOnceApplication.instance.completeCheckMCPE();
