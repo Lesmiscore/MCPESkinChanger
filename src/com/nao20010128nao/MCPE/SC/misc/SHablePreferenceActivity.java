@@ -3,11 +3,11 @@ import android.preference.*;
 import com.nao20010128nao.ToolBox.*;
 
 public abstract class SHablePreferenceActivity extends PreferenceActivity{
-	void sH(Preference pref,HandledPreference.OnClickListener handler){
+	protected void sH(Preference pref,HandledPreference.OnClickListener handler){
 		if(!(pref instanceof HandledPreference))return;
 		((HandledPreference)pref).setOnClickListener(handler);
 	}
-	void sH(String pref,HandledPreference.OnClickListener handler){
+	protected void sH(String pref,HandledPreference.OnClickListener handler){
 		sH(findPreference(pref),handler);
 	}
 }

@@ -18,8 +18,9 @@ import java.net.*;
 import java.util.*;
 import android.content.pm.PackageManager.*;
 import android.content.res.Resources.*;
+import com.nao20010128nao.MCPE.SC.misc.*;
 
-public class MainActivity extends PreferenceActivity {
+public class MainActivity extends SHablePreferenceActivity {
 	public static WeakReference<MainActivity> instance=new WeakReference<>(null);
 	static boolean preventStart=false;;
 	Map<String,URI> skins=ModificateActivity.skins;
@@ -190,13 +191,6 @@ public class MainActivity extends PreferenceActivity {
 			
 		}
     }
-	void sH(Preference pref, HandledPreference.OnClickListener handler) {
-		if (!(pref instanceof HandledPreference))return;
-		((HandledPreference)pref).setOnClickListener(handler);
-	}
-	void sH(String pref, HandledPreference.OnClickListener handler) {
-		sH(findPreference(pref), handler);
-	}
 	void selectFileForSkin(String name){
 		Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 		intent.setType("image/png");
