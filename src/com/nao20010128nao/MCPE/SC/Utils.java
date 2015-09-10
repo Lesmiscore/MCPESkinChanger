@@ -6,6 +6,7 @@ import com.nao20010128nao.MC_PE.SkinChanger.*;
 import android.content.res.*;
 import java.util.*;
 import java.lang.reflect.*;
+import android.os.*;
 
 public class Utils
 {
@@ -109,10 +110,12 @@ public class Utils
 		}
 	}
 	public static class Cheats{
-		public final static Class IPackageManager,IPackageManager_Stub,ServiceManager;
+		public final static Class IPackageManager,IPackageManager_Stub,IActivityManager,ActivityManagerNative,ServiceManager;
 		static{
 			IPackageManager=getClass("android.content.pm.IPackageManager");
 			IPackageManager_Stub=getClass("android.content.pm.IPackageManager$Stub");
+			IActivityManager=getClass("android.app.IActivityManager");
+			ActivityManagerNative=getClass("android.app.ActivityManagerNative");
 			ServiceManager=getClass("android.os.ServiceManager");
 		}
 		private static Class getClass(String cls){
@@ -124,7 +127,7 @@ public class Utils
 		}
 		public static Object getPackageManager(){
 			try {
-				return IPackageManager_Stub.getMethod("asInterface", ServiceManager).invoke(ServiceManager.getMethod("getService", String.class).invoke("package"));
+				return IPackageManager_Stub.getMethod("asInterface", IBinder.class).invoke(null,ServiceManager.getMethod("getService", String.class).invoke("package"));
 			} catch (IllegalAccessException e) {
 				
 			} catch (InvocationTargetException e) {
@@ -133,6 +136,20 @@ public class Utils
 				
 			} catch (IllegalArgumentException e) {
 				
+			}
+			return null;
+		}
+		public static Object getActivityManager(){
+			try {
+				return ActivityManagerNative.getMethod("getDefault").invoke(null);
+			} catch (IllegalAccessException e) {
+
+			} catch (InvocationTargetException e) {
+
+			} catch (NoSuchMethodException e) {
+
+			} catch (IllegalArgumentException e) {
+
 			}
 			return null;
 		}
