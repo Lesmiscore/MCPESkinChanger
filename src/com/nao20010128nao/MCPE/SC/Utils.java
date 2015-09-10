@@ -5,6 +5,7 @@ import android.content.pm.PackageManager.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 import android.content.res.*;
 import java.util.*;
+import java.lang.reflect.*;
 
 public class Utils
 {
@@ -105,6 +106,35 @@ public class Utils
 		}
 		public static boolean isNameAvaliable(String s){
 			return fromFileName.containsKey(s);
+		}
+	}
+	public static class Cheats{
+		public final static Class IPackageManager,IPackageManager_Stub,ServiceManager;
+		static{
+			IPackageManager=getClass("android.content.pm.IPackageManager");
+			IPackageManager_Stub=getClass("android.content.pm.IPackageManager$Stub");
+			ServiceManager=getClass(" android.os.ServiceManager");
+		}
+		private static Class getClass(String cls){
+			try {
+				return Class.forName(cls);
+			} catch (ClassNotFoundException e) {
+				return null;
+			}
+		}
+		public static Object getPackageManager(){
+			try {
+				return IPackageManager_Stub.getMethod("asInterface", ServiceManager).invoke(ServiceManager.getMethod("getService", String.class).invoke("package"));
+			} catch (IllegalAccessException e) {
+				
+			} catch (InvocationTargetException e) {
+				
+			} catch (NoSuchMethodException e) {
+				
+			} catch (IllegalArgumentException e) {
+				
+			}
+			return null;
 		}
 	}
 }
