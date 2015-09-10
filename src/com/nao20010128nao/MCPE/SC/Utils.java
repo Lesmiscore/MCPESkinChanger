@@ -113,7 +113,7 @@ public class Utils
 		static{
 			IPackageManager=getClass("android.content.pm.IPackageManager");
 			IPackageManager_Stub=getClass("android.content.pm.IPackageManager$Stub");
-			ServiceManager=getClass(" android.os.ServiceManager");
+			ServiceManager=getClass("android.os.ServiceManager");
 		}
 		private static Class getClass(String cls){
 			try {
