@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.nao20010128nao.MC_PE.SkinChanger"
-    android:versionCode="13"
-    android:versionName="0.3.1_2" >
+    android:versionCode="19"
+    android:versionName="0.4.0" >
     <uses-sdk 
         android:minSdkVersion="8" 
         android:targetSdkVersion="21" />
@@ -23,9 +23,9 @@
         </activity>
 		<activity
 			android:label="@string/checking"
-			android:name="com.nao20010128nao.MCPE.SC.SupportCheckerActivity"
+			android:name="com.nao20010128nao.MCPE.SC.SplashActivity"
 			android:exported="false"
-			android:theme="@style/AppDialog" >
+			android:theme="@style/AppTheme.NoTitle" >
         </activity>
 		<activity
             android:label="@string/changing"
@@ -50,10 +50,6 @@
 			android:theme="@style/AppDialog"
 			android:exported="false">
         </activity>
-		<service
-			android:label="@string/app_name"
-			android:name="com.nao20010128nao.MCPE.SC.CacheDeleteService"
-			android:exported="false">
-		</service>
     </application>
 </manifest>
+

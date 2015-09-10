@@ -21,9 +21,15 @@ public class ChangingListEditor extends ListActivity {
 				public void onItemClick(AdapterView view, View v, int i, long l) {
 					Map.Entry<String,URI> entry=(Map.Entry<String,URI>)v.getTag();
 					final String key=entry.getKey();
+					final String show;
+					if(Utils.MobNames.isNameAvaliable(key)){
+						show=Utils.MobNames.localizeMobNameFromFileName(key,ChangingListEditor.this);
+					}else{
+						show=key;
+					}
 					new AlertDialog.Builder(ChangingListEditor.this).
 						setTitle(R.string.confirm).
-						setMessage(getResources().getString(R.string.changeDeleteConfirm).replace("@KEY@", key)).
+						setMessage(getResources().getString(R.string.changeDeleteConfirm).replace("@KEY@", show)).
 						setPositiveButton(R.string.delete, new DialogInterface.OnClickListener(){
 							public void onClick(DialogInterface di, int w) {
 								ModificateActivity.skins.remove(key);
@@ -52,13 +58,28 @@ public class ChangingListEditor extends ListActivity {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			// TODO: Implement this method
-			if (convertView == null)
-				convertView = getLayoutInflater().inflate(R.layout.chglistcomponent, null);
+			String fn=getItem(position).getKey();
+			if (convertView == null){
+				int layout;
+				if(Utils.MobNames.isNameAvaliable(fn)){
+					Log.d("cle","name avaliable for: "+fn);
+					layout=R.layout.chglistname;
+				}else{
+					Log.d("cle","name not avaliable for: "+fn);
+					layout=R.layout.chglistcomponent;
+				}
+				convertView = getLayoutInflater().inflate(layout, null);
+			}
 			convertView.setTag(getItem(position));
 			TextView mimg=(TextView)convertView.findViewById(R.id.mobimgname);
-			mimg.setText(getItem(position).getKey());
+			if(mimg!=null)
+				mimg.setText(getItem(position).getKey());
 			TextView name=(TextView)convertView.findViewById(R.id.fname);
-			name.setText(getItem(position).getValue().toString());
+			if(name!=null)
+				name.setText(getItem(position).getValue().toString());
+			TextView mnam=(TextView)convertView.findViewById(R.id.mobname);
+			if(mnam!=null)
+				mnam.setText(Utils.MobNames.localizeMobNameFromFileName(getItem(position).getKey(),ChangingListEditor.this));
 			Log.d("listAdapter", "key:" + getItem(position).getKey() + "-value:" + getItem(position).getValue().toString());
 			return convertView;
 		}

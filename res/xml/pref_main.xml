@@ -3,92 +3,131 @@
 	xmlns:android="http://schemas.android.com/apk/res/android">
 	<PreferenceScreen
 		android:title="@string/changeableSkins">
-		<pref.StartPref
+		<pref.ImagePref
 			android:title="@string/selectSteve"
-			android:summary="@string/selectSteve_desc"
 			android:key="selectSteve"/>
-		<pref.StartPref
+		<pref.ImagePref
 			android:title="@string/selectSteveN"
 			android:key="selectSteveN"/>
-		<pref.StartPref
+		<pref.ImagePref
 			android:title="@string/selectAlexN"
 			android:key="selectAlexN"/>
 		
-		<pref.StartPref
+		<pref.ImagePref
 			android:title="@string/selectZombie"
-			android:summary="@string/selectZombie_desc"
 			android:key="selectZombie"/>
-		<pref.StartPref
+		<pref.ImagePref
 			android:title="@string/selectZombiePigman"
-			android:summary="@string/selectZombiePigman_desc"
 			android:key="selectZombiePigman"/>
-		<pref.StartPref
+		<pref.ImagePref
 			android:title="@string/selectCow"
-			android:summary="@string/selectCow_desc"
 			android:key="selectCow"/>
-		<pref.StartPref
-			android:title="@string/selectCreeper"
-			android:summary="@string/selectCreeper_desc"
-			android:key="selectCreeper"/>
-		<pref.StartPref
+		<pref.ImagePref
+			android:title="@string/selectChicken"
+			android:key="selectChicken"/>
+		<pref.ImagePref
 			android:title="@string/selectPig"
-			android:summary="@string/selectPig_desc"
 			android:key="selectPig"/>
+		<pref.ImagePref
+			android:title="@string/selectCreeper"
+			android:key="selectCreeper"/>
+		<pref.ImagePref
+			android:title="@string/selectCreeperArmor"
+			android:key="selectCreeperArmor"/>
+		<pref.ImagePref
+			android:title="@string/selectSkeleton"
+			android:key="selectSkeleton"/>
 		<PreferenceScreen
-			android:title="@string/selectSheep"
-			android:summary="@string/selectSheep_desc">
-			<pref.StartPref
+			android:title="@string/selectSheep">
+			<pref.ImagePref
 				android:title="@string/selectSheep0"
 				android:key="selectSheep0"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep1"
 				android:key="selectSheep1"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep2"
 				android:key="selectSheep2"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep3"
 				android:key="selectSheep3"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep4"
 				android:key="selectSheep4"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep5"
 				android:key="selectSheep5"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep6"
 				android:key="selectSheep6"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep7"
 				android:key="selectSheep7"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep8"
 				android:key="selectSheep8"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep9"
 				android:key="selectSheep9"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep10"
 				android:key="selectSheep10"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep11"
 				android:key="selectSheep11"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep12"
 				android:key="selectSheep12"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep13"
 				android:key="selectSheep13"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep14"
 				android:key="selectSheep14"/>
-			<pref.StartPref
+			<pref.ImagePref
 				android:title="@string/selectSheep15"
 				android:key="selectSheep15"/>
 		</PreferenceScreen>
-		<pref.StartPref
-			android:title="@string/more"
-			android:enabled="false"/>
+		
+		<pref.ImagePref
+			android:title="@string/selectGhastNormal"
+			android:key="selectGhastNormal"/>
+		<pref.ImagePref
+			android:title="@string/selectGhastShooting"
+			android:key="selectGhastShooting"/>
+		<pref.ImagePref
+			android:title="@string/selectSnowGolem"
+			android:key="selectSnowGolem"/>
+		<pref.ImagePref
+			android:title="@string/selectIronGolem"
+			android:key="selectIronGolem"/>
+		<pref.ImagePref
+			android:title="@string/selectWolfNormal"
+			android:key="selectWolfNormal"/>
+		<pref.ImagePref
+			android:title="@string/selectWolfAngry"
+			android:key="selectWolfAngry"/>
+		<pref.ImagePref
+			android:title="@string/selectBat"
+			android:key="selectBat"/>
+		<pref.ImagePref
+			android:title="@string/selectBlaze"
+			android:key="selectBlaze"/>
+		<pref.ImagePref
+			android:title="@string/selectMooshroom"
+			android:key="selectMooshroom"/>
+		<pref.ImagePref
+			android:title="@string/selectMagmaCube"
+			android:key="selectMagmaCube"/>
+		<pref.ImagePref
+			android:title="@string/selectSilverFish"
+			android:key="selectSiverFish"/>
+		<pref.ImagePref
+			android:title="@string/selectSlime"
+			android:key="selectSlime"/>
+		<pref.ImagePref
+			android:title="@string/selectWitherSkeleton"
+			android:key="selectWitherSkeleton"/>
 	</PreferenceScreen>
 	<PreferenceScreen
 		android:title="@string/options">
@@ -103,13 +142,27 @@
 		android:title="@string/startChange"
 		android:key="startChange"/>
 	<pref.StartPref
-		android:title="@string/deleteCache"
-		android:key="deleteCache"/>
-	<pref.StartPref
 		android:title="@string/chgList"
 		android:key="chgList"/>
 	<pref.StartPref
 		android:title="@string/wantUpdate"
 		android:summary="@string/wantUpdate_desc"
 		android:key="wantUpdate"/>
+	<PreferenceScreen
+		android:title="@string/another">
+	</PreferenceScreen>
+	<PreferenceScreen
+		android:title="@string/about">
+		<pref.StartPref
+			android:title="@string/version"
+			android:summary=""
+			android:key="version"/>
+		<pref.StartPref
+			android:title="@string/beta"
+			android:summary=""
+			android:key="betabuild"/>
+		<pref.StartPref
+			android:title="@string/openPlayStore"
+			android:key="openPlayStore"/>
+	</PreferenceScreen>
 </PreferenceScreen>

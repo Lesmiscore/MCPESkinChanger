@@ -16,8 +16,11 @@ import java.io.*;
 import java.lang.ref.*;
 import java.net.*;
 import java.util.*;
+import android.content.pm.PackageManager.*;
+import android.content.res.Resources.*;
+import com.nao20010128nao.MCPE.SC.misc.*;
 
-public class MainActivity extends PreferenceActivity {
+public class MainActivity extends SHablePreferenceActivity {
 	public static WeakReference<MainActivity> instance=new WeakReference<>(null);
 	static boolean preventStart=false;;
 	Map<String,URI> skins=ModificateActivity.skins;
@@ -31,7 +34,7 @@ public class MainActivity extends PreferenceActivity {
 			startActivity(new Intent(this, ModificateActivity.class).putExtra("mode", "noservice"));
 			MainActivity.preventStart();
 		} else
-			startActivity(new Intent(this, SupportCheckerActivity.class));
+			startActivity(new Intent(this, SplashActivity.class));
 		if(preventStart){
 			finish();
 			return;
@@ -66,39 +69,48 @@ public class MainActivity extends PreferenceActivity {
 					}
 				}
 			});
-		sH("selectSteve", createListenerForPerf("assets/images/mob/char.png"));
-		sH("selectSteveN", createListenerForPerf("assets/images/mob/steve.png"));
-		sH("selectAlexN", createListenerForPerf("assets/images/mob/alex.png"));
-		sH("selectZombie", createListenerForPerf("assets/images/mob/zombie.png"));
-		sH("selectZombiePigman", createListenerForPerf("assets/images/mob/pigzombie.png"));
-		sH("selectCow", createListenerForPerf("assets/images/mob/cow.png"));
-		sH("selectCreeper", createListenerForPerf("assets/images/mob/creeper.png"));
-		sH("selectPig", createListenerForPerf("assets/images/mob/pig.png"));
-		sH("selectSheep0", createListenerForPerf("assets/images/mob/sheep_0.png"));
-		sH("selectSheep1", createListenerForPerf("assets/images/mob/sheep_1.png"));
-		sH("selectSheep2", createListenerForPerf("assets/images/mob/sheep_2.png"));
-		sH("selectSheep3", createListenerForPerf("assets/images/mob/sheep_3.png"));
-		sH("selectSheep4", createListenerForPerf("assets/images/mob/sheep_4.png"));
-		sH("selectSheep5", createListenerForPerf("assets/images/mob/sheep_5.png"));
-		sH("selectSheep6", createListenerForPerf("assets/images/mob/sheep_6.png"));
-		sH("selectSheep7", createListenerForPerf("assets/images/mob/sheep_7.png"));
-		sH("selectSheep8", createListenerForPerf("assets/images/mob/sheep_8.png"));
-		sH("selectSheep9", createListenerForPerf("assets/images/mob/sheep_9.png"));
-		sH("selectSheep10", createListenerForPerf("assets/images/mob/sheep_10.png"));
-		sH("selectSheep11", createListenerForPerf("assets/images/mob/sheep_11.png"));
-		sH("selectSheep12", createListenerForPerf("assets/images/mob/sheep_12.png"));
-		sH("selectSheep13", createListenerForPerf("assets/images/mob/sheep_13.png"));
-		sH("selectSheep14", createListenerForPerf("assets/images/mob/sheep_14.png"));
-		sH("selectSheep15", createListenerForPerf("assets/images/mob/sheep_15.png"));
-		sH("deleteCache", new OnClickListener(){
-				public void onClick(String p1, String p2, String p3) {
-					new File(Environment.getExternalStorageDirectory(), "games/com.mojang/minecraft/skinchanger").delete();
-					new File(getFilesDir(), "vanilla.apk").delete();
-					new File(getFilesDir(), "modded.apk").delete();
-					new File(getFilesDir(), "signed.apk").delete();
-					Toast.makeText(MainActivity.this, R.string.deletedCache, Toast.LENGTH_LONG).show();
-				}
-			});
+		link("selectSteve", "assets/images/mob/char.png");
+		link("selectSteveN", "assets/images/mob/steve.png");
+		link("selectAlexN", "assets/images/mob/alex.png");
+		link("selectZombie", "assets/images/mob/zombie.png");
+		link("selectZombiePigman", "assets/images/mob/pigzombie.png");
+		link("selectCow", "assets/images/mob/cow.png");
+		link("selectCreeper", "assets/images/mob/creeper.png");
+		link("selectPig", "assets/images/mob/pig.png");
+		link("selectSkeleton", "assets/images/mob/skeleton.png");
+		link("selectSheep0", "assets/images/mob/sheep_0.png");
+		link("selectSheep1", "assets/images/mob/sheep_1.png");
+		link("selectSheep2", "assets/images/mob/sheep_2.png");
+		link("selectSheep3", "assets/images/mob/sheep_3.png");
+		link("selectSheep4", "assets/images/mob/sheep_4.png");
+		link("selectSheep5", "assets/images/mob/sheep_5.png");
+		link("selectSheep6", "assets/images/mob/sheep_6.png");
+		link("selectSheep7", "assets/images/mob/sheep_7.png");
+		link("selectSheep8", "assets/images/mob/sheep_8.png");
+		link("selectSheep9", "assets/images/mob/sheep_9.png");
+		link("selectSheep10", "assets/images/mob/sheep_10.png");
+		link("selectSheep11", "assets/images/mob/sheep_11.png");
+		link("selectSheep12", "assets/images/mob/sheep_12.png");
+		link("selectSheep13", "assets/images/mob/sheep_13.png");
+		link("selectSheep14", "assets/images/mob/sheep_14.png");
+		link("selectSheep15", "assets/images/mob/sheep_15.png");
+		
+		link("selectGhastNormal", "assets/images/mob/ghast.png");
+		link("selectGhastShooting", "assets/images/mob/ghast_shooting.png");
+		link("selectSnowGolem", "assets/images/mob/snow_golem.png");
+		link("selectIronGolem", "assets/images/mob/iron_golem.png");
+		link("selectSquid", "assets/images/mob/squid.png");
+		link("selectWolfNormal", "assets/images/mob/wolf.png");
+		link("selectWolfAngry", "assets/images/mob/wolf_angry.png");
+		link("selectBat", "assets/images/mob/bat.png");
+		link("selectBlaze", "assets/images/mob/blaze.png");
+		link("selectChicken", "assets/images/mob/chicken.png");
+		link("selectMooshroom", "assets/images/mob/mooshroom.png");
+		link("selectMagmaCube", "assets/images/mob/magmacube.png");
+		link("selectSilverFish", "assets/images/mob/silverfish.png");
+		link("selectSlime", "assets/images/mob/slime.png");
+		link("selectWitherSkeleton", "assets/images/mob/wither_skeleton.png");
+		
 		sH("inputFrom", new OnClickListener(){
 				public void onClick(String p1, String p2, String p3) {
 					final int revert=Tools.getSettings("input.mode", 0, MainActivity.this);
@@ -118,7 +130,7 @@ public class MainActivity extends PreferenceActivity {
 							public void onClick(DialogInterface di, int where) {
 								switch (Tools.getSettings("input.mode", 0, MainActivity.this)) {
 									case 0://installed
-										startActivity(new Intent(MainActivity.this, SupportCheckerActivity.class));
+										startActivity(new Intent(MainActivity.this, SplashActivity.class));
 										break;
 									case 1://select
 										startActivityForResult(new Intent(Intent.ACTION_GET_CONTENT).setType("application/vnd.android.package-archive"), 456);
@@ -163,19 +175,35 @@ public class MainActivity extends PreferenceActivity {
 					startActivity(new Intent(MainActivity.this, ChangingListEditor.class));
 				}
 			});
+		Preference p;
+		(p=findPreference("version")).setSummary(Utils.getVersionName(this));
+		p.setEnabled(false);
+		(p=findPreference("betabuild")).setSummary(Utils.getBetaVersion(this));
+		p.setEnabled(false);
+		sH("openPlayStore",new OnClickListener(){
+				public void onClick(String p1, String p2, String p3) {
+					startActivity(Intent.createChooser(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("http://play.google.com/store/apps/details?id="+getPackageName())),getResources().getString(R.string.openPlayStore)));
+				}
+			});
+		try {
+			ImageLoader.startLoadImagesAsync(getApkPath());
+		} catch (PackageManager.NameNotFoundException e) {
+			
+		}
     }
-	void sH(Preference pref, HandledPreference.OnClickListener handler) {
-		if (!(pref instanceof HandledPreference))return;
-		((HandledPreference)pref).setOnClickListener(handler);
-	}
-	void sH(String pref, HandledPreference.OnClickListener handler) {
-		sH(findPreference(pref), handler);
-	}
 	void selectFileForSkin(String name){
 		Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 		intent.setType("image/png");
 		changeTmp = name;
 		startActivityForResult(intent, 123);
+	}
+	void link(String pref,String name){
+		sH(pref,createListenerForPerf(name));
+		Object data=findPreference(pref);
+		if(data instanceof ImageHandler.ImageHandlerReceiver){
+			String[] arr;
+			ImageHandler.registerReceiver((arr=name.split("¥¥/"))[arr.length-1],(ImageHandler.ImageHandlerReceiver)data);
+		}
 	}
 	OnClickListener createListenerForPerf(final String name){
 		return new OnClickListener(){
@@ -221,26 +249,38 @@ public class MainActivity extends PreferenceActivity {
 				final File unchecked=new File(data.getStringExtra("result"));
 				File checked=new File(getFilesDir(), "mcpeCopy.apk");
 				if(unchecked.exists()){
-					AndroidPackage pak=new AndroidPackage(unchecked);
-					PackageInfo info=pak.getResult();
-					if("com.mojang.minecraftpe".equals(info.packageName)){
-						unchecked.renameTo(checked);
-					}else{
-						ApplicationInfo appInfo=info.applicationInfo;
-						AndroidPackage.AppSnippet as=AndroidPackage.getAppSnippet(this,appInfo,unchecked);
-						CharSequence s=as.label;
-						String mes=getResources().getString(R.string.fakeapp).replace("@APP@",s);
+					try {
+						AndroidPackage pak=new AndroidPackage(unchecked);
+						PackageInfo info=pak.getResult();
+						if ("com.mojang.minecraftpe".equals(info.packageName)) {
+							unchecked.renameTo(checked);
+						} else {
+							ApplicationInfo appInfo=info.applicationInfo;
+							AndroidPackage.AppSnippet as=AndroidPackage.getAppSnippet(this, appInfo, unchecked);
+							CharSequence s=as.label;
+							String mes=getResources().getString(R.string.fakeapp).replace("@APP@", s);
+							new AlertDialog.Builder(this).
+								setMessage(mes).
+								setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener(){
+									public void onClick(DialogInterface a, int w) {
+										a.cancel();
+										unchecked.delete();
+									}
+								}).
+								show();
+						}
+					} catch (Throwable e) {
 						new AlertDialog.Builder(this).
-							setMessage(mes).
-							setPositiveButton(android.R.string.ok,new DialogInterface.OnClickListener(){
-								public void onClick(DialogInterface a,int w){
+							setMessage(R.string.badapk).
+							setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener(){
+								public void onClick(DialogInterface a, int w) {
 									a.cancel();
 									unchecked.delete();
 								}
 							}).
 							show();
 					}
-				}else{
+				} else {
 					return;
 				}
 				Tools.setSettings("input.where", data.getStringExtra("result"), this);
@@ -255,5 +295,15 @@ public class MainActivity extends PreferenceActivity {
 	}
 	public static void preventStart(){
 		preventStart=true;
+	}
+	String getApkPath() throws PackageManager.NameNotFoundException {
+		switch (Tools.getSettings("input.mode", 0, this)) {
+			case 0://installed
+				return createPackageContext("com.mojang.minecraftpe", CONTEXT_IGNORE_SECURITY).getPackageCodePath();
+			case 1://select
+				return Tools.getSettings("input.where", "", this);
+			default:
+				return null;
+		}
 	}
 }

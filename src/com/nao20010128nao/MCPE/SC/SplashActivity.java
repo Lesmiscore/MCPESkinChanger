@@ -7,8 +7,10 @@ import android.util.*;
 import android.widget.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 import java.io.*;
+import java.lang.reflect.*;
+import com.nao20010128nao.SpoofBrowser.classes.*;
 
-public class SupportCheckerActivity extends Activity {
+public class SplashActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO: Implement this method
@@ -17,17 +19,10 @@ public class SupportCheckerActivity extends Activity {
 			finish();
 			return;
 		}
-		setContentView(R.layout.checker);
-		final ProgressBar progress=(ProgressBar)findViewById(R.id.pbProgress);
-		final TextView state=(TextView)findViewById(R.id.tvState);
+		setContentView(R.layout.splash);
+		hideActionbar();
 		new AsyncTask<Void,Void,Void>(){
 			public Void doInBackground(Void[] p) {
-				runOnUiThread(new Runnable(){
-						public void run() {
-							progress.setMax(2);
-							state.setText(getResources().getStringArray(R.array.checkName)[0]);
-						}
-					});
 				boolean ok=false;
 				/*Step 1*/
 				for (PackageInfo i:getPackageManager().getInstalledPackages(PackageManager.GET_ACTIVITIES | PackageManager.GET_CONFIGURATIONS)) {
@@ -37,15 +32,8 @@ public class SupportCheckerActivity extends Activity {
 					}
 					Log.d("dbg_sca", i.packageName);
 				}
-				if (ok) {
-					runOnUiThread(new Runnable(){
-							public void run() {
-								progress.setProgress(1);
-								state.setText(getResources().getStringArray(R.array.checkName)[1]);
-							}
-						});
-				} else {
-					new AlertDialog.Builder(SupportCheckerActivity.this)
+				if (!ok) {
+					new AlertDialog.Builder(SplashActivity.this)
 						.setTitle(R.string.err_title)
 						.setCancelable(false)
 						.setMessage(getResources().getStringArray(R.array.errors)[0])
@@ -80,14 +68,8 @@ public class SupportCheckerActivity extends Activity {
 				} catch (IOException err) {
 					err.printStackTrace(System.out);
 				}
-				if (ok) {
-					runOnUiThread(new Runnable(){
-							public void run() {
-								progress.setProgress(2);
-							}
-						});
-				} else {
-					new AlertDialog.Builder(SupportCheckerActivity.this)
+				if (!ok) {
+					new AlertDialog.Builder(SplashActivity.this)
 						.setTitle(R.string.err_title)
 						.setCancelable(false)
 						.setMessage(getResources().getStringArray(R.array.errors)[1])
@@ -106,6 +88,41 @@ public class SupportCheckerActivity extends Activity {
 						.show();
 					return null;
 				}
+				{
+					try {
+						File cacheDir=new File(getFilesDir(), "cache");
+						cacheDir.mkdirs();
+						new ProcessBuilder().
+							command(new String[]{"/system/bin/rm","-rf",cacheDir.getAbsolutePath()}).
+							directory(cacheDir).
+							start().
+							waitFor();
+					} catch (Throwable ex) {
+
+					}
+					try{
+						File sco=new File(Environment.getExternalStorageDirectory(), "games/com.mojang/minecraft/skinchanger");
+						new ProcessBuilder().
+							command(new String[]{"/system/bin/rm","-rf",sco.getAbsolutePath()}).
+							directory(sco).
+							start().
+							waitFor();
+						sco.delete();
+						new File(getFilesDir(), "vanilla.apk").delete();
+						new File(getFilesDir(), "modded.apk").delete();
+						new File(getFilesDir(), "signed.apk").delete();
+					}catch(Throwable e){
+
+					}
+					try{
+						new File(getFilesDir(),"mcpeCopy_unchecked.apk").delete();
+						if(Tools.getSettings("input.mode", 0, SplashActivity.this)==0){
+							new File(getFilesDir(),"mcpeCopy.apk").delete();
+						}
+					}catch(Throwable e){
+						
+					}
+				}
 				RunOnceApplication.instance.completeCheckMCPE();
 				return null;
 			}
@@ -113,5 +130,20 @@ public class SupportCheckerActivity extends Activity {
 				finish();
 			}
 		}.execute();
+	}
+
+	@Override
+	public void onBackPressed() {
+		
+	}
+	
+	public void hideActionbar(){
+		/*It can be called by 1.x and 2.x, but it won't do anything.*/
+		try {
+			Object actbar=getClass().getMethod("getActionBar").invoke(this);
+			actbar.getClass().getMethod("hide").invoke(actbar);
+		} catch (Throwable e) {
+			
+		}
 	}
 }

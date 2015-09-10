@@ -13,7 +13,7 @@ import java.util.*;
 
 public class ModificateActivity extends Activity {
 	public static WeakReference<ModificateActivity> instance=new WeakReference<>(null);
-	public static Map<String,URI> skins=new HashMap<>();
+	public static Map<String,URI> skins=new FilteredMap();
 	volatile transient static int totalMax,totalVal,compMax,compVal;
 	volatile transient static String log="";
 	volatile transient static boolean ready=false;

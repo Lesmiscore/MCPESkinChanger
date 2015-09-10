@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="signerInput">Input:</string>
+	<string name="signerOutput">Output:</string>
+	<string name="signerMode">Sign mode: auto-testkey\n(Cannot be changed, use \"ZipSigner\" to customize it.)</string>
+	<string name="signerStart">Start signing</string>
+</resources>
