@@ -139,7 +139,7 @@ public class Utils
 			}
 			return null;
 		}
-		public static Object getActivityManager(){
+		public static Object getActivityManager(){ 
 			try {
 				return ActivityManagerNative.getMethod("getDefault").invoke(null);
 			} catch (IllegalAccessException e) {
