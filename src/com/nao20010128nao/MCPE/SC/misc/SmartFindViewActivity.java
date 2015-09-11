@@ -45,4 +45,20 @@ public abstract class SmartFindViewActivity extends Activity {
 		}
 		return null;
 	}
+	@Override
+	public int look(String resKind,String name) {
+		// TODO: Implement this method
+		try {
+			return (int)Class.forName(getPackageName() + ".R$"+resKind).getField(name).get(null);
+		} catch (ClassNotFoundException e) {
+
+		} catch (NoSuchFieldException e) {
+
+		} catch (IllegalAccessException e) {
+
+		} catch (IllegalArgumentException e) {
+
+		}
+		return -1;
+	}
 }
