@@ -10,11 +10,13 @@ import android.view.*;
 
 public class PluginLauncher extends SmartFindViewListActivity
 {
-	final Intent lookupIntent=null;
+	final Intent lookupIntent=new Intent();
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO: Implement this method
 		super.onCreate(savedInstanceState);
+		lookupIntent.
+			setAction(getPackageName()+".plugins.LAUNCH");
 		setListAdapter(new PluginList());
 	}
 	private class PluginList extends ArrayAdapter<ResolveInfo>{
