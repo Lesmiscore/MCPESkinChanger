@@ -19,6 +19,7 @@ import java.util.*;
 import android.content.pm.PackageManager.*;
 import android.content.res.Resources.*;
 import com.nao20010128nao.MCPE.SC.misc.*;
+import com.nao20010128nao.MCPE.SC.plugin.*;
 
 public class MainActivity extends SHablePreferenceActivity {
 	public static WeakReference<MainActivity> instance=new WeakReference<>(null);
@@ -183,6 +184,11 @@ public class MainActivity extends SHablePreferenceActivity {
 		sH("openPlayStore",new OnClickListener(){
 				public void onClick(String p1, String p2, String p3) {
 					startActivity(Intent.createChooser(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("http://play.google.com/store/apps/details?id="+getPackageName())),getResources().getString(R.string.openPlayStore)));
+				}
+			});
+		sH("plugins", new OnClickListener(){
+				public void onClick(String p1, String p2, String p3) {
+					startActivity(new Intent(MainActivity.this, PluginLauncher.class));
 				}
 			});
 		try {
