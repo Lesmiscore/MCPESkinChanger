@@ -50,6 +50,11 @@
 			android:theme="@style/AppDialog"
 			android:exported="false">
         </activity>
+		<activity
+			android:label="@string/plugins"
+			android:name="com.nao20010128nao.MCPE.SC.plugin.PluginLauncher"
+			android:exported="false">
+        </activity>
     </application>
 </manifest>
 
