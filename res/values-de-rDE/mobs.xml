@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="Bat">Fledermaus</string>
+  <string name="Blaze">Lohe</string>
+  <string name="Chicken">Huhn</string>
+  <string name="Cow">Kuh</string>
+  <string name="Creeper">Creeper</string>
+  <string name="GhastNormal">Ghast</string>
+  <string name="MagmaCube">Magmaschleim</string>
+  <string name="Mooshroom">Pilzkuh</string>
+  <string name="Pig">Schwein</string>
+  <string name="ZombiePigman">Zombie Pigman</string>
+  <string name="Sheep">Schaf</string>
+  <string name="SilverFish">Silberfischchen</string>
+  <string name="Skeleton">Skelett</string>
+  <string name="Slime">Schleim</string>
+  <string name="SnowGolem">Schneegolem</string>
+  <string name="Squid">Tintenfisch</string>
+  <string name="IronGolem">Eisengolem</string>
+  <string name="WolfNormal">Wolf</string>
+  <string name="Zombie">Zombie</string>
+  <string name="AlexN">Alex</string>
+  <string name="Steve">Steve</string>
+  <string name="SteveN">Steve</string>
+</resources>

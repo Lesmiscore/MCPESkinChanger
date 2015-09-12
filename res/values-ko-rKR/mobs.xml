@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="Bat">박쥐</string>
+  <string name="Blaze">블레이즈</string>
+  <string name="Chicken">닭</string>
+  <string name="Cow">소</string>
+  <string name="Creeper">크리퍼</string>
+  <string name="GhastNormal">가스트</string>
+  <string name="MagmaCube">마그마 큐브</string>
+  <string name="Mooshroom">버섯소</string>
+  <string name="Pig">돼지</string>
+  <string name="ZombiePigman">좀비 피그맨</string>
+  <string name="Sheep">양</string>
+  <string name="SilverFish">좀벌레</string>
+  <string name="Skeleton">스켈레톤</string>
+  <string name="Slime">슬라임</string>
+  <string name="SnowGolem">눈사람</string>
+  <string name="Squid">오징어</string>
+  <string name="IronGolem">철 골렘</string>
+  <string name="WolfNormal">늑대</string>
+  <string name="Zombie">좀비</string>
+  <string name="AlexN">알렉스</string>
+  <string name="Steve">스티브</string>
+  <string name="SteveN">스티브</string>
+</resources>
