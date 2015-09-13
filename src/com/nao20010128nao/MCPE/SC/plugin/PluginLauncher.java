@@ -18,6 +18,15 @@ public class PluginLauncher extends SmartFindViewListActivity
 		lookupIntent.
 			setAction(getPackageName()+".plugins.LAUNCH");
 		setListAdapter(new PluginList());
+		getListView().setOnItemClickListener(new AdapterView.OnItemClickListener(){
+			public void onItemClick(AdapterView av,View v,int i,long l){
+				ResolveInfo ri=(ResolveInfo)getListView().getItemAtPosition(i);
+				ActivityInfo ai=ri.activityInfo;
+				Intent toStart=(Intent)lookupIntent.clone();
+				toStart.setClassName(ai.packageName,ai.name);
+				startActivityForResult(toStart,1);
+			}
+		});
 	}
 	private class PluginList extends ArrayAdapter<ResolveInfo>{
 		public PluginList(){
@@ -40,5 +49,17 @@ public class PluginLauncher extends SmartFindViewListActivity
 	}
 	List<ResolveInfo> listPlugins(){
 		return getPackageManager().queryIntentActivities(lookupIntent,0);
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO: Implement this method
+		switch(requestCode){
+			case 1:
+				if(resultCode==RESULT_OK){
+					
+				}
+				break;
+		}
 	}
 }
