@@ -64,11 +64,11 @@ public class PluginLauncher extends SmartFindViewListActivity
 				break;
 		}
 	}
-	DiffMap<String,Byte[]> deserializeDiff(Map<String,Byte[]> base,byte[] data){
+	DiffMap<String,byte[]> deserializeDiff(Map<String,byte[]> base,byte[] data){
 		try {
 			DataInputStream dis=new DataInputStream(new ByteArrayInputStream(data));
 			Set<String> removes=new HashSet<>();
-			Map<String,Byte[]> additions=new HashMap<>();
+			Map<String,byte[]> additions=new HashMap<>();
 			int remSize=dis.readInt();
 			for (int i=0;i < remSize;i++) {
 				removes.add(dis.readUTF());
@@ -78,12 +78,12 @@ public class PluginLauncher extends SmartFindViewListActivity
 				String k=dis.readUTF();
 				byte[] v=new byte[dis.readShort()];
 				dis.readFully(v);
-				additions.put(k, primToWrap(v));
+				additions.put(k, v);
 			}
-			DiffMap<String,Byte[]> result=new DiffMap<>(base);
+			DiffMap<String,byte[]> result=new DiffMap<>(base);
 			for (String s:removes)
 				result.remove(s);
-			for (Map.Entry<String,Byte[]> entry:additions.entrySet())
+			for (Map.Entry<String,byte[]> entry:additions.entrySet())
 				result.put(entry.getKey(), entry.getValue());
 			return result;
 		} catch (IOException e) {
@@ -91,6 +91,7 @@ public class PluginLauncher extends SmartFindViewListActivity
 		}
 		return new DiffMap<>(Collections.emptyMap());
 	}
+	
 	Byte[] primToWrap(byte[] prim){
 		Byte[] wrap=new Byte[prim.length];
 		for(int i=0;i<prim.length;i++){
