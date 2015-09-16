@@ -9,6 +9,8 @@ import android.content.*;
 import android.view.*;
 import java.io.*;
 import com.nao20010128nao.SpoofBrowser.classes.*;
+import java.net.*;
+import com.nao20010128nao.MCPE.SC.*;
 
 public class PluginLauncher extends SmartFindViewListActivity
 {
@@ -91,7 +93,45 @@ public class PluginLauncher extends SmartFindViewListActivity
 		}
 		return new DiffMap<>(Collections.emptyMap());
 	}
-	
+	public byte[] serializeMap(Map<String,URI> map){
+		try {
+			ByteArrayOutputStream baos=new ByteArrayOutputStream(map.size() * 100);
+			DataOutputStream dos=new DataOutputStream(baos);
+			ByteArrayOutputStream tmp=new ByteArrayOutputStream(1000);
+			dos.writeInt(map.size());
+			for (Map.Entry<String,URI> entry:map.entrySet()) {
+				dos.writeUTF(entry.getKey());
+				InputStream is=null;
+				try {
+					byte[] data=new byte[1000];
+					is = entry.getValue().toURL().openConnection().getInputStream();
+					while (true) {
+						int r=is.read(data);
+						if (r <= 0) {
+							break;
+						}
+						tmp.write(data, 0, r);
+					}
+				} catch (IOException e) {
+
+				} finally {
+					try {
+						is.close();
+					} catch (Throwable e) {
+
+					}
+				}
+				dos.writeShort(tmp.size());
+				dos.write(tmp.toByteArray());
+				tmp.reset();
+				dos.flush();
+			}
+			return baos.toByteArray();
+		} catch (IOException e) {
+			
+		}
+		return new byte[]{0,0,0,0};
+	}
 	Byte[] primToWrap(byte[] prim){
 		Byte[] wrap=new Byte[prim.length];
 		for(int i=0;i<prim.length;i++){
