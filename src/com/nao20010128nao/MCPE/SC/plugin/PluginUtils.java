@@ -35,7 +35,7 @@ public class PluginUtils
 			dos.writeInt(entry.getValue().length);
 			dos.write(entry.getValue());
 		}
-		dos.flush();
+		dos.close();
 		intent.putExtra("mapResult",new String(baos.toByteArray()));
 	}
 }
