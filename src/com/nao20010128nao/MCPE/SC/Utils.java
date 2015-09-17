@@ -5,6 +5,7 @@ import android.content.pm.PackageManager.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 import android.content.res.*;
 import java.util.*;
+import android.util.*;
 
 public class Utils
 {
@@ -106,5 +107,15 @@ public class Utils
 		public static boolean isNameAvaliable(String s){
 			return fromFileName.containsKey(s);
 		}
+	}
+	public static String getRandomString() {
+		StringBuilder sb=new StringBuilder("cache_");
+		Random r=new Random();
+		for (int i=0;i < 9;i++) {
+			String append=String.format("%06x", r.nextInt() & 0xff).substring(4);
+			sb.append(append);
+		}
+		Log.d("random", sb.toString());
+		return sb.toString();
 	}
 }
