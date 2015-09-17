@@ -12,6 +12,8 @@ import com.nao20010128nao.SpoofBrowser.classes.*;
 import java.net.*;
 import com.nao20010128nao.MCPE.SC.*;
 import android.util.*;
+import android.net.*;
+import com.nao20010128nao.MC_PE.SkinChanger.*;
 
 public class PluginLauncher extends SmartFindViewListActivity
 {
@@ -67,9 +69,42 @@ public class PluginLauncher extends SmartFindViewListActivity
 					for(Map.Entry<String,URI> entry:ModificateActivity.skins.entrySet()){
 						based.put(entry.getKey(),null);
 					}
-					deserializeDiff(based,Base64.decode(data.getStringExtra("mapResult"),Base64.NO_WRAP));
+					DiffMap<String,byte[]>  map=deserializeDiff(based,Base64.decode(data.getStringExtra("mapResult"),Base64.NO_WRAP));
+					File f;
+					(f = new File(getFilesDir(), "cache")).mkdir();
+					for(Map.Entry<String,byte[]> entry:map.getAdds().entrySet()){
+						File saveFile = new File(f, Utils.getRandomString());
+						FileOutputStream fos=null;
+						try{
+							fos=new FileOutputStream(saveFile);
+							fos.write(entry.getValue());
+						}catch(Throwable e){
+							StringWriter sw;
+							PrintWriter w=new PrintWriter(sw=new StringWriter());
+							w.println(getResources().getString(R.string.err_title));
+							e.printStackTrace(w);
+							Toast.makeText(this,sw.toString(),Toast.LENGTH_SHORT);
+							continue;
+						}finally{
+							try {
+								fos.close();
+							} catch (Throwable e) {
+								
+							}
+						}
+					}
 				}
 				break;
+		}
+	}
+	OutputStream trySave(String uri) throws IOException {
+		Log.d("dbg", "trySave:" + uri);
+		if (uri.startsWith("content://")) {
+			return getContentResolver().openOutputStream(Uri.parse(uri));
+		} else if (uri.startsWith("/")) {
+			return new FileOutputStream(uri);
+		} else {
+			return URI.create(uri).toURL().openConnection().getOutputStream();
 		}
 	}
 	DiffMap<String,byte[]> deserializeDiff(Map<String,byte[]> base,byte[] data){
