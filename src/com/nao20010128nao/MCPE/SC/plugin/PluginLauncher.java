@@ -23,7 +23,7 @@ public class PluginLauncher extends SmartFindViewListActivity
 		// TODO: Implement this method
 		super.onCreate(savedInstanceState);
 		lookupIntent.
-			setAction(getPackageName()+".plugins.LAUNCH");
+			setAction(getPackageName()+".plugin.LAUNCHABLE");
 		setListAdapter(new PluginList());
 		getListView().setOnItemClickListener(new AdapterView.OnItemClickListener(){
 			public void onItemClick(AdapterView av,View v,int i,long l){
