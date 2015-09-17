@@ -70,6 +70,8 @@ public class PluginLauncher extends SmartFindViewListActivity
 						based.put(entry.getKey(),null);
 					}
 					DiffMap<String,byte[]>  map=deserializeDiff(based,Base64.decode(data.getStringExtra("mapResult"),Base64.NO_WRAP));
+					for(String s:map.keySet())
+						ModificateActivity.skins.remove(s);
 					File f;
 					(f = new File(getFilesDir(), "cache")).mkdir();
 					for(Map.Entry<String,byte[]> entry:map.getAdds().entrySet()){
@@ -78,6 +80,7 @@ public class PluginLauncher extends SmartFindViewListActivity
 						try{
 							fos=new FileOutputStream(saveFile);
 							fos.write(entry.getValue());
+							ModificateActivity.skins.put(entry.getKey(),saveFile.toURI());
 						}catch(Throwable e){
 							StringWriter sw;
 							PrintWriter w=new PrintWriter(sw=new StringWriter());
