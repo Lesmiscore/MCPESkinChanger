@@ -11,6 +11,7 @@ import java.io.*;
 import com.nao20010128nao.SpoofBrowser.classes.*;
 import java.net.*;
 import com.nao20010128nao.MCPE.SC.*;
+import android.util.*;
 
 public class PluginLauncher extends SmartFindViewListActivity
 {
@@ -28,6 +29,7 @@ public class PluginLauncher extends SmartFindViewListActivity
 				ActivityInfo ai=ri.activityInfo;
 				Intent toStart=(Intent)lookupIntent.clone();
 				toStart.setClassName(ai.packageName,ai.name);
+				toStart.putExtra("map",Base64.encodeToString(serializeMap(ModificateActivity.skins),Base64.NO_WRAP));
 				startActivityForResult(toStart,1);
 			}
 		});
@@ -61,7 +63,11 @@ public class PluginLauncher extends SmartFindViewListActivity
 		switch(requestCode){
 			case 1:
 				if(resultCode==RESULT_OK){
-					
+					Map<String,byte[]> based=new HashMap<>();
+					for(Map.Entry<String,URI> entry:ModificateActivity.skins.entrySet()){
+						based.put(entry.getKey(),null);
+					}
+					deserializeDiff(based,Base64.decode(data.getStringExtra("mapResult"),Base64.NO_WRAP));
 				}
 				break;
 		}
