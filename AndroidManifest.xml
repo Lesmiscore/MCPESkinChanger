@@ -55,16 +55,6 @@
 			android:name="com.nao20010128nao.MCPE.SC.plugin.PluginLauncher"
 			android:exported="false">
         </activity>
-		
-		<!--Plugin test activity. Not for use.-->
-		<activity
-			android:label="@string/plugins"
-			android:name="com.nao20010128nao.MCPE.SC.plugin.PluginTest"
-			android:exported="true">
-			<intent-filter>
-                <action android:name="com.nao20010128nao.MC_PE.SkinChanger.plugin.LAUNCHABLE" />
-            </intent-filter>
-        </activity>
     </application>
 </manifest>
 
