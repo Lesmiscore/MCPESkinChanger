@@ -70,7 +70,7 @@ public class PluginLauncher extends SmartFindViewListActivity
 						based.put(entry.getKey(),null);
 					}
 					DiffMap<String,byte[]>  map=deserializeDiff(based,Base64.decode(data.getStringExtra("mapResult"),Base64.NO_WRAP));
-					for(String s:map.keySet())
+					for(String s:map.getRemoves())
 						ModificateActivity.skins.remove(s);
 					File f;
 					(f = new File(getFilesDir(), "cache")).mkdir();
