@@ -127,7 +127,7 @@ public class Utils
 	public static Size getImageSize(InputStream is){
 		BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
 		bitmapOptions.inJustDecodeBounds = true;
-		BitmapFactory.decodeStream(is, null, bitmapOptions);
+		BitmapFactory.decodeStream(is, null, bitmapOptions).recycle();
 		int width  = bitmapOptions.outWidth;
 		int height = bitmapOptions.outHeight;
 		return new Size(width,height);
