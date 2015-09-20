@@ -65,6 +65,7 @@ public class PluginLauncher extends SmartFindViewListActivity
 		switch(requestCode){
 			case 1:
 				if(resultCode==RESULT_OK){
+					Log.d("launcher","return: ok");
 					Map<String,byte[]> based=new HashMap<>();
 					for(Map.Entry<String,URI> entry:ModificateActivity.skins.entrySet()){
 						based.put(entry.getKey(),null);
