@@ -2,7 +2,7 @@ package com.nao20010128nao.MCPE.SC.misc;
 import android.app.*;
 import android.view.*;
 
-public abstract class SmartFindViewActivity extends Activity {
+public abstract class SmartFindViewListActivity extends ListActivity {
 	@Override
 	public <T extends View> T find(int id) {
 		// TODO: Implement this method

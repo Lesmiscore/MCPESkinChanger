@@ -5,9 +5,16 @@ import android.content.pm.PackageManager.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 import android.content.res.*;
 import java.util.*;
+import android.util.*;
+import android.graphics.*;
+import java.io.*;
 
 public class Utils
 {
+	public static final Size[] MC_HUMAN_SKIN_VALID_SIZES=new Size[]{
+		new Size(64,32),//Old skin
+		new Size(64,64),//New skin
+	};
 	public static int getVersionCode(Context context){
         PackageManager pm = context.getPackageManager();
         int versionCode = 0;
@@ -106,5 +113,31 @@ public class Utils
 		public static boolean isNameAvaliable(String s){
 			return fromFileName.containsKey(s);
 		}
+	}
+	public static String getRandomString() {
+		StringBuilder sb=new StringBuilder("cache_");
+		Random r=new Random();
+		for (int i=0;i < 9;i++) {
+			String append=String.format("%06x", r.nextInt() & 0xff).substring(4);
+			sb.append(append);
+		}
+		Log.d("random", sb.toString());
+		return sb.toString();
+	}
+	public static Size getImageSize(InputStream is){
+		BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
+		bitmapOptions.inJustDecodeBounds = true;
+		BitmapFactory.decodeStream(is, null, bitmapOptions).recycle();
+		int width  = bitmapOptions.outWidth;
+		int height = bitmapOptions.outHeight;
+		return new Size(width,height);
+	}
+	public static boolean isValidHumanSkin(Size s){
+		for(Size ss:MC_HUMAN_SKIN_VALID_SIZES){
+			if(ss.equals(s)|s.equals(ss)){
+				return true;
+			}
+		}
+		return false;
 	}
 }

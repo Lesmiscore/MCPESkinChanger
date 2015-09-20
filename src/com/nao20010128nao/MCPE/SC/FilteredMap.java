@@ -67,6 +67,7 @@ public class FilteredMap extends HashMap<String,URI> {
 			// TODO: Implement this method
 			if(object==null)return false;
 			object=object.replace('¥','/').replace('\\','/').toLowerCase();
+			while(object.indexOf("//")!=-1)object=object.replace("//","/");
 			return super.add(object);
 		}
 
@@ -92,6 +93,7 @@ public class FilteredMap extends HashMap<String,URI> {
 				return false;
 			}
 			String data=((String)object).replace('¥','/').replace('\\','/').toLowerCase();
+			while(data.indexOf("//")!=-1)data=data.replace("//","/");
 			return super.contains(data);
 		}
 

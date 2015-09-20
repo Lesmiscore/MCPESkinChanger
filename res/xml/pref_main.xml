@@ -150,6 +150,9 @@
 		android:key="wantUpdate"/>
 	<PreferenceScreen
 		android:title="@string/another">
+		<pref.StartPref
+			android:title="@string/plugins"
+			android:key="plugins"/>
 	</PreferenceScreen>
 	<PreferenceScreen
 		android:title="@string/about">

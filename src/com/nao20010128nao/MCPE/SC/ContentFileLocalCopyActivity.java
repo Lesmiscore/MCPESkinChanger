@@ -30,7 +30,7 @@ public class ContentFileLocalCopyActivity extends Activity {
 					if (saveFile == null) {
 						File f;
 						(f = new File(getFilesDir(), "cache")).mkdir();
-						saveFile = new File(f, getRandomString()).toString();
+						saveFile = new File(f, Utils.getRandomString()).toString();
 					}
 					InputStream from=tryOpen(contentUri);
 					OutputStream to=trySave(saveFile);
@@ -73,15 +73,5 @@ public class ContentFileLocalCopyActivity extends Activity {
 		} else {
 			return URI.create(uri).toURL().openConnection().getOutputStream();
 		}
-	}
-	public String getRandomString() {
-		StringBuilder sb=new StringBuilder("cache_");
-		Random r=new Random();
-		for (int i=0;i < 9;i++) {
-			String append=String.format("%06x", r.nextInt() & 0xff).substring(4);
-			sb.append(append);
-		}
-		Log.d("random", sb.toString());
-		return sb.toString();
 	}
 }
