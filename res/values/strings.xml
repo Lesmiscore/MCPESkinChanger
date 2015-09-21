@@ -86,7 +86,9 @@
     <string name="notbeta">This version is not a beta build</string>
     <string name="onbeta">Build @BETA@</string>
     <string name="openPlayStore">Open Play Store for this app</string>
-
+	<string name="openSourceLic">Open Source License</string>
+	<string name="appInfo">Internal Application Information</string>
+	
     <string-array name="checkName">
         <item>Checking Minecraft PE is installed...</item>
         <item>Checking Minecraft PE can be copied...</item>
