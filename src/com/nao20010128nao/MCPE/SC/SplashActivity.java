@@ -123,6 +123,8 @@ public class SplashActivity extends Activity {
 						
 					}
 				}
+				RunOnceApplication.instance.getUuids().load(SplashActivity.this);
+				RunOnceApplication.instance.getUuids().regenUuid();
 				RunOnceApplication.instance.completeCheckMCPE();
 				return null;
 			}

@@ -5,7 +5,9 @@ import android.content.*;
 
 public class RunOnceApplication extends Application {
 	boolean isCheckedMCPE=false;
+	UUIDs uuids=new UUIDs();
 	public static RunOnceApplication instance;
+
 	@Override
 	public void onCreate() {
 		// TODO: Implement this method
@@ -17,5 +19,8 @@ public class RunOnceApplication extends Application {
 	}
 	public void completeCheckMCPE() {
 		isCheckedMCPE = true;
+	}
+	public UUIDs getUuids() {
+		return uuids;
 	}
 }
