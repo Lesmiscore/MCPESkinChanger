@@ -26,13 +26,13 @@
 				android:layout_width="wrap_content"
 				android:id="@+id/tvState"/>
 
-			<ProgressBar
+			<com.nao20010128nao.MCPE.SC.view.FillProgressBar
 				style="?android:attr/progressBarStyleHorizontal"
 				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
 				android:id="@+id/pbTotal"/>
 
-			<ProgressBar
+			<com.nao20010128nao.MCPE.SC.view.FillProgressBar
 				style="?android:attr/progressBarStyleHorizontal"
 				android:layout_height="wrap_content"
 				android:layout_width="match_parent"

@@ -10,6 +10,8 @@ import java.io.*;
 import java.lang.ref.*;
 import java.net.*;
 import java.util.*;
+import com.nao20010128nao.MCPE.SC.view.*;
+import android.graphics.*;
 
 public class ModificateActivity extends Activity {
 	public static WeakReference<ModificateActivity> instance=new WeakReference<>(null);
@@ -17,7 +19,7 @@ public class ModificateActivity extends Activity {
 	volatile transient static int totalMax,totalVal,compMax,compVal;
 	volatile transient static String log="";
 	volatile transient static boolean ready=false;
-	ProgressBar total,component;TextView state;
+	FillProgressBar total/*,component*/;TextView state;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO: Implement this method
@@ -26,8 +28,10 @@ public class ModificateActivity extends Activity {
 		if (MainActivity.instance.get() != null)
 			MainActivity.instance.get().finish();
 		setContentView(R.layout.modder);
-		total = (ProgressBar)findViewById(R.id.pbTotal);
-		component = (ProgressBar)findViewById(R.id.pbComponent);
+		total = (FillProgressBar)findViewById(R.id.pbTotal);
+		//component = (FillProgressBar)findViewById(R.id.pbComponent);
+		total.setProgressColor(Color.GRAY);
+		total.setSecondProgressColor(Color.BLACK);
 		state = (TextView)findViewById(R.id.tvState);
 		ready = true;
 		update();
@@ -67,14 +71,13 @@ public class ModificateActivity extends Activity {
 				public void run() {
 					/*prevent errors*/
 					total.setProgress(0);
-					component.setProgress(0);
+					total.setSecondProgress(0);
 					total.setMax(0);
-					component.setMax(0);
 					/*mainly program*/
 					total.setMax(totalMax);
-					component.setMax(compMax);
+					total.setSecondMax(compMax);
 					total.setProgress(totalVal);
-					component.setProgress(compVal);
+					total.setSecondProgress(compVal);
 					state.setText(log);
 					findViewById(android.R.id.content).invalidate();
 				}
