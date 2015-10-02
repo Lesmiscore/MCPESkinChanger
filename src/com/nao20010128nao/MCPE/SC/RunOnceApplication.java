@@ -6,6 +6,7 @@ import android.content.*;
 public class RunOnceApplication extends Application {
 	boolean isCheckedMCPE=false;
 	UUIDs uuids=new UUIDs();
+	public static byte[] mcpeApk;
 	public static RunOnceApplication instance;
 
 	@Override
@@ -23,4 +24,5 @@ public class RunOnceApplication extends Application {
 	public UUIDs getUuids() {
 		return uuids;
 	}
+	
 }
