@@ -33,8 +33,9 @@ public class RunOnceApplication extends Application {
 	}
 	public void loadMcpeApk(){
 		InputStream is=null;
-		ByteArrayOutputStream baos=new ByteArrayOutputStream();
+		OutputStream os=null;
 		try {
+			os=new FileOutputStream(new File(getExternalCacheDir(),"mcpe.apk"));
 			is = openAPK();
 			byte[]buf=new byte[10000];
 			while (true) {
@@ -42,7 +43,7 @@ public class RunOnceApplication extends Application {
 				if(r<=0){
 					break;
 				}
-				baos.write(buf,0,r);
+				os.write(buf,0,r);
 			}
 		} catch (Throwable e) {
 
@@ -52,10 +53,14 @@ public class RunOnceApplication extends Application {
 			} catch (Throwable e) {
 
 			}
+			try {
+				os.close();
+			} catch (Throwable e) {
+
+			}
 		}
-		mcpeApk=baos.toByteArray();
 	}
-	InputStream openAPK() throws IOException,PackageManager.NameNotFoundException {
+	public InputStream openAPK() throws IOException,PackageManager.NameNotFoundException {
 		switch (Tools.getSettings("input.mode", 0, this)) {
 			case 0://installed
 				return new FileInputStream(createPackageContext("com.mojang.minecraftpe", CONTEXT_IGNORE_SECURITY).getPackageCodePath());
