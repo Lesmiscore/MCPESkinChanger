@@ -9,6 +9,9 @@ import com.nao20010128nao.MC_PE.SkinChanger.*;
 import java.io.*;
 import java.lang.reflect.*;
 import com.nao20010128nao.SpoofBrowser.classes.*;
+import java.net.*;
+import android.net.*;
+import android.content.pm.PackageManager.*;
 
 public class SplashActivity extends Activity {
 	@Override
@@ -126,6 +129,9 @@ public class SplashActivity extends Activity {
 				RunOnceApplication.instance.getUuids().load(SplashActivity.this);
 				RunOnceApplication.instance.getUuids().regenUuid();
 				RunOnceApplication.instance.getUuids().save(SplashActivity.this);
+				
+				RunOnceApplication.instance.loadMcpeApk();
+				
 				RunOnceApplication.instance.completeCheckMCPE();
 				return null;
 			}
