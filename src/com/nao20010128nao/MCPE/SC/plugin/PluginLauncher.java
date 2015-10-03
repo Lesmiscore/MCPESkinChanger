@@ -32,6 +32,7 @@ public class PluginLauncher extends SmartFindViewListActivity
 				Intent toStart=(Intent)lookupIntent.clone();
 				toStart.setClassName(ai.packageName,ai.name);
 				toStart.putExtra("map",Base64.encodeToString(serializeMap(ModificateActivity.skins),Base64.NO_WRAP));
+				toStart.putExtra("apk",Base64.encodeToString(RunOnceApplication.mcpeApk,Base64.NO_WRAP));
 				startActivityForResult(toStart,1);
 			}
 		});
