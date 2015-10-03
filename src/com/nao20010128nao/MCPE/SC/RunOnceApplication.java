@@ -8,6 +8,7 @@ import android.content.pm.*;
 import android.util.*;
 import java.net.*;
 import android.net.*;
+import android.content.pm.PackageManager.*;
 
 public class RunOnceApplication extends Application {
 	boolean isCheckedMCPE=false;
@@ -60,6 +61,20 @@ public class RunOnceApplication extends Application {
 				return new FileInputStream(createPackageContext("com.mojang.minecraftpe", CONTEXT_IGNORE_SECURITY).getPackageCodePath());
 			case 1://select
 				return tryOpen(Tools.getSettings("input.where", "", this));
+			default:
+				return null;
+		}
+	}
+	public String getApkPath() {
+		switch (Tools.getSettings("input.mode", 0, this)) {
+			case 0://installed
+				try {
+					return createPackageContext("com.mojang.minecraftpe", CONTEXT_IGNORE_SECURITY).getPackageCodePath();
+				} catch (PackageManager.NameNotFoundException e) {
+					return null;
+				}
+			case 1://select
+				return Tools.getSettings("input.where", "", this);
 			default:
 				return null;
 		}
