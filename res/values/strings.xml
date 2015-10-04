@@ -16,8 +16,8 @@
     <string name="select">Select</string>
     <string name="delete">Delete</string>
     <string name="wait">Please wait...</string>
-	<string name="loading">Loading...</string>
-	<string name="plugins">Plugins</string>
+    <string name="loading">Loading...</string>
+    <string name="plugins">Plugins</string>
 
     <string name="err_no_skins">Any Skins won\'t be changed.\nSelect more than one skin to change.</string>
     <string name="wantUpdate">Want to update? Tap here to open Google Play.</string>
@@ -73,12 +73,12 @@
     <string name="changing">Changing skins...</string>
     <string name="verifying">Verifying the APK...</string>
     <string name="fakeapp">You tried to use \"@APP@\" as Minecraft:PE? You can\'t!\nUse correctly Minecraft:PE\'s APK!</string>
-	<string name="badapk">Failed to check the APK. Maybe it is broken or incorrect format. Please check that it is correct.</string>
-	
+    <string name="badapk">Failed to check the APK. Maybe it is broken or incorrect format. Please check that it is correct.</string>
+
     <string name="check_internal">An error occured while checking the APK: Maybe an internal error, or called from out of the app.</string>
     <string name="check_apk">An error occured while checking the APK: Some files are missing. It is caused by this app. Report it to the developer!</string>
     <string name="check_success">Generated APK has no problem!</string>
-	
+
     <string name="another">Another Tools</string>
     <string name="about">About this app</string>
     <string name="version">Version</string>
@@ -86,9 +86,9 @@
     <string name="notbeta">This version is not a beta build</string>
     <string name="onbeta">Build @BETA@</string>
     <string name="openPlayStore">Open Play Store for this app</string>
-	<string name="openSourceLic">Open Source License</string>
-	<string name="appInfo">Internal Application Information</string>
-	
+    <string name="openSourceLic">Open Source License</string>
+    <string name="appInfo">Internal Application Information</string>
+
     <string-array name="checkName">
         <item>Checking Minecraft PE is installed...</item>
         <item>Checking Minecraft PE can be copied...</item>

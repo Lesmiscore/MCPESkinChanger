@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="Steve">Steve</string>
+    <string name="Steve">Steve</string>
     <string name="SteveN">Steve</string>
     <string name="AlexN">Alex</string>
     <string name="Zombie">Zombie</string>
     <string name="ZombiePigman">Zombie Pigman</string>
-	
-	<string name="Cow">Cow</string>
+
+    <string name="Cow">Cow</string>
     <string name="Creeper">Crepeer</string>
     <string name="Pig">Pig</string>
     <string name="Sheep">Sheep</string>

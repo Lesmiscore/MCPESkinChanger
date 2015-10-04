@@ -6,24 +6,24 @@
 	android:orientation="horizontal"
 	android:gravity="center">
 
-	<View
-		android:background="#ffffffff"
-		android:layout_height="40dp"
-		android:layout_width="1dp"
-		android:visibility="visible"/>
+    <View
+      android:background="#ffffffff"
+      android:layout_height="40dp"
+      android:layout_width="1dp"
+      android:visibility="visible"/>
 
-	<TextView
-		android:layout_height="40dp"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:layout_width="match_parent"
-		android:id="@+id/mobname"
-		android:gravity="center"/>
+    <TextView
+      android:layout_height="40dp"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="match_parent"
+      android:id="@+id/mobname"
+      android:gravity="center"/>
 
-	<View
-		android:background="#ffffffff"
-		android:layout_height="40dp"
-		android:layout_width="1dp"
-		android:visibility="visible"/>
+    <View
+      android:background="#ffffffff"
+      android:layout_height="40dp"
+      android:layout_width="1dp"
+      android:visibility="visible"/>
 
 </LinearLayout>
 

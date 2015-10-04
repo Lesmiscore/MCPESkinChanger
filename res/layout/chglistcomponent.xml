@@ -6,40 +6,40 @@
 	android:orientation="horizontal"
 	android:gravity="center">
 
-	<LinearLayout
-		android:layout_height="match_parent"
-		android:layout_width="match_parent"
-		android:orientation="horizontal"
-		android:layout_weight="1.0"
-		android:gravity="center_vertical">
+    <LinearLayout
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:orientation="horizontal"
+      android:layout_weight="1.0"
+      android:gravity="center_vertical">
 
-		<TextView
-			android:layout_height="wrap_content"
-			android:textAppearance="?android:attr/textAppearanceMedium"
-			android:layout_width="wrap_content"
-			android:id="@+id/mobimgname"/>
+        <TextView
+          android:layout_height="wrap_content"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:layout_width="wrap_content"
+          android:id="@+id/mobimgname"/>
 
-	</LinearLayout>
+    </LinearLayout>
 
-	<View
-		android:background="?android:attr/dividerHorizontal"
-		android:layout_height="match_parent"
-		android:layout_width="1dp"/>
+    <View
+      android:background="?android:attr/dividerHorizontal"
+      android:layout_height="match_parent"
+      android:layout_width="1dp"/>
 
-	<LinearLayout
-		android:layout_height="match_parent"
-		android:layout_width="match_parent"
-		android:orientation="horizontal"
-		android:layout_weight="1.0"
-		android:gravity="center_vertical">
+    <LinearLayout
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:orientation="horizontal"
+      android:layout_weight="1.0"
+      android:gravity="center_vertical">
 
-		<TextView
-			android:layout_height="wrap_content"
-			android:textAppearance="?android:attr/textAppearanceSmall"
-			android:layout_width="wrap_content"
-			android:id="@+id/fname"/>
+        <TextView
+          android:layout_height="wrap_content"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:id="@+id/fname"/>
 
-	</LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
 

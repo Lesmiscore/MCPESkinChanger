@@ -6,60 +6,60 @@
 	android:orientation="horizontal"
 	android:gravity="center">
 
-	<LinearLayout
-		android:layout_width="400dp"
-		android:layout_height="fill_parent"
-		android:orientation="vertical"
-		android:background="#FFFFFF"
-		android:gravity="center">
+    <LinearLayout
+      android:layout_width="400dp"
+      android:layout_height="fill_parent"
+      android:orientation="vertical"
+      android:background="#FFFFFF"
+      android:gravity="center">
 
-		<ImageView
-			android:layout_height="180dp"
-			android:layout_width="180dp"
-			android:src="@drawable/maxlogo"/>
+        <ImageView
+          android:layout_height="180dp"
+          android:layout_width="180dp"
+          android:src="@drawable/maxlogo"/>
 
-		<View
-			android:background="#00FFFFFF"
-			android:layout_height="1dp"
-			android:layout_width="match_parent"
-			android:visibility="invisible"/>
+        <View
+          android:background="#00FFFFFF"
+          android:layout_height="1dp"
+          android:layout_width="match_parent"
+          android:visibility="invisible"/>
 
-		<TextView
-			android:layout_height="wrap_content"
-			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:layout_width="wrap_content"
-			android:text="@string/app_name"
-			android:scaleX="2.0"
-			android:scaleY="2.0"/>
+        <TextView
+          android:layout_height="wrap_content"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:layout_width="wrap_content"
+          android:text="@string/app_name"
+          android:scaleX="2.0"
+          android:scaleY="2.0"/>
 
-		<View
-			android:background="#00FFFFFF"
-			android:layout_height="1dp"
-			android:layout_width="match_parent"
-			android:visibility="invisible"/>
+        <View
+          android:background="#00FFFFFF"
+          android:layout_height="1dp"
+          android:layout_width="match_parent"
+          android:visibility="invisible"/>
 
-		<ProgressBar
-			style="?android:attr/progressBarStyleHorizontal"
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
-			android:id="@+id/pbProgress"
-			android:visibility="gone"/>
+        <ProgressBar
+          style="?android:attr/progressBarStyleHorizontal"
+          android:layout_height="wrap_content"
+          android:layout_width="match_parent"
+          android:id="@+id/pbProgress"
+          android:visibility="gone"/>
 
-		<View
-			android:background="#00FFFFFF"
-			android:layout_height="1dp"
-			android:layout_width="match_parent"
-			android:visibility="gone"
-			android:id="@+id/split"/>
+        <View
+          android:background="#00FFFFFF"
+          android:layout_height="1dp"
+          android:layout_width="match_parent"
+          android:visibility="gone"
+          android:id="@+id/split"/>
 
-		<TextView
-			android:layout_height="wrap_content"
-			android:textAppearance="?android:attr/textAppearanceMedium"
-			android:layout_width="wrap_content"
-			android:id="@+id/tvState"
-			android:visibility="gone"/>
+        <TextView
+          android:layout_height="wrap_content"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:layout_width="wrap_content"
+          android:id="@+id/tvState"
+          android:visibility="gone"/>
 
-	</LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
 
