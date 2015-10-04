@@ -14,5 +14,6 @@ public class OpenSourceActivity extends SmartFindViewActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.license);
 		view=find("license");
+		view.loadUrl("file:///android_asset/osl.html");
 	}
 }
