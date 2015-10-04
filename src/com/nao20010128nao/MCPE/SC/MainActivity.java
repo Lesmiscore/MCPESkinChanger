@@ -191,6 +191,16 @@ public class MainActivity extends SHablePreferenceActivity {
 					startActivity(new Intent(MainActivity.this, PluginLauncher.class));
 				}
 			});
+		sH("openSourceLic",new OnClickListener(){
+				public void onClick(String p1, String p2, String p3) {
+					startActivity(new Intent(MainActivity.this, OpenSourceActivity.class));
+				}
+			});
+		sH("appInfo", new OnClickListener(){
+				public void onClick(String p1, String p2, String p3) {
+					startActivity(new Intent(MainActivity.this, AppInfoActivity.class));
+				}
+			});
 		try {
 			ImageLoader.startLoadImagesAsync(getApkPath());
 		} catch (PackageManager.NameNotFoundException e) {
