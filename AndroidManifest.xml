@@ -55,6 +55,16 @@
 			android:name="com.nao20010128nao.MCPE.SC.plugin.PluginLauncher"
 			android:exported="false">
         </activity>
+		<activity
+			android:label="@string/openSourceLic"
+			android:name="com.nao20010128nao.MCPE.SC.OpenSourceLicense"
+			android:exported="false">
+        </activity>
+		<activity
+			android:label="@string/appIndfo"
+			android:name="com.nao20010128nao.MCPE.SC.AppInfoActivity"
+			android:exported="false">
+        </activity>
     </application>
 </manifest>
 
