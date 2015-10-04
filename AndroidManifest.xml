@@ -57,7 +57,7 @@
         </activity>
 		<activity
 			android:label="@string/openSourceLic"
-			android:name="com.nao20010128nao.MCPE.SC.OpenSourceLicense"
+			android:name="com.nao20010128nao.MCPE.SC.OpenSourceActivity"
 			android:exported="false">
         </activity>
 		<activity
