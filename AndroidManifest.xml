@@ -61,7 +61,7 @@
 			android:exported="false">
         </activity>
 		<activity
-			android:label="@string/appIndfo"
+			android:label="@string/appInfo"
 			android:name="com.nao20010128nao.MCPE.SC.AppInfoActivity"
 			android:exported="false">
         </activity>
