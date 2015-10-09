@@ -32,15 +32,14 @@ public class ModificationService extends ServiceX {
 		// TODO: Implement this method
 		instance = new WeakReference<ModificationService>(this);
 		final Notification.Builder n=new Notification.Builder(this);
-		final Notification ntf;
+		//final Notification ntf;
 		n.setContentTitle(getResources().getString(R.string.app_name));
 		n.setContentText("");
 		n.setContentIntent(PendingIntent.getActivity(this, -1, new Intent().setClass(this, ModificateActivity.class).putExtra("mode", "noservice"), Intent.FLAG_ACTIVITY_CLEAR_TOP));
 		n.setSmallIcon(R.drawable.paw).setLargeIcon(((BitmapDrawable)getResources().getDrawable(R.drawable.paw)).getBitmap());
-		ntf=n.build();
-		startForeground(100, ntf);
+		startForeground(100, n.build());
 		final NotificationManager mNM=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-		mNM.notify(100, ntf);
+		mNM.notify(100, n.build());
 		//Toast.makeText(this,"",Toast.LENGTH_LONG).show();
 		new AsyncTask<Void,Integer,Void>(){
 			public Void doInBackground(Void[] p) {
