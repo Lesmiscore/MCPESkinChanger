@@ -170,8 +170,5 @@
         <pref.StartPref
           android:title="@string/openSourceLic"
           android:key="openSourceLic"/>
-        <pref.StartPref
-          android:title="@string/appInfo"
-          android:key="appInfo"/>
     </PreferenceScreen>
 </PreferenceScreen>
