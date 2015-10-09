@@ -16,6 +16,7 @@ import java.util.zip.*;
 import kellinwood.security.zipsigner.*;
 import android.widget.*;
 import java.lang.reflect.*;
+import android.graphics.drawable.*;
 
 public class ModificationService extends ServiceX {
 	Map<String,URI> skins=ModificateActivity.skins;
@@ -30,12 +31,16 @@ public class ModificationService extends ServiceX {
 	public int onStartCommand(int flags, int startId) {
 		// TODO: Implement this method
 		instance = new WeakReference<ModificationService>(this);
-		final Notification n=new Notification();
-		n.setLatestEventInfo(this, getResources().getString(R.string.app_name), "", PendingIntent.getActivity(this, -1, new Intent().setClass(this, ModificateActivity.class).putExtra("mode", "noservice"), Intent.FLAG_ACTIVITY_CLEAR_TOP));
-		n.icon = R.drawable.paw;
-		startForeground(100, n);
+		final Notification.Builder n=new Notification.Builder(this);
+		final Notification ntf;
+		n.setContentTitle(getResources().getString(R.string.app_name));
+		n.setContentText("");
+		n.setContentIntent(PendingIntent.getActivity(this, -1, new Intent().setClass(this, ModificateActivity.class).putExtra("mode", "noservice"), Intent.FLAG_ACTIVITY_CLEAR_TOP));
+		n.setSmallIcon(R.drawable.paw).setLargeIcon(((BitmapDrawable)getResources().getDrawable(R.drawable.paw)).getBitmap());
+		ntf=n.build();
+		startForeground(100, ntf);
 		final NotificationManager mNM=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-		mNM.notify(100, n);
+		mNM.notify(100, ntf);
 		//Toast.makeText(this,"",Toast.LENGTH_LONG).show();
 		new AsyncTask<Void,Integer,Void>(){
 			public Void doInBackground(Void[] p) {
@@ -241,8 +246,8 @@ public class ModificationService extends ServiceX {
 				}
 			}
 			public void onProgressUpdate(Integer[] a) {
-				n.setLatestEventInfo(ModificationService.this, getResources().getString(R.string.app_name), getResources().getStringArray(R.array.modSteps)[a[0]], PendingIntent.getActivity(ModificationService.this, -1, new Intent().setClass(ModificationService.this, ModificateActivity.class).putExtra("mode", "noservice"), Intent.FLAG_ACTIVITY_CLEAR_TOP));
-				mNM.notify(100, n);
+				n.setContentText(getResources().getStringArray(R.array.modSteps)[a[0]]);
+				mNM.notify(100, n.build());
 				ModificateActivity.set(-1, a[0], -1, -1, getResources().getStringArray(R.array.modSteps)[a[0]]);
 			}
 			public int countZipEntries(String path) throws IOException {
