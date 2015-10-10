@@ -26,6 +26,7 @@ public class SplashActivity extends Activity {
 		hideActionbar();
 		new AsyncTask<Void,Void,Void>(){
 			public Void doInBackground(Void[] p) {
+				Looper.prepare();
 				boolean ok=false;
 				/*Step 1*/
 				for (PackageInfo i:getPackageManager().getInstalledPackages(PackageManager.GET_ACTIVITIES | PackageManager.GET_CONFIGURATIONS)) {
