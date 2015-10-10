@@ -85,6 +85,8 @@
     <string name="notbeta">このバージョンはベータビルドではありません。</string>
     <string name="onbeta">ビルド @BETA@</string>
     <string name="openPlayStore">Playストアでこのアプリを見る</string>
+	<string name="openSourceLic">オープンソースライセンス</string>
+    <string name="appInfo">アプリケーションの内部的情報</string>
 
     <string-array name="checkName">
         <item>Minecraft PEがインストールされているかを調べています...</item>
