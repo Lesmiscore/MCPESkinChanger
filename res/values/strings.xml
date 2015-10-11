@@ -88,6 +88,7 @@
     <string name="openPlayStore">Open Play Store for this app</string>
     <string name="openSourceLic">Open Source License</string>
     <string name="appInfo">Internal Application Information</string>
+	<string name="workMode">Application Mode</string>
 
     <string-array name="checkName">
         <item>Checking Minecraft PE is installed...</item>
@@ -112,5 +113,10 @@
     <string-array name="outputList">
         <item>Install</item>
         <item>Select output at</item>
+    </string-array>
+	<string-array name="workModeList">
+        <item>Retro Mode (Default)</item>
+        <item>Marshmallow Mode (For Android 6.0)</item>
+		<!--<item>Root Mode (Skip Installer Dialog)</item>-->
     </string-array>
 </resources>
