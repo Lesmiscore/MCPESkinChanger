@@ -9,6 +9,7 @@ import android.util.*;
 import java.net.*;
 import android.net.*;
 import android.content.pm.PackageManager.*;
+import com.nao20010128nao.MC_PE.SkinChanger.*;
 
 public class RunOnceApplication extends Application {
 	boolean isCheckedApp=false;
@@ -27,6 +28,16 @@ public class RunOnceApplication extends Application {
 	}
 	public void completeCheckApp() {
 		isCheckedApp = true;
+	}
+	public int getWorkMode(){
+		int wm=Tools.getSettings("workMode",-1,this);
+		if(wm==-1){
+			wm=getResources().getInteger(R.integer.defaultWorkMode);
+		}
+		return wm;
+	}
+	public void setWorkMode(int mode){
+		Tools.setSettings("workMode",mode,this);
 	}
 	public UUIDs getUuids() {
 		return uuids;
