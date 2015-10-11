@@ -1,14 +1,12 @@
 package com.nao20010128nao.MCPE.SC;
 import android.app.*;
+import android.net.*;
 import android.os.*;
-import com.nao20010128nao.MC_PE.SkinChanger.*;
+import android.util.*;
 import android.widget.*;
+import com.nao20010128nao.MC_PE.SkinChanger.*;
 import java.io.*;
 import java.net.*;
-import android.net.*;
-import android.util.*;
-import android.content.*;
-import java.util.*;
 
 public class ContentFileLocalCopyActivity extends Activity {
 	TextView state;

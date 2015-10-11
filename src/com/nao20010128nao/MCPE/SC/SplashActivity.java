@@ -4,14 +4,9 @@ import android.content.*;
 import android.content.pm.*;
 import android.os.*;
 import android.util.*;
-import android.widget.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
-import java.io.*;
-import java.lang.reflect.*;
 import com.nao20010128nao.SpoofBrowser.classes.*;
-import java.net.*;
-import android.net.*;
-import android.content.pm.PackageManager.*;
+import java.io.*;
 
 public class SplashActivity extends Activity {
 	@Override

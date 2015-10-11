@@ -2,21 +2,21 @@ package com.nao20010128nao.MCPE.SC;
 import android.app.*;
 import android.content.*;
 import android.content.pm.*;
+import android.graphics.drawable.*;
 import android.net.*;
 import android.os.*;
 import android.util.*;
+import android.widget.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 import com.nao20010128nao.SpoofBrowser.classes.*;
 import com.nao20010128nao.ToolBox.*;
 import java.io.*;
 import java.lang.ref.*;
+import java.lang.reflect.*;
 import java.net.*;
 import java.util.*;
 import java.util.zip.*;
 import kellinwood.security.zipsigner.*;
-import android.widget.*;
-import java.lang.reflect.*;
-import android.graphics.drawable.*;
 
 public class ModificationService extends ServiceX {
 	Map<String,URI> skins=ModificateActivity.skins;
