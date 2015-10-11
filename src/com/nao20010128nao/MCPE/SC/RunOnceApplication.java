@@ -11,7 +11,7 @@ import android.net.*;
 import android.content.pm.PackageManager.*;
 
 public class RunOnceApplication extends Application {
-	boolean isCheckedMCPE=false;
+	boolean isCheckedApp=false;
 	UUIDs uuids=new UUIDs();
 	public static byte[] mcpeApk;
 	public static RunOnceApplication instance;
@@ -22,11 +22,11 @@ public class RunOnceApplication extends Application {
 		super.onCreate();
 		instance = this;
 	}
-	public boolean isCheckedMCPE() {
-		return isCheckedMCPE;
+	public boolean isCheckedApp() {
+		return isCheckedApp;
 	}
-	public void completeCheckMCPE() {
-		isCheckedMCPE = true;
+	public void completeCheckApp() {
+		isCheckedApp = true;
 	}
 	public UUIDs getUuids() {
 		return uuids;

@@ -13,7 +13,7 @@ public class SplashActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO: Implement this method
 		super.onCreate(savedInstanceState);
-		if (RunOnceApplication.instance.isCheckedMCPE()) {
+		if (RunOnceApplication.instance.isCheckedApp()) {
 			finish();
 			return;
 		}
@@ -126,7 +126,7 @@ public class SplashActivity extends Activity {
 				RunOnceApplication.instance.getUuids().regenUuid();
 				RunOnceApplication.instance.getUuids().save(SplashActivity.this);
 				
-				RunOnceApplication.instance.completeCheckMCPE();
+				RunOnceApplication.instance.completeCheckApp();
 				return null;
 			}
 			public void onPostExecute(Void r) {
