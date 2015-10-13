@@ -21,16 +21,16 @@
     <string name="err_no_skins">どのスキンも変更されません。\n変更したいスキンを1つ以上選択してください。</string>
     <string name="wantUpdate">アップデートしたい? ここをタッチしてGoogle Playに移動します。</string>
     <string name="wantUpdate_desc">[アンインストール] (-> [はい]) -> [インストール]の順番でタッチするとアップデートできます。\nスキン変更は何度でもできます。</string>
-    <string name="selectSteve">Steve(スティーブ)のスキンを変更(~0.10.5)</string>
-    <string name="selectSteveN">Steve(スティーブ)のスキンを変更(0.11.0~)</string>
-    <string name="selectAlexN">Alex(アレックス)のスキンを変更(0.11.0~)</string>
-    <string name="selectZombie">ゾンビのスキンを変更</string>
-    <string name="selectZombiePigman">ゾンビピッグマンのスキンを変更</string>
+    <string name="selectSteve">Steve(スティーブ)のスキンを選択(~0.10.5)</string>
+    <string name="selectSteveN">Steve(スティーブ)のスキンを選択(0.11.0~)</string>
+    <string name="selectAlexN">Alex(アレックス)のスキンを選択(0.11.0~)</string>
+    <string name="selectZombie">ゾンビのスキンを選択</string>
+    <string name="selectZombiePigman">ゾンビピッグマンのスキンを選択</string>
 
-    <string name="selectCow">牛のスキンを変更</string>
-    <string name="selectCreeper">クリーパーのスキンを変更</string>
-    <string name="selectPig">ブタのスキンを変更</string>
-    <string name="selectSheep">羊のスキンを変更 (~0.11.1)</string>
+    <string name="selectCow">牛のスキンを選択</string>
+    <string name="selectCreeper">クリーパーのスキンを選択</string>
+    <string name="selectPig">ブタのスキンを選択</string>
+    <string name="selectSheep">羊のスキンを選択 (~0.11.1)</string>
 
     <string name="selectSheep0">白い羊のスキンを選択</string>
     <string name="selectSheep1">オレンジ色の羊のスキンを選択</string>
