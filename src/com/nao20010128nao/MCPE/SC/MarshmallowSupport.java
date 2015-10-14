@@ -8,6 +8,7 @@ import com.nao20010128nao.MC_PE.SkinChanger.*;
 import android.widget.*;
 import android.view.*;
 import java.util.*;
+import android.util.*;
 
 public class MarshmallowSupport
 {
@@ -35,7 +36,7 @@ public class MarshmallowSupport
 						String perm=getItem(pos);
 						try {
 							PermissionInfo pinfo = pm.getPermissionInfo(perm, 0);
-							((TextView)conv.findViewById(R.id.permName)).setText(perm);//pinfo.loadDescription(pm).toString());
+							((TextView)conv.findViewById(R.id.permName)).setText(pinfo.loadDescription(pm));
 							((ImageView)conv.findViewById(R.id.permImage)).setImageDrawable(pinfo.loadLogo(pm));
 						} catch (Throwable e) {
 							((TextView)conv.findViewById(R.id.permName)).setText("Error");
@@ -50,6 +51,9 @@ public class MarshmallowSupport
 				.setPositiveButton(R.string.next,new DialogInterface.OnClickListener(){
 					public void onClick(DialogInterface di,int p2){
 						require=deprivated.toArray(new String[deprivated.size()]);
+						for(String s:require){
+							Log.d("perm",s);
+						}
 						cont=toContinue;
 						ctx.startActivity(new Intent(ctx,PermActivity.class));
 						di.cancel();
@@ -83,6 +87,10 @@ public class MarshmallowSupport
 		protected void onCreate(Bundle savedInstanceState) {
 			// TODO: Implement this method
 			super.onCreate(savedInstanceState);
+			for(String s:require){
+				Log.d("perm",s);
+				shouldShowRequestPermissionRationale(s);
+			}
 			requestPermissions(require,0);
 			setContentView(new LinearLayout(this));
 		}
@@ -91,6 +99,8 @@ public class MarshmallowSupport
 		public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
 			// TODO: Implement this method
 			super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+			Log.d("perm",requestCode+";"+permissions+";"+grantResults);
+			
 			for(int i:grantResults){
 				if(i==PackageManager.PERMISSION_DENIED){
 					//Retry
