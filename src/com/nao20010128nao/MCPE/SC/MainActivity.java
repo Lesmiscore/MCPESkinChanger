@@ -57,7 +57,11 @@ public class MainActivity extends SHablePreferenceActivity {
 							.show();
 						return;
 					}
-					startActivity(new Intent(MainActivity.this, ModificateActivity.class).putExtra("mode", "normal"));
+					MarshmallowSupport.alertPerms(MainActivity.this,Arrays.asList(Utils.APP_MININUM_PERMISSIONS),new Runnable(){
+						public void run(){
+							startActivity(new Intent(MainActivity.this, ModificateActivity.class).putExtra("mode", "normal"));
+						}
+					});
 				}
 			});
 		sH("wantUpdate", new OnClickListener(){

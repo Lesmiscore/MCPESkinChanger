@@ -15,6 +15,11 @@ public class Utils
 		new Size(64,32),//Old skin
 		new Size(64,64),//New skin
 	};
+	public static final String[] APP_MININUM_PERMISSIONS=new String[]{
+		"android.permission.WRITE_EXTERNAL_STORAGE",
+		"android.permission.MANAGE_DOCUMENTS"
+	};
+	
 	public static int getVersionCode(Context context){
         PackageManager pm = context.getPackageManager();
         int versionCode = 0;
@@ -139,5 +144,13 @@ public class Utils
 			}
 		}
 		return false;
+	}
+	public static String[] getPermissions(Context ctx){
+		try {
+			return ctx.getPackageManager().getPackageInfo(ctx.getPackageName(), PackageManager.GET_PERMISSIONS).requestedPermissions;
+		} catch (PackageManager.NameNotFoundException e) {
+			
+		}
+		return APP_MININUM_PERMISSIONS;
 	}
 }
