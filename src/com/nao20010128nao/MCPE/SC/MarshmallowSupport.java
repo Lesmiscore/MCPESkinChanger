@@ -28,7 +28,7 @@ public class MarshmallowSupport
 				.setTitle(R.string.permNotFull)
 				.setAdapter(
 				new ArrayAdapter<String>(ctx,0,deprivated){
-					public View getView(int pos,long id,AdapterView parent,View conv){
+					public View getView(int pos,AdapterView parent,View conv){
 						if(conv==null){
 							conv=((LayoutInflater)ctx.getSystemService(Activity.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.permnotfull,null);
 						}
