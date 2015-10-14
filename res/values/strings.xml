@@ -89,9 +89,6 @@
     <string name="openSourceLic">Open Source License</string>
     <string name="appInfo">Internal Application Information</string>
 	<string name="workMode">Application Mode</string>
-	
-	<string name="permNotFull">Some permission are denied to continue:</string>
-	<string name="next">Continue</string>
 
     <string-array name="checkName">
         <item>Checking Minecraft PE is installed...</item>
