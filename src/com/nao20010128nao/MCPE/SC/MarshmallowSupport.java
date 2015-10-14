@@ -28,16 +28,16 @@ public class MarshmallowSupport
 				.setTitle(R.string.permNotFull)
 				.setAdapter(
 				new ArrayAdapter<String>(ctx,0,deprivated){
-					public View getView(int pos,AdapterView parent,View conv){
+					public View getView(int pos,View conv,ViewGroup parent){
 						if(conv==null){
 							conv=((LayoutInflater)ctx.getSystemService(Activity.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.permnotfull,null);
 						}
 						String perm=getItem(pos);
 						try {
 							PermissionInfo pinfo = pm.getPermissionInfo(perm, 0);
-							((TextView)conv.findViewById(R.id.permName)).setText(pinfo.loadDescription(pm).toString());
+							((TextView)conv.findViewById(R.id.permName)).setText(perm);//pinfo.loadDescription(pm).toString());
 							((ImageView)conv.findViewById(R.id.permImage)).setImageDrawable(pinfo.loadLogo(pm));
-						} catch (PackageManager.NameNotFoundException e) {
+						} catch (Throwable e) {
 							((TextView)conv.findViewById(R.id.permName)).setText("Error");
 						}
 						return conv;
@@ -52,6 +52,7 @@ public class MarshmallowSupport
 						require=deprivated.toArray(new String[deprivated.size()]);
 						cont=toContinue;
 						ctx.startActivity(new Intent(ctx,PermActivity.class));
+						di.cancel();
 					}
 				})
 				.show();
@@ -83,6 +84,7 @@ public class MarshmallowSupport
 			// TODO: Implement this method
 			super.onCreate(savedInstanceState);
 			requestPermissions(require,0);
+			setContentView(new LinearLayout(this));
 		}
 
 		@Override
@@ -101,7 +103,16 @@ public class MarshmallowSupport
 			}finally{
 				cont=null;
 				require=null;
+				finish();
 			}
 		}
+
+		@Override
+		public void onBackPressed() {
+			// TODO: Implement this method
+			super.onBackPressed();
+			finish();
+		}
+		
 	}
 }
