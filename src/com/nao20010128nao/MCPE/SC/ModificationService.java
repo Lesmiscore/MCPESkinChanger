@@ -76,7 +76,8 @@ public class ModificationService extends ServiceX {
 							String stat=dat[1];
 							String[] sv=stat.split("\\;");
 							ModificateActivity.set(new Integer(sv[0]),new Integer(sv[1]),new Integer(sv[2]),new Integer(sv[3]),null);
-							publishProgress(new Integer(sv[4]));
+							if(!"null".equals(sv[4]))
+								publishProgress(new Integer(sv[4]));
 						}else if("ErrorToast".equals(cmd)){
 							Toast.makeText(ModificationService.this,new Integer(dat[2]),1).show();
 							finishForExit();
@@ -103,7 +104,8 @@ public class ModificationService extends ServiceX {
 						.append(':')
 						.append(ent.getKey());
 				}
-				return sb.substring(2).toString();
+				if(sb.length()==0)return "";
+				return sb.substring(1).toString();
 			}
 			public void finishForExit(){
 				Activity a=null;
