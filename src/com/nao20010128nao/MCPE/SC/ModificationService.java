@@ -141,6 +141,8 @@ public class ModificationService extends ServiceX {
 					startActivity(new Intent(ModificationService.this, ModificateActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("mode", "last"));
 				else
 					ModificateActivity.instance.get().doLast();
+				stopForeground(true);
+				mNM.cancel(100);
 				return null;
 			}
 			public String buildChanges(){
