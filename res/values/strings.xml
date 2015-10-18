@@ -104,6 +104,7 @@
         <item>Signing a changed APK...</item>
         <item>Copying a changed APK to External Storage...</item>
         <item>@string/verifying</item>
+		<item>@string/wait</item>
         <item>Complete! Install it and have fun!</item>
     </string-array>
     <string-array name="inputList">

@@ -92,7 +92,55 @@ public class ModificationService extends ServiceX {
 				if(Tools.getSettings("output.mode", 0, ModificationService.this)==1){
 					String dst=Tools.getSettings("output.where", "", ModificationService.this);
 					String frm=new File(getCacheDir(),"result.apk").toString();
+					FileInputStream fis=null;
+					FileOutputStream fos=null;
+					int fLen=0,fTmp=0;
+					try{
+						fis=new FileInputStream(frm);
+						fLen=calcLength(fis);
+					}catch(IOException e){
+
+					}finally{
+						try {
+							fis.close();
+						} catch (Throwable e) {
+							
+						}
+					}
+					ModificateActivity.set(-1,-1,-1,fLen,null);
+					try{
+						fis=new FileInputStream(frm);
+						fos=new FileOutputStream(dst);
+						byte[] buf=new byte[10000];
+						while(true){
+							int i=fis.read(buf);
+							if(i<=0){
+								break;
+							}
+							fTmp+=i;
+							ModificateActivity.set(-1,-1,fTmp,-1,null);
+							fos.write(buf,0,i);
+						}
+					}catch(IOException e){
+						
+					}finally{
+						try {
+							fis.close();
+						} catch (Throwable e) {
+
+						}
+						try {
+							fos.close();
+						} catch (Throwable e) {
+
+						}
+					}
 				}
+				publishProgress(6);
+				if (ModificateActivity.instance.get() == null)
+					startActivity(new Intent(ModificationService.this, ModificateActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("mode", "last"));
+				else
+					ModificateActivity.instance.get().doLast();
 				return null;
 			}
 			public String buildChanges(){
@@ -115,6 +163,32 @@ public class ModificationService extends ServiceX {
 					} catch (InvocationTargetException e) {
 					} catch (IllegalAccessException e) {
 					} catch (IllegalArgumentException e) {
+					}
+				}
+			}
+			public int calcLength(InputStream is){
+				int len=0,err=0;
+				try {
+					if (is.available() <= 1)
+						return is.available();
+				} catch (IOException e) {
+
+				}
+				byte[] buf=new byte[10000];
+				int l=0;
+				while(true){
+					try {
+						if ((l=is.read(buf)) != -1)len+=l;
+						else{
+							is.close();
+							return len;
+						}
+					} catch (IOException e) {
+						e.printStackTrace();
+						err++;
+					}
+					if(err>10){
+						return -1;
 					}
 				}
 			}
