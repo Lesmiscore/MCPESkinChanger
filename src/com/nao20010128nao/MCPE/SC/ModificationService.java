@@ -21,6 +21,7 @@ import kellinwood.security.zipsigner.*;
 public class ModificationService extends ServiceX {
 	Map<String,URI> skins=ModificateActivity.skins;
 	public static WeakReference<ModificationService> instance=new WeakReference<>(null);
+	java.lang.Process proc;
 	@Override
 	public IBinder onBind() {
 		// TODO: Implement this method
@@ -59,7 +60,7 @@ public class ModificationService extends ServiceX {
 					args.add(buildChanges());
 					args.add("-cache");
 					args.add(getCacheDir().toString());
-					java.lang.Process proc=
+					proc=
 						new ProcessBuilder()
 							.command(args)
 							.directory(getCacheDir())
@@ -240,5 +241,9 @@ public class ModificationService extends ServiceX {
 			}
 		}.execute();
 		return START_NOT_STICKY;
+	}
+	public void killChanger(){
+		proc.destroy();
+		proc=null;
 	}
 }
