@@ -47,7 +47,7 @@ public class ModificationService extends ServiceX {
 				ModificateActivity.set(getResources().getStringArray(R.array.modSteps).length - 1, 0, -1, -1, null);
 				try {
 					List<String> args=new ArrayList<>();
-					args.add("dalvikvm");
+					args.add("/system/bin/dalvikvm");
 					args.add("-classpath");
 					args.add(getApplicationInfo().sourceDir);
 					args.add(IsolatedChanger.class.getName());
@@ -69,6 +69,7 @@ public class ModificationService extends ServiceX {
 					while(true){
 						String s=br.readLine();
 						if(s==null)break;
+						Log.d("line",s);
 						String[] dat=s.split("\\:");
 						String cmd=dat[0];
 						if("Status".equals(cmd)){
@@ -82,7 +83,7 @@ public class ModificationService extends ServiceX {
 						}
 					}
 				} catch (IOException e) {
-					
+					e.printStackTrace();
 				} catch (PackageManager.NameNotFoundException e) {
 
 				}
@@ -102,7 +103,7 @@ public class ModificationService extends ServiceX {
 						.append(':')
 						.append(ent.getKey());
 				}
-				return sb.substring(1).toString();
+				return sb.substring(2).toString();
 			}
 			public void finishForExit(){
 				Activity a=null;

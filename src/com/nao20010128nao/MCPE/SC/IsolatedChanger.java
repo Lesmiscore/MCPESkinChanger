@@ -46,6 +46,9 @@ public class IsolatedChanger
 		// Phase 2 - Parsing Changes
 		for(String s:changes.split("\\;")){
 			String[] oneConv=s.split("\\:");
+			if(oneConv.length!=2){
+				continue;
+			}
 			String vfile=oneConv[0];
 			String rfile=oneConv[1];
 			try {
