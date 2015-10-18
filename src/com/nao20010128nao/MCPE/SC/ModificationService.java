@@ -45,173 +45,64 @@ public class ModificationService extends ServiceX {
 			public Void doInBackground(Void[] p) {
 				ModificateActivity.set(-1, -1, -1, -1, null);
 				ModificateActivity.set(getResources().getStringArray(R.array.modSteps).length - 1, 0, -1, -1, null);
-				/*Step1*/
-				InputStream is=null;
-				OutputStream os=null;
-				publishProgress(0);
 				try {
-					int tmp=0;
-					ModificateActivity.set(-1, -1, calcLength(openAPK()), 0, null);
-					is = openAPK();
-					os = openFileOutput("vanilla.apk", MODE_MULTI_PROCESS | MODE_WORLD_READABLE);
-					byte[] buf=new byte[10000];
-					while (true) {
-						int i=is.read(buf);
-						if (i <= 0)break;
-						tmp += i;
-						ModificateActivity.set(-1, -1, -1, tmp, null);
-						os.write(buf, 0, i);
-					}
-				} catch (Throwable ex) {
-					ex.printStackTrace(System.out);
-				} finally {
-					try {
-						if (is != null)is.close();
-						if (os != null)os.close();
-					} catch (IOException e) {
-
-					}
-				}
-				/*Step2*/
-				publishProgress(1);
-				ZipOutputStream zos=null;
-				ZipInputStream zis=null;
-				ModificateActivity.set(-1, 1, 0, 0, null);
-				Set<String> toCheck=new HashSet<>();
-				try {
-					ModificateActivity.set(-1, -1, countZipEntries("vanilla.apk"), 0, null);
-					is = openFileInput("vanilla.apk");
-					os = openFileOutput("modded.apk", MODE_MULTI_PROCESS | MODE_WORLD_READABLE);
-					zos = new ZipOutputStream(new BufferedOutputStream(os));
-					zis = new ZipInputStream(new BufferedInputStream(is));
-					zos.setLevel(8);
-					ZipEntry ze;
-					int tmp=0;
-					byte[] buf=new byte[10000];
-					while ((ze = zis.getNextEntry()) != null) {
-						if (ze.getName().startsWith("META-INF")) {
-							ModificateActivity.set(-1, -1, -1, ++tmp, null);
-							continue;//don't copy sign data
+					List<String> args=new ArrayList<>();
+					args.add("dalvikvm");
+					args.add("-classpath");
+					args.add(getApplicationInfo().sourceDir);
+					args.add(IsolatedChanger.class.getName());
+					args.add("-apk");
+					args.add(openAPK());
+					args.add("-output");
+					args.add(saveAPK());
+					args.add("-changes");
+					args.add(buildChanges());
+					args.add("-cache");
+					args.add(getCacheDir().toString());
+					java.lang.Process proc=
+						new ProcessBuilder()
+							.command(args)
+							.directory(getCacheDir())
+							.redirectErrorStream(true)
+							.start();
+					BufferedReader br=new BufferedReader(new InputStreamReader(proc.getInputStream()));
+					while(true){
+						String s=br.readLine();
+						if(s==null)break;
+						String[] dat=s.split("\\:");
+						String cmd=dat[0];
+						if("Status".equals(cmd)){
+							String stat=dat[1];
+							String[] sv=stat.split("\\;");
+							ModificateActivity.set(new Integer(sv[0]),new Integer(sv[1]),new Integer(sv[2]),new Integer(sv[3]),null);
+							publishProgress(new Integer(sv[4]));
+						}else if("ErrorToast".equals(cmd)){
+							Toast.makeText(ModificationService.this,new Integer(dat[2]),1).show();
+							finishForExit();
 						}
-						toCheck.add(ze.getName());
-						InputStream source=zis;
-						if (skins.containsKey(ze.getName())) {
-							source = tryOpen(skins.get(ze.getName()).toString());
-						}
-						ze = new ZipEntry(ze.getName());//by private issue reporting
-						zos.putNextEntry(ze);
-						while (true) {
-							int i=source.read(buf);
-							if (i <= 0)break;
-							zos.write(buf, 0, i);
-						}
-						if (skins.containsKey(ze.getName())) {
-							source.close();
-						}
-						ModificateActivity.set(-1, -1, -1, ++tmp, null);
-					}
-				} catch (Throwable ex) {
-					ex.printStackTrace(System.out);
-				} finally {
-					try {
-						if (zis != null)zis.close();
-						if (zos != null)zos.close();
-					} catch (IOException e) {
-
-					}
-				}
-				/*Step3*/
-				publishProgress(2);
-				try {
-					ModificateActivity.set(-1, -1, 100, -1, null);
-					ZipSigner zs=new ZipSigner();
-					zs.setKeymode("auto-testkey");
-					zs.addProgressListener(new ProgressListener(){
-							public void onProgress(ProgressEvent pe) {
-								ModificateActivity.set(-1, -1, -1, pe.getPercentDone(), null);
-							}
-						});
-					zs.signZip(new File(getFilesDir(), "modded.apk") + "",
-							   new File(getFilesDir(), "signed.apk") + "");
-				} catch (Throwable e) {
-					e.printStackTrace(System.out);
-				}
-				/*Step4*/
-				publishProgress(3);
-				try {
-					int tmp=0;
-					ModificateActivity.set(-1, -1, (int)new File(getFilesDir(), "signed.apk").length(), 0, null);
-					is = openFileInput("signed.apk");
-					os = saveAPK();
-					byte[] buf=new byte[10000];
-					while (true) {
-						int i=is.read(buf);
-						if (i <= 0)break;
-						tmp += i;
-						ModificateActivity.set(-1, -1, -1, tmp, null);
-						os.write(buf, 0, i);
-					}
-				} catch (Throwable ex) {
-					ex.printStackTrace(System.out);
-				} finally {
-					try {
-						if (is != null)is.close();
-						if (os != null)os.close();
-					} catch (IOException e) {
-
-					}
-				}
-				/*Step5*/
-				publishProgress(4);
-				ModificateActivity.set(-1, -1, -1, 0, null);
-				try {
-					int count=countZipEntries(new ZipInputStream(openFileInput("signed.apk")));
-					if (count == -1) {
-						Log.d("apkCheck", "count == -1");
-						Toast.makeText(ModificationService.this,R.string.check_apk,1).show();
-						finishForExit();
-						return null;
-					}
-					ModificateActivity.set(-1, -1, count, 0, null);
-				} catch (FileNotFoundException e) {
-					
-				}
-				int time=0;
-				try {
-					zis=new ZipInputStream(openFileInput("signed.apk"));
-					ZipEntry ze=null;
-					while((ze=zis.getNextEntry())!=null){
-						toCheck.remove(ze.getName());
-						ModificateActivity.set(-1,-1,-1,++time,null);
 					}
 				} catch (IOException e) {
-					e.printStackTrace();
 					
-				}finally{
-					try {
-						zis.close();
-					} catch (Throwable e) {
+				} catch (PackageManager.NameNotFoundException e) {
 
-					}
 				}
-				if(toCheck.size()==0){
-					Log.d("apkCheck","toCheck.size() == 0");
-					
-				}else{
-					Log.d("apkCheck","toCheck.size() != 0");
-					Toast.makeText(ModificationService.this,R.string.check_apk,1).show();
-					finishForExit();
-					return null;
+				//
+				if(Tools.getSettings("output.mode", 0, ModificationService.this)==1){
+					String dst=Tools.getSettings("output.where", "", ModificationService.this);
+					String frm=new File(getCacheDir(),"result.apk").toString();
 				}
-				/*Step6*/
-				publishProgress(5);
-				//ModificateActivity.set(-1,5,-1,-1,null);
-				if (ModificateActivity.instance.get() == null)
-					startActivity(new Intent(ModificationService.this, ModificateActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("mode", "last"));
-				else
-					ModificateActivity.instance.get().doLast();
-				stopForeground(true);
 				return null;
+			}
+			public String buildChanges(){
+				StringBuilder sb=new StringBuilder();
+				for(Map.Entry<String,URI> ent:skins.entrySet()){
+					sb
+						.append(';')
+						.append(ent.getKey())
+						.append(':')
+						.append(ent.getKey());
+				}
+				return sb.substring(1).toString();
 			}
 			public void finishForExit(){
 				Activity a=null;
@@ -224,99 +115,29 @@ public class ModificationService extends ServiceX {
 					}
 				}
 			}
-			public InputStream tryOpen(String uri) throws IOException {
-				Log.d("dbg", "tryOpen:" + uri);
-				if (uri.startsWith("content://")) {
-					return getContentResolver().openInputStream(Uri.parse(uri));
-				} else if (uri.startsWith("/")) {
-					return new FileInputStream(uri);
-				} else {
-					return URI.create(uri).toURL().openConnection().getInputStream();
-				}
-			}
-			public OutputStream trySave(String uri) throws IOException {
-				Log.d("dbg", "trySave:" + uri);
-				if (uri.startsWith("content://")) {
-					return getContentResolver().openOutputStream(Uri.parse(uri));
-				} else if (uri.startsWith("/")) {
-					return new FileOutputStream(uri);
-				} else {
-					return URI.create(uri).toURL().openConnection().getOutputStream();
-				}
-			}
 			public void onProgressUpdate(Integer[] a) {
 				n.setContentText(getResources().getStringArray(R.array.modSteps)[a[0]]);
 				mNM.notify(100, n.build());
 				ModificateActivity.set(-1, a[0], -1, -1, getResources().getStringArray(R.array.modSteps)[a[0]]);
 			}
-			public int countZipEntries(String path) throws IOException {
-				int count=0;
-				InputStream is=openFileInput("vanilla.apk");
-				ZipInputStream zis=new ZipInputStream(new BufferedInputStream(is));
-				while (zis.getNextEntry() != null)
-					count++;
-				return count;
-			}
-			public int countZipEntries(ZipInputStream zis) {
-				try {
-					int count=0;
-					while (zis.getNextEntry() != null)
-						count++;
-					return count;
-				} catch (IOException e) {
-					return -1;
-				}finally{
-					try {
-						zis.close();
-					} catch (Throwable e) {
-
-					}
-				}
-			}
-			InputStream openAPK() throws IOException,PackageManager.NameNotFoundException {
+			String openAPK() throws PackageManager.NameNotFoundException {
 				switch (Tools.getSettings("input.mode", 0, ModificationService.this)) {
 					case 0://installed
-						return new FileInputStream(createPackageContext("com.mojang.minecraftpe", CONTEXT_IGNORE_SECURITY).getPackageCodePath());
+						return createPackageContext("com.mojang.minecraftpe", CONTEXT_IGNORE_SECURITY).getPackageCodePath();
 					case 1://select
-						return tryOpen(Tools.getSettings("input.where", "", ModificationService.this));
+						return Tools.getSettings("input.where", "", ModificationService.this);
 					default:
 						return null;
 				}
 			}
-			int calcLength(InputStream is){
-				int len=0,err=0;
-				try {
-					if (is.available() <= 1)
-						return is.available();
-				} catch (IOException e) {
-					
-				}
-				byte[] buf=new byte[10000];
-				int l=0;
-				while(true){
-					try {
-						if ((l=is.read(buf)) != -1)len+=l;
-						else{
-							is.close();
-							return len;
-						}
-					} catch (IOException e) {
-						e.printStackTrace();
-						err++;
-					}
-					if(err>10){
-						return -1;
-					}
-				}
-			}
-			OutputStream saveAPK() throws IOException {
-				switch (Tools.getSettings("input.mode", 0, ModificationService.this)) {
+			String saveAPK(){
+				switch (Tools.getSettings("output.mode", 0, ModificationService.this)) {
 					case 0://installed
 						File f=new File(Environment.getExternalStorageDirectory(), "games/com.mojang");
 						(f = new File(f, "skinchanger")).mkdirs();
-						return new FileOutputStream(new File(f, "signed.apk"));
+						return new File(f, "signed.apk").getAbsolutePath();
 					case 1://select
-						return trySave(Tools.getSettings("output.where", "", ModificationService.this));
+						return new File(getCacheDir(),"result.apk").toString();
 					default:
 						return null;
 				}
