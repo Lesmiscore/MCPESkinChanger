@@ -1,11 +1,10 @@
 package com.nao20010128nao.MCPE.SC;
-import java.io.*;
-import android.content.pm.*;
-import java.util.*;
-import java.lang.reflect.*;
 import android.app.*;
+import android.content.pm.*;
 import android.content.res.*;
 import android.graphics.drawable.*;
+import java.io.*;
+import java.lang.reflect.*;
 
 // quoted almost code from
 // https://github.com/android/platform_packages_apps_packageinstaller/blob/master/src/com/android/packageinstaller/PackageInstallerActivity.java

@@ -48,7 +48,7 @@ public class ModificateActivity extends Activity {
 		};//.execute();
 	}
 	public void doLast() {
-		switch (Tools.getSettings("input.mode", 0, this)) {
+		switch (Tools.getSettings("output.mode", 0, this)) {
 			case 0://installed
 				Intent intent = new Intent(Intent.ACTION_DELETE, Uri.fromParts("package", "com.mojang.minecraftpe", null));
 				//intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

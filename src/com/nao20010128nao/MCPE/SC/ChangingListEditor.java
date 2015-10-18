@@ -1,13 +1,13 @@
 package com.nao20010128nao.MCPE.SC;
 import android.app.*;
-import android.os.*;
-import com.nao20010128nao.MC_PE.SkinChanger.*;
-import android.widget.*;
-import java.util.*;
-import java.net.*;
-import android.view.*;
 import android.content.*;
+import android.os.*;
 import android.util.*;
+import android.view.*;
+import android.widget.*;
+import com.nao20010128nao.MC_PE.SkinChanger.*;
+import java.net.*;
+import java.util.*;
 
 public class ChangingListEditor extends ListActivity {
 	String changeTmp=null;

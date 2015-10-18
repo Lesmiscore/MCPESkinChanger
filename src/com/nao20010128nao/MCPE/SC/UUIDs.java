@@ -1,7 +1,7 @@
 package com.nao20010128nao.MCPE.SC;
-import java.util.*;
 import android.content.*;
 import com.nao20010128nao.SpoofBrowser.classes.*;
+import java.util.*;
 
 public class UUIDs
 {

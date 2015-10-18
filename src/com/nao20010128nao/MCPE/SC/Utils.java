@@ -2,12 +2,12 @@ package com.nao20010128nao.MCPE.SC;
 import android.content.*;
 import android.content.pm.*;
 import android.content.pm.PackageManager.*;
-import com.nao20010128nao.MC_PE.SkinChanger.*;
 import android.content.res.*;
-import java.util.*;
-import android.util.*;
 import android.graphics.*;
+import android.util.*;
+import com.nao20010128nao.MC_PE.SkinChanger.*;
 import java.io.*;
+import java.util.*;
 
 public class Utils
 {

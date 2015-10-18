@@ -4,21 +4,16 @@ import android.content.*;
 import android.content.pm.*;
 import android.os.*;
 import android.util.*;
-import android.widget.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
-import java.io.*;
-import java.lang.reflect.*;
 import com.nao20010128nao.SpoofBrowser.classes.*;
-import java.net.*;
-import android.net.*;
-import android.content.pm.PackageManager.*;
+import java.io.*;
 
 public class SplashActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO: Implement this method
 		super.onCreate(savedInstanceState);
-		if (RunOnceApplication.instance.isCheckedMCPE()) {
+		if (RunOnceApplication.instance.isCheckedApp()) {
 			finish();
 			return;
 		}
@@ -26,6 +21,7 @@ public class SplashActivity extends Activity {
 		hideActionbar();
 		new AsyncTask<Void,Void,Void>(){
 			public Void doInBackground(Void[] p) {
+				Looper.prepare();
 				boolean ok=false;
 				/*Step 1*/
 				for (PackageInfo i:getPackageManager().getInstalledPackages(PackageManager.GET_ACTIVITIES | PackageManager.GET_CONFIGURATIONS)) {
@@ -126,11 +122,14 @@ public class SplashActivity extends Activity {
 						
 					}
 				}
+				if(!new File(getFilesDir(), "zipalign").exists()){
+					
+				}
 				RunOnceApplication.instance.getUuids().load(SplashActivity.this);
 				RunOnceApplication.instance.getUuids().regenUuid();
 				RunOnceApplication.instance.getUuids().save(SplashActivity.this);
 				
-				RunOnceApplication.instance.completeCheckMCPE();
+				RunOnceApplication.instance.completeCheckApp();
 				return null;
 			}
 			public void onPostExecute(Void r) {
