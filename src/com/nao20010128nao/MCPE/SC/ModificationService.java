@@ -143,6 +143,7 @@ public class ModificationService extends ServiceX {
 					ModificateActivity.instance.get().doLast();
 				stopForeground(true);
 				mNM.cancel(100);
+				instance.clear();
 				return null;
 			}
 			public String buildChanges(){
