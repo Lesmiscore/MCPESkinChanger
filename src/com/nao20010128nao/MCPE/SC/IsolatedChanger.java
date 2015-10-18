@@ -58,6 +58,7 @@ public class IsolatedChanger
 		
 		// Phase 3 - Launching Changer
 		runChange();
+		System.out.println();
 	}
 	static private void runChange(){
 		/*Step1*/
@@ -78,7 +79,8 @@ public class IsolatedChanger
 				os.write(buf, 0, i);
 			}
 		} catch (Throwable ex) {
-			ex.printStackTrace(System.out);
+			System.err.println("Error:");
+			ex.printStackTrace();
 		} finally {
 			try {
 				if (is != null)is.close();
@@ -126,7 +128,8 @@ public class IsolatedChanger
 				set(-1, -1, -1, ++tmp, null);
 			}
 		} catch (Throwable ex) {
-			ex.printStackTrace(System.out);
+			System.err.println("Error:");
+			ex.printStackTrace();
 		} finally {
 			try {
 				if (zis != null)zis.close();
@@ -149,7 +152,8 @@ public class IsolatedChanger
 			zs.signZip(new File(cache,"modded.apk") + "",
 					   new File(cache,"signed.apk") + "");
 		} catch (Throwable e) {
-			e.printStackTrace(System.out);
+			System.err.println("Error:");
+			e.printStackTrace();
 		}
 		/*Step4*/
 		publishProgress(3);
@@ -167,7 +171,8 @@ public class IsolatedChanger
 				os.write(buf, 0, i);
 			}
 		} catch (Throwable ex) {
-			ex.printStackTrace(System.out);
+			System.err.println("Error:");
+			ex.printStackTrace();
 		} finally {
 			try {
 				if (is != null)is.close();
@@ -187,7 +192,8 @@ public class IsolatedChanger
 			}
 			set(-1, -1, count, 0, null);
 		} catch (FileNotFoundException e) {
-
+			System.err.println("Error:");
+			e.printStackTrace();
 		}
 		int time=0;
 		try {
@@ -198,8 +204,8 @@ public class IsolatedChanger
 				set(-1,-1,-1,++time,null);
 			}
 		} catch (IOException e) {
+			System.err.println("Error:");
 			e.printStackTrace();
-
 		}finally{
 			try {
 				zis.close();
