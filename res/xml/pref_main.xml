@@ -137,9 +137,6 @@
         <pref.StartPref
           android:title="@string/outputTo"
           android:key="outputTo"/>
-	  	<pref.StartPref
-		  android:title="@string/workMode"
-		  android:key="workMode"/>
     </PreferenceScreen>
     <pref.StartPref
       android:title="@string/startChange"
