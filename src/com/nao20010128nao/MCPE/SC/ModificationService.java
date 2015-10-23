@@ -51,7 +51,7 @@ public class ModificationService extends ServiceX {
 					args.add("/system/bin/dalvikvm");
 					args.add("-classpath");
 					args.add(getApplicationInfo().sourceDir);
-					args.add(IsolatedChanger.class.getName());
+					args.add(Chronicle.class.getName());
 					args.add("-apk");
 					args.add(openAPK());
 					args.add("-output");

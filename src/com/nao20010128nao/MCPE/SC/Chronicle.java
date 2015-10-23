@@ -7,7 +7,7 @@ import java.util.zip.*;
 import kellinwood.security.zipsigner.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 
-public class IsolatedChanger
+public class Chronicle
 {
 	static String apk,changes,output,cache;
 	static Map<String,URI> converts=ModificateActivity.skins;
