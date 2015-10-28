@@ -8,6 +8,7 @@ import com.nao20010128nao.MC_PE.SkinChanger.*;
 import com.nao20010128nao.SpoofBrowser.classes.*;
 import java.io.*;
 import android.widget.*;
+import java.util.*;
 
 public class SplashActivity extends Activity {
 	@Override
@@ -89,40 +90,24 @@ public class SplashActivity extends Activity {
 						.show();
 					return null;
 				}
-				{
-					try {
-						File cacheDir=new File(getFilesDir(), "cache");
-						cacheDir.mkdirs();
-						new ProcessBuilder().
-							command(new String[]{"/system/bin/rm","-rf",cacheDir.getAbsolutePath()}).
-							directory(cacheDir).
-							start().
-							waitFor();
-					} catch (Throwable ex) {
-
-					}
-					try{
-						File sco=new File(Environment.getExternalStorageDirectory(), "games/com.mojang/minecraft/skinchanger");
-						new ProcessBuilder().
-							command(new String[]{"/system/bin/rm","-rf",sco.getAbsolutePath()}).
-							directory(sco).
-							start().
-							waitFor();
-						sco.delete();
-						new File(getFilesDir(), "vanilla.apk").delete();
-						new File(getFilesDir(), "modded.apk").delete();
-						new File(getFilesDir(), "signed.apk").delete();
-					}catch(Throwable e){
-
-					}
-					try{
-						new File(getFilesDir(),"mcpeCopy_unchecked.apk").delete();
-						if(Tools.getSettings("input.mode", 0, SplashActivity.this)==0){
-							new File(getFilesDir(),"mcpeCopy.apk").delete();
-						}
-					}catch(Throwable e){
-						
-					}
+				try {
+					List<String> args=new ArrayList<>();
+					args.add("/system/bin/dalvikvm");
+					args.add("-classpath");
+					args.add(getApplicationInfo().sourceDir);
+					args.add(CacheDeleter.class.getName());
+					args.add("-data");
+					args.add(getFilesDir().toString());
+					args.add("-cache");
+					args.add(getCacheDir().toString());
+					new ProcessBuilder()
+						.command(args)
+						.directory(getCacheDir())
+						.redirectErrorStream(true)
+						.start();
+					
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
 				if(!new File(getFilesDir(), "zipalign").exists()){
 					
