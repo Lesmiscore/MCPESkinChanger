@@ -108,9 +108,7 @@ public class SplashActivity extends Activity {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				if(!new File(getFilesDir(), "zipalign").exists()){
-					
-				}
+
 				RunOnceApplication.instance.getUuids().load(SplashActivity.this);
 				RunOnceApplication.instance.getUuids().regenUuid();
 				RunOnceApplication.instance.getUuids().save(SplashActivity.this);
