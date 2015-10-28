@@ -10,10 +10,13 @@ import java.net.*;
 import android.net.*;
 import android.content.pm.PackageManager.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
+import android.graphics.*;
 
 public class RunOnceApplication extends Application {
 	boolean isCheckedApp=false;
 	UUIDs uuids=new UUIDs();
+	//public File accentFont=new File(getCacheDir(),"cinzeldecorative.ttf");
+	public Typeface accentFontObj;
 	public static byte[] mcpeApk;
 	public static RunOnceApplication instance;
 
@@ -22,6 +25,7 @@ public class RunOnceApplication extends Application {
 		// TODO: Implement this method
 		super.onCreate();
 		instance = this;
+		accentFontObj=Typeface.createFromAsset(getAssets(),"cinzeldecorative.ttf");
 	}
 	public boolean isCheckedApp() {
 		return isCheckedApp;

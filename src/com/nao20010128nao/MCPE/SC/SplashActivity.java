@@ -7,6 +7,7 @@ import android.util.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
 import com.nao20010128nao.SpoofBrowser.classes.*;
 import java.io.*;
+import android.widget.*;
 
 public class SplashActivity extends Activity {
 	@Override
@@ -18,6 +19,7 @@ public class SplashActivity extends Activity {
 			return;
 		}
 		setContentView(R.layout.splash);
+		((TextView)findViewById(R.id.appName)).setTypeface(RunOnceApplication.instance.accentFontObj);
 		hideActionbar();
 		new AsyncTask<Void,Void,Void>(){
 			public Void doInBackground(Void[] p) {
