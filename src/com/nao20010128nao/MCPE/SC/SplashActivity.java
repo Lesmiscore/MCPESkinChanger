@@ -105,7 +105,6 @@ public class SplashActivity extends Activity {
 						.directory(getCacheDir())
 						.redirectErrorStream(true)
 						.start();
-					
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
