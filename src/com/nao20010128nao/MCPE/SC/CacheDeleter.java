@@ -57,6 +57,24 @@ public class CacheDeleter
 
 			}
 			try{
+				new File(cache, "vanilla.apk").delete();
+				new File(cache, "modded.apk").delete();
+				new File(cache, "signed.apk").delete();
+			}catch(Throwable e){
+
+			}
+			try {
+				new ProcessBuilder().
+					command(new String[]{"/system/bin/rm","-rf",new File(cache).getAbsolutePath()}).
+					directory(new File(cache).getAbsoluteFile()).
+					start().
+					waitFor();
+			} catch (IOException e) {
+				
+			} catch (InterruptedException e) {
+				
+			}
+			try {
 				new File(data,"mcpeCopy_unchecked.apk").delete();
 				if(deleteCopy){
 					new File(data,"mcpeCopy.apk").delete();
