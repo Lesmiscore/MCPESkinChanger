@@ -23,8 +23,8 @@ public class ModificateActivity extends Activity {
 		// TODO: Implement this method
 		super.onCreate(savedInstanceState);
 		instance = new WeakReference<ModificateActivity>(this);
-		if (MainActivity.instance.get() != null)
-			MainActivity.instance.get().finish();
+		if (ControllerActivity.instance.get() != null)
+			ControllerActivity.instance.get().finish();
 		setContentView(R.layout.modder);
 		total = (ProgressBar)findViewById(R.id.pbTotal);
 		component = (ProgressBar)findViewById(R.id.pbComponent);

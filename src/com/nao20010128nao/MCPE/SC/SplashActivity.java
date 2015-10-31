@@ -44,7 +44,7 @@ public class SplashActivity extends Activity {
 								a.cancel();
 								runOnUiThread(new Runnable(){
 										public void run() {
-											MainActivity.instance.get().finish();
+											ControllerActivity.instance.get().finish();
 											finish();
 										}
 									});
@@ -80,7 +80,7 @@ public class SplashActivity extends Activity {
 								a.cancel();
 								runOnUiThread(new Runnable(){
 										public void run() {
-											MainActivity.instance.get().finish();
+											ControllerActivity.instance.get().finish();
 											finish();
 										}
 									});
@@ -117,6 +117,7 @@ public class SplashActivity extends Activity {
 				return null;
 			}
 			public void onPostExecute(Void r) {
+				startActivity(new Intent(SplashActivity.this,ControllerActivity.class));
 				finish();
 			}
 		}.execute();
