@@ -90,6 +90,10 @@
     <string name="appInfo">Internal Application Information</string>
 	<string name="workMode">Application Mode</string>
 
+	<string name="appNotCompiledCorrectly">This app is not compiled correctly!</string>
+	<string name="contactDev_ANCC">Please contact about it with this dialog (Screenshot the screen).</string>
+	<string name="recompileAgain_ANCC">Please recompile this app again. These classes cannot be found:</string>
+	
     <string-array name="checkName">
         <item>Checking Minecraft PE is installed...</item>
         <item>Checking Minecraft PE can be copied...</item>

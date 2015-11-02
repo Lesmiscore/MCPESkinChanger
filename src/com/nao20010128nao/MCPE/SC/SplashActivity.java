@@ -25,6 +25,49 @@ public class SplashActivity extends Activity {
 		new AsyncTask<Void,Void,Void>(){
 			public Void doInBackground(Void[] p) {
 				Looper.prepare();
+				{
+					BufferedReader br=null;
+					Set<String> corruptClasses=new HashSet<>();
+					try {
+						br = new BufferedReader(new InputStreamReader(getAssets().open("names.app.txt")));
+						String s=null;
+						while(null!=(s=br.readLine())){
+							try {
+								Class.forName(s);
+							} catch (ClassNotFoundException e) {
+								corruptClasses.add(s);
+							}
+						}
+					} catch (IOException e) {
+						e.printStackTrace();
+					}finally{
+						try {
+							br.close();
+						} catch (Throwable e) {}
+						corruptClasses.remove(null);
+					}
+					if(!corruptClasses.isEmpty()){
+						StringBuilder sb=new StringBuilder(BuildConfig.DEBUG?getResources().getString(R.string.contactDev_ANCC):getResources().getString(R.string.contactDev_ANCC));
+						sb.append('\n');
+						for(String s:corruptClasses){
+							sb.append(s).append('\n');
+						}
+						sb.setLength(sb.length()-1);//Delete the least "\n"
+						new AlertDialog.Builder(SplashActivity.this)
+							.setTitle(R.string.appNotCompiledCorrectly)
+							.setCancelable(false)
+							.setMessage(sb.toString())
+							.setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener(){
+								public void onClick(DialogInterface a, int b) {
+									Log.e("EMERGENCY","THIS APP IS BROKEN!");
+									System.exit(0);
+								}
+							})
+							.create()
+							.show();
+						return null;
+					}
+				}
 				boolean ok=false;
 				/*Step 1*/
 				for (PackageInfo i:getPackageManager().getInstalledPackages(PackageManager.GET_ACTIVITIES | PackageManager.GET_CONFIGURATIONS)) {
