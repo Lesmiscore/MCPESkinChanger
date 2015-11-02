@@ -22,8 +22,8 @@ public class SplashActivity extends Activity {
 		setContentView(R.layout.splash);
 		((TextView)findViewById(R.id.appName)).setTypeface(RunOnceApplication.instance.accentFontObj);
 		hideActionbar();
-		new AsyncTask<Void,Void,Boolean>(){
-			public Boolean doInBackground(Void[] p) {
+		new AsyncTask<Void,Void,AlertDialog>(){
+			public AlertDialog doInBackground(Void[] p) {
 				Looper.prepare();
 				{
 					BufferedReader br=null;
@@ -34,7 +34,6 @@ public class SplashActivity extends Activity {
 						while(null!=(s=br.readLine())){
 							try {
 								Class.forName(s).getName();
-								getClassLoader().loadClass(s).getName();
 							} catch (Throwable e) {
 								e.printStackTrace();
 								corruptClasses.add(s);
@@ -49,14 +48,14 @@ public class SplashActivity extends Activity {
 						//corruptClasses.remove(null);
 					}
 					Log.d("len",corruptClasses.size()+"");
-					if(!corruptClasses.isEmpty()){
+					if(corruptClasses.size()!=0){
 						StringBuilder sb=new StringBuilder(BuildConfig.DEBUG?getResources().getString(R.string.contactDev_ANCC):getResources().getString(R.string.contactDev_ANCC));
 						sb.append('\n');
 						for(String s:corruptClasses){
 							sb.append(s).append('\n');
 						}
 						sb.setLength(sb.length()-1);//Delete the least "\n"
-						new AlertDialog.Builder(SplashActivity.this)
+						return new AlertDialog.Builder(SplashActivity.this)
 							.setTitle(R.string.appNotCompiledCorrectly)
 							.setCancelable(false)
 							.setMessage(sb.toString())
@@ -66,9 +65,7 @@ public class SplashActivity extends Activity {
 									System.exit(0);
 								}
 							})
-							.create()
-							.show();
-						return false;
+							.create();
 					}
 				}
 				boolean ok=false;
@@ -81,7 +78,7 @@ public class SplashActivity extends Activity {
 					Log.d("dbg_sca", i.packageName);
 				}
 				if (!ok) {
-					new AlertDialog.Builder(SplashActivity.this)
+					return new AlertDialog.Builder(SplashActivity.this)
 						.setTitle(R.string.err_title)
 						.setCancelable(false)
 						.setMessage(getResources().getStringArray(R.array.errors)[0])
@@ -96,9 +93,7 @@ public class SplashActivity extends Activity {
 									});
 							}
 						})
-						.create()
-						.show();
-					return false;
+						.create();
 				}
 				ok = false;
 				/*Step 2*/
@@ -117,7 +112,7 @@ public class SplashActivity extends Activity {
 					err.printStackTrace(System.out);
 				}
 				if (!ok) {
-					new AlertDialog.Builder(SplashActivity.this)
+					return new AlertDialog.Builder(SplashActivity.this)
 						.setTitle(R.string.err_title)
 						.setCancelable(false)
 						.setMessage(getResources().getStringArray(R.array.errors)[1])
@@ -132,9 +127,7 @@ public class SplashActivity extends Activity {
 									});
 							}
 						})
-						.create()
-						.show();
-					return false;
+						.create();
 				}
 				try {
 					List<String> args=new ArrayList<>();
@@ -160,12 +153,14 @@ public class SplashActivity extends Activity {
 				RunOnceApplication.instance.getUuids().save(SplashActivity.this);
 
 				RunOnceApplication.instance.completeCheckApp();
-				return true;
+				return null;
 			}
-			public void onPostExecute(Boolean r) {
-				if(r){
+			public void onPostExecute(AlertDialog r) {
+				if(r==null){
 					startActivity(new Intent(SplashActivity.this,ControllerActivity.class));
 					finish();
+				}else{
+					r.show();
 				}
 			}
 		}.execute();
