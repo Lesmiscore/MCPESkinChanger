@@ -34,6 +34,7 @@ public class SplashActivity extends Activity {
 						while(null!=(s=br.readLine())){
 							try {
 								Class.forName(s);
+								getClassLoader().loadClass(s);
 							} catch (ClassNotFoundException e) {
 								corruptClasses.add(s);
 							}
@@ -46,6 +47,7 @@ public class SplashActivity extends Activity {
 						} catch (Throwable e) {}
 						corruptClasses.remove(null);
 					}
+					Log.d("len",corruptClasses.size()+"");
 					if(!corruptClasses.isEmpty()){
 						StringBuilder sb=new StringBuilder(BuildConfig.DEBUG?getResources().getString(R.string.contactDev_ANCC):getResources().getString(R.string.contactDev_ANCC));
 						sb.append('\n');
