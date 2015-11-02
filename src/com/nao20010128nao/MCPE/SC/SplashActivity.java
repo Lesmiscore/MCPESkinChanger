@@ -22,8 +22,8 @@ public class SplashActivity extends Activity {
 		setContentView(R.layout.splash);
 		((TextView)findViewById(R.id.appName)).setTypeface(RunOnceApplication.instance.accentFontObj);
 		hideActionbar();
-		new AsyncTask<Void,Void,Void>(){
-			public Void doInBackground(Void[] p) {
+		new AsyncTask<Void,Void,Boolean>(){
+			public Boolean doInBackground(Void[] p) {
 				Looper.prepare();
 				{
 					BufferedReader br=null;
@@ -68,7 +68,7 @@ public class SplashActivity extends Activity {
 							})
 							.create()
 							.show();
-						return null;
+						return false;
 					}
 				}
 				boolean ok=false;
@@ -98,7 +98,7 @@ public class SplashActivity extends Activity {
 						})
 						.create()
 						.show();
-					return null;
+					return false;
 				}
 				ok = false;
 				/*Step 2*/
@@ -134,7 +134,7 @@ public class SplashActivity extends Activity {
 						})
 						.create()
 						.show();
-					return null;
+					return false;
 				}
 				try {
 					List<String> args=new ArrayList<>();
@@ -158,29 +158,31 @@ public class SplashActivity extends Activity {
 				RunOnceApplication.instance.getUuids().load(SplashActivity.this);
 				RunOnceApplication.instance.getUuids().regenUuid();
 				RunOnceApplication.instance.getUuids().save(SplashActivity.this);
-				
+
 				RunOnceApplication.instance.completeCheckApp();
-				return null;
+				return true;
 			}
-			public void onPostExecute(Void r) {
-				startActivity(new Intent(SplashActivity.this,ControllerActivity.class));
-				finish();
+			public void onPostExecute(Boolean r) {
+				if(r){
+					startActivity(new Intent(SplashActivity.this,ControllerActivity.class));
+					finish();
+				}
 			}
 		}.execute();
 	}
 
 	@Override
 	public void onBackPressed() {
-		
+
 	}
-	
+
 	public void hideActionbar(){
 		/*It can be called by 1.x and 2.x, but it won't do anything.*/
 		try {
 			Object actbar=getClass().getMethod("getActionBar").invoke(this);
 			actbar.getClass().getMethod("hide").invoke(actbar);
 		} catch (Throwable e) {
-			
+
 		}
 	}
 }
