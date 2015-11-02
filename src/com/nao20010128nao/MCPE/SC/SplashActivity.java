@@ -61,6 +61,8 @@ public class SplashActivity extends Activity {
 							.setMessage(sb.toString())
 							.setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener(){
 								public void onClick(DialogInterface a, int b) {
+									a.cancel();
+									finish();
 									Log.e("EMERGENCY","THIS APP IS BROKEN!");
 									System.exit(0);
 								}
@@ -87,7 +89,6 @@ public class SplashActivity extends Activity {
 								a.cancel();
 								runOnUiThread(new Runnable(){
 										public void run() {
-											ControllerActivity.instance.get().finish();
 											finish();
 										}
 									});
@@ -121,7 +122,6 @@ public class SplashActivity extends Activity {
 								a.cancel();
 								runOnUiThread(new Runnable(){
 										public void run() {
-											ControllerActivity.instance.get().finish();
 											finish();
 										}
 									});
