@@ -49,7 +49,7 @@ public class SplashActivity extends Activity {
 					}
 					Log.d("len",corruptClasses.size()+"");
 					if(corruptClasses.size()!=0){
-						StringBuilder sb=new StringBuilder(BuildConfig.DEBUG?getResources().getString(R.string.contactDev_ANCC):getResources().getString(R.string.contactDev_ANCC));
+						StringBuilder sb=new StringBuilder(BuildConfig.DEBUG?getResources().getString(R.string.recompileAgain_ANCC):getResources().getString(R.string.contactDev_ANCC));
 						sb.append('\n');
 						for(String s:corruptClasses){
 							sb.append(s).append('\n');
