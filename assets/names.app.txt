@@ -19,14 +19,6 @@ com.nao20010128nao.MCPE.SC.ImageHandler
 com.nao20010128nao.MCPE.SC.ImageHandler$ImageHandlerReceiver
 com.nao20010128nao.MCPE.SC.ImageLoader
 com.nao20010128nao.MCPE.SC.Utils
-com.nao20010128nao.MCPE.SC.jobs.impl.AsyncJobRunner
-com.nao20010128nao.MCPE.SC.jobs.impl.SyncJobRunner
-com.nao20010128nao.MCPE.SC.jobs.Job
-com.nao20010128nao.MCPE.SC.jobs.JobArgument
-com.nao20010128nao.MCPE.SC.jobs.JobRunner
-com.nao20010128nao.MCPE.SC.jobs.JobRunner$JobDataHandler
-com.nao20010128nao.MCPE.SC.jobs.JobRunner$JobResult
-com.nao20010128nao.MCPE.SC.jobs.JobRunner$JobResultHandler
 com.nao20010128nao.MCPE.SC.ModificationService
 com.nao20010128nao.MCPE.SC.OpenSourceActivity
 com.nao20010128nao.MCPE.SC.RunOnceApplication
