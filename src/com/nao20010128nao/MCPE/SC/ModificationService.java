@@ -17,6 +17,7 @@ import java.net.*;
 import java.util.*;
 import java.util.zip.*;
 import kellinwood.security.zipsigner.*;
+import com.nao20010128nao.MCPE.SC.methods.*;
 
 public class ModificationService extends ServiceX {
 	Map<String,URI> skins=ModificateActivity.skins;

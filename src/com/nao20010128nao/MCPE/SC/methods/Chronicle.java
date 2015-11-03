@@ -1,4 +1,4 @@
-package com.nao20010128nao.MCPE.SC;
+package com.nao20010128nao.MCPE.SC.methods;
 import java.util.*;
 import java.net.*;
 import joptsimple.*;
@@ -6,6 +6,7 @@ import java.io.*;
 import java.util.zip.*;
 import kellinwood.security.zipsigner.*;
 import com.nao20010128nao.MC_PE.SkinChanger.*;
+import com.nao20010128nao.MCPE.SC.*;
 
 public class Chronicle
 {
