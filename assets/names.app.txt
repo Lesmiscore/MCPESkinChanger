@@ -1,3 +1,5 @@
+com.nao20010128nao.MCPE.SC.methods.Chronicle
+com.nao20010128nao.MCPE.SC.methods.Terrace
 com.nao20010128nao.MCPE.SC.misc.SHablePreferenceActivity
 com.nao20010128nao.MCPE.SC.misc.SmartFindViewActivity
 com.nao20010128nao.MCPE.SC.misc.SmartFindViewListActivity
@@ -26,7 +28,6 @@ com.nao20010128nao.MCPE.SC.SignFileActivity
 com.nao20010128nao.MCPE.SC.Utils$MobNames
 com.nao20010128nao.MCPE.SC.AndroidPackage
 com.nao20010128nao.MCPE.SC.AndroidPackage$AppSnippet
-com.nao20010128nao.MCPE.SC.Chronicle
 com.nao20010128nao.MCPE.SC.UUIDs
 com.nao20010128nao.MCPE.SC.MainActivity
 com.nao20010128nao.MC_PE.SkinChanger.R
