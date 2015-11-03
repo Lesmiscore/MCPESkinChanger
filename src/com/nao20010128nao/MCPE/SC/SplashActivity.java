@@ -9,6 +9,7 @@ import com.nao20010128nao.SpoofBrowser.classes.*;
 import java.io.*;
 import android.widget.*;
 import java.util.*;
+import com.nao20010128nao.MCPE.SC.misc.*;
 
 public class SplashActivity extends Activity {
 	@Override
