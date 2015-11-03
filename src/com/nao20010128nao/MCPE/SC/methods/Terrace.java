@@ -96,26 +96,27 @@ public class Terrace
 		/*Step2*/
 		publishProgress(1);
 		ZipOutputStream zos=null;
-		ZipInputStream zis=null;
+		ZipFile zis=null;
 		set(-1, 1, 0, 0, null);
 		Set<String> toCheck=new HashSet<>();
 		try {
 			set(-1, -1, countZipEntries("vanilla.apk"), 0, null);
-			is = openFileInput("vanilla.apk");
 			os = openFileOutput("modded.apk");
 			zos = new ZipOutputStream(new BufferedOutputStream(os));
-			zis = new ZipInputStream(new BufferedInputStream(is));
+			zis = new ZipFile(new File(cache,"vanilla.apk"));
 			zos.setLevel(8);
 			ZipEntry ze;
 			int tmp=0;
 			byte[] buf=new byte[10000];
-			while ((ze = zis.getNextEntry()) != null) {
+			Enumeration<? extends ZipEntry> entries=zis.entries();
+			while (entries.hasMoreElements()) {
+				ze=entries.nextElement();
 				if (ze.getName().startsWith("META-INF")) {
 					set(-1, -1, -1, ++tmp, null);
 					continue;//don't copy sign data
 				}
 				toCheck.add(ze.getName());
-				InputStream source=zis;
+				InputStream source=zis.getInputStream(ze);
 				if (converts.containsKey(ze.getName())) {
 					source = tryOpen(converts.get(ze.getName()).toString());
 				}
@@ -201,9 +202,11 @@ public class Terrace
 		}
 		int time=0;
 		try {
-			zis=new ZipInputStream(openFileInput("signed.apk"));
+			zis=new ZipFile(new File(cache,"signed.apk"));
 			ZipEntry ze=null;
-			while((ze=zis.getNextEntry())!=null){
+			Enumeration<? extends ZipEntry> entries=zis.entries();
+			while(entries.hasMoreElements()){
+				ze=entries.nextElement();
 				toCheck.remove(ze.getName());
 				set(-1,-1,-1,++time,null);
 			}
