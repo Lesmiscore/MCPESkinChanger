@@ -1,4 +1,4 @@
-package com.nao20010128nao.MCPE.SC;
+package com.nao20010128nao.MCPE.SC.misc;
 import joptsimple.*;
 import java.io.*;
 import android.os.*;
