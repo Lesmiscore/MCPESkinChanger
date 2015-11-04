@@ -20,6 +20,7 @@ import kellinwood.security.zipsigner.*;
 import com.nao20010128nao.MCPE.SC.methods.*;
 
 public class ModificationService extends ServiceX {
+	public static Class[] changerImpl={Chronicle.class,Terrace.class};
 	Map<String,URI> skins=ModificateActivity.skins;
 	public static WeakReference<ModificationService> instance=new WeakReference<>(null);
 	java.lang.Process proc;
@@ -52,7 +53,7 @@ public class ModificationService extends ServiceX {
 					args.add("/system/bin/dalvikvm");
 					args.add("-classpath");
 					args.add(getApplicationInfo().sourceDir);
-					args.add(Chronicle.class.getName());
+					args.add(changerImpl[RunOnceApplication.instance.getChangerImpl()].getName());
 					args.add("-apk");
 					args.add(openAPK());
 					args.add("-output");

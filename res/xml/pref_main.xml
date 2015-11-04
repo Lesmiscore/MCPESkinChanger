@@ -137,6 +137,9 @@
         <pref.StartPref
           android:title="@string/outputTo"
           android:key="outputTo"/>
+		<pref.StartPref
+			android:title="@string/changerImpl"
+			android:key="changerImpl"/>
     </PreferenceScreen>
     <pref.StartPref
       android:title="@string/startChange"

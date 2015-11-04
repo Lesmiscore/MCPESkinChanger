@@ -94,6 +94,8 @@
 	<string name="contactDev_ANCC">Please contact about it with this dialog (Screenshot the screen).</string>
 	<string name="recompileAgain_ANCC">Please recompile this app again. These classes cannot be found:</string>
 	
+	<string name="changerImpl">Change Changer Implementation</string>
+	
     <string-array name="checkName">
         <item>Checking Minecraft PE is installed...</item>
         <item>Checking Minecraft PE can be copied...</item>

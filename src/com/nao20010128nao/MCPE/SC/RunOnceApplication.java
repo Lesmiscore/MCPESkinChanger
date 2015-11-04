@@ -43,6 +43,12 @@ public class RunOnceApplication extends Application {
 	public void setWorkMode(int mode){
 		Tools.setSettings("workMode",mode,this);
 	}
+	public int getChangerImpl(){
+		return Tools.getSettings("changer",0,this);
+	}
+	public void setChangerImpl(int id){
+		Tools.setSettings("changer",id,this);
+	}
 	public UUIDs getUuids() {
 		return uuids;
 	}
