@@ -1,5 +1,6 @@
 com.nao20010128nao.MCPE.SC.methods.Chronicle
 com.nao20010128nao.MCPE.SC.methods.Terrace
+com.nao20010128nao.MCPE.SC.misc.ImageRecompressor
 com.nao20010128nao.MCPE.SC.misc.SHablePreferenceActivity
 com.nao20010128nao.MCPE.SC.misc.SmartFindViewActivity
 com.nao20010128nao.MCPE.SC.misc.SmartFindViewListActivity
