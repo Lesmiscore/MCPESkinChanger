@@ -88,6 +88,12 @@
 	<string name="openSourceLic">オープンソースライセンス</string>
     <string name="appInfo">アプリケーションの内部的情報</string>
 
+	<string name="appNotCompiledCorrectly">このアプリは正しくコンパイルされていません。</string>
+	<string name="contactDev_ANCC">このダイアログの内容を開発者にお伝え下さい(画面をスクリーンショットする事を推奨します).</string>
+	<string name="recompileAgain_ANCC">このアプリを再度コンパイルしてください。ここに列挙されたクラスを発見できませんでした。</string>
+	
+	<string name="changerImpl">変更モジュールを変更</string>
+	
     <string-array name="checkName">
         <item>Minecraft PEがインストールされているかを調べています...</item>
         <item>Minecraft PEのAPKファイルがコピー可能かを調べています...</item>
