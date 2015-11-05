@@ -200,6 +200,29 @@ public class ControllerActivity extends SHablePreferenceActivity {
 					startActivity(new Intent(ControllerActivity.this, AppInfoActivity.class));
 				}
 			});
+		sH("changerImpl", new OnClickListener(){
+				public void onClick(String p1, String p2, String p3) {
+					final int revert=RunOnceApplication.instance.getChangerImpl();
+					new AlertDialog.Builder(ControllerActivity.this).
+						setTitle(R.string.changerImpl).
+						setSingleChoiceItems(R.array.changerImplSelections, revert, new DialogInterface.OnClickListener(){
+							public void onClick(DialogInterface di, int where) {
+								RunOnceApplication.instance.setChangerImpl(where);
+							}
+						}).
+						setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener(){
+							public void onClick(DialogInterface di, int where) {
+								RunOnceApplication.instance.setChangerImpl(revert);
+							}
+						}).
+						setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener(){
+							public void onClick(DialogInterface di, int where) {
+								di.cancel();
+							}
+						}).
+						show();
+					}
+			});
 		try {
 			ImageLoader.startLoadImagesAsync(getApkPath());
 		} catch (PackageManager.NameNotFoundException e) {
