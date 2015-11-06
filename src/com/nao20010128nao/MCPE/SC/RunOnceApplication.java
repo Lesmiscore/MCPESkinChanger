@@ -51,45 +51,6 @@ public class RunOnceApplication extends Application {
 	public UUIDs getUuids() {
 		return uuids;
 	}
-	public void loadMcpeApk(){
-		InputStream is=null;
-		OutputStream os=null;
-		try {
-			os=new FileOutputStream(new File(getExternalCacheDir(),"mcpe.apk"));
-			is = openAPK();
-			byte[]buf=new byte[10000];
-			while (true) {
-				int r=is.read(buf);
-				if(r<=0){
-					break;
-				}
-				os.write(buf,0,r);
-			}
-		} catch (Throwable e) {
-
-		}finally{
-			try {
-				is.close();
-			} catch (Throwable e) {
-
-			}
-			try {
-				os.close();
-			} catch (Throwable e) {
-
-			}
-		}
-	}
-	public InputStream openAPK() throws IOException,PackageManager.NameNotFoundException {
-		switch (Tools.getSettings("input.mode", 0, this)) {
-			case 0://installed
-				return new FileInputStream(createPackageContext("com.mojang.minecraftpe", CONTEXT_IGNORE_SECURITY).getPackageCodePath());
-			case 1://select
-				return tryOpen(Tools.getSettings("input.where", "", this));
-			default:
-				return null;
-		}
-	}
 	public String getApkPath() {
 		switch (Tools.getSettings("input.mode", 0, this)) {
 			case 0://installed
@@ -102,16 +63,6 @@ public class RunOnceApplication extends Application {
 				return Tools.getSettings("input.where", "", this);
 			default:
 				return null;
-		}
-	}
-	public InputStream tryOpen(String uri) throws IOException {
-		Log.d("dbg", "tryOpen:" + uri);
-		if (uri.startsWith("content://")) {
-			return getContentResolver().openInputStream(Uri.parse(uri));
-		} else if (uri.startsWith("/")) {
-			return new FileInputStream(uri);
-		} else {
-			return URI.create(uri).toURL().openConnection().getInputStream();
 		}
 	}
 }
