@@ -1,5 +1,6 @@
 com.nao20010128nao.MCPE.SC.methods.Chronicle
 com.nao20010128nao.MCPE.SC.methods.Terrace
+com.nao20010128nao.MCPE.SC.misc.CacheDeleter
 com.nao20010128nao.MCPE.SC.misc.ImageRecompressor
 com.nao20010128nao.MCPE.SC.misc.SHablePreferenceActivity
 com.nao20010128nao.MCPE.SC.misc.SmartFindViewActivity
@@ -12,7 +13,6 @@ com.nao20010128nao.MCPE.SC.ControllerActivity
 com.nao20010128nao.MCPE.SC.ModificateActivity
 com.nao20010128nao.MCPE.SC.SplashActivity
 com.nao20010128nao.MCPE.SC.AppInfoActivity
-com.nao20010128nao.MCPE.SC.CacheDeleter
 com.nao20010128nao.MCPE.SC.ChangingListEditor
 com.nao20010128nao.MCPE.SC.ChangingListEditor$InternalListAdapter
 com.nao20010128nao.MCPE.SC.ContentFileLocalCopyActivity
