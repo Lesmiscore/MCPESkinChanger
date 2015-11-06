@@ -15,8 +15,7 @@ import android.graphics.*;
 public class RunOnceApplication extends Application {
 	boolean isCheckedApp=false;
 	UUIDs uuids=new UUIDs();
-	//public File accentFont=new File(getCacheDir(),"cinzeldecorative.ttf");
-	public Typeface accentFontObj;
+	public Typeface accentFont;
 	public static byte[] mcpeApk;
 	public static RunOnceApplication instance;
 
@@ -25,7 +24,7 @@ public class RunOnceApplication extends Application {
 		// TODO: Implement this method
 		super.onCreate();
 		instance = this;
-		accentFontObj=Typeface.createFromAsset(getAssets(),"cinzeldecorative.ttf");
+		accentFont=Typeface.createFromAsset(getAssets(),"cinzeldecorative.ttf");
 	}
 	public boolean isCheckedApp() {
 		return isCheckedApp;
