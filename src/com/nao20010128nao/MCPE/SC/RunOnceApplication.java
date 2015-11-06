@@ -24,7 +24,7 @@ public class RunOnceApplication extends Application {
 		// TODO: Implement this method
 		super.onCreate();
 		instance = this;
-		accentFont=Typeface.createFromAsset(getAssets(),"cinzeldecorative.ttf");
+		accentFont=Typeface.createFromAsset(getAssets(),"font.ttf");
 	}
 	public boolean isCheckedApp() {
 		return isCheckedApp;
