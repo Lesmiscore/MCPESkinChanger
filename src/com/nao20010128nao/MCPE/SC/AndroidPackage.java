@@ -5,6 +5,8 @@ import android.content.res.*;
 import android.graphics.drawable.*;
 import java.io.*;
 import java.lang.reflect.*;
+import android.os.*;
+import java.util.*;
 
 // quoted almost code from
 // https://github.com/android/platform_packages_apps_packageinstaller/blob/master/src/com/android/packageinstaller/PackageInstallerActivity.java
@@ -17,6 +19,7 @@ public class AndroidPackage
 	static Class packageParser=declare("PackageParser");
 	static Class packagE=declare("PackageParser$Package");
 	static Class packageUserState=declare("PackageUserState");
+	static Class genPackInfoSet=loadClassGpis();
 	static Class inCl=int.class;
 	static Class declare(String name){
 		try {
@@ -25,6 +28,18 @@ public class AndroidPackage
 			e.printStackTrace();
 			return null;
 		}
+	}
+	static Class loadClassGpis(){
+		if(Build.VERSION.SDK_INT>=23){
+			return Set.class;
+		}else{
+			try {
+				return Class.forName("android.util.ArraySet");
+			} catch (ClassNotFoundException e) {
+				
+			}
+		}
+		return Set.class;
 	}
 	
 	Object parser,packaGE;
@@ -38,7 +53,7 @@ public class AndroidPackage
 			parser = packageParser.newInstance();
 			packaGE = packageParser.getMethod("parseMonolithicPackage", File.class, inCl).invoke(parser, file, 0);
 			packageParser.getMethod("collectManifestDigest", packagE).invoke(parser, packaGE);
-			info = (PackageInfo)packageParser.getMethod("generatePackageInfo", packagE, int[].class, inCl, long.class, long.class, Class.forName("android.util.ArraySet"), packageUserState).invoke(null, packaGE, null, necessaryFlags, 0, 0, null, packageUserState.newInstance());
+			info = (PackageInfo)packageParser.getMethod("generatePackageInfo", packagE, int[].class, inCl, long.class, long.class, genPackInfoSet, packageUserState).invoke(null, packaGE, null, necessaryFlags, 0, 0, null, packageUserState.newInstance());
 		} catch (InvocationTargetException e) {
 			(ex=e).printStackTrace();
 		} catch (IllegalArgumentException e) {
@@ -48,8 +63,6 @@ public class AndroidPackage
 		} catch (IllegalAccessException e) {
 			(ex=e).printStackTrace();
 		} catch (NoSuchMethodException e) {
-			(ex=e).printStackTrace();
-		} catch (ClassNotFoundException e) {
 			(ex=e).printStackTrace();
 		}
 		if(info==null){
