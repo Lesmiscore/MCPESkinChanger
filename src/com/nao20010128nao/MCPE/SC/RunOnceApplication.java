@@ -48,6 +48,12 @@ public class RunOnceApplication extends Application {
 	public void setChangerImpl(int id){
 		Tools.setSettings("changer",id,this);
 	}
+	public boolean getLiteMode(){
+		return Tools.getSettings("lite",false,this);
+	}
+	public void setLiteMode(boolean value){
+		Tools.setSettings("lite",value,this);
+	}
 	public UUIDs getUuids() {
 		return uuids;
 	}

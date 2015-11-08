@@ -20,8 +20,12 @@ public class SplashActivity extends Activity {
 			finish();
 			return;
 		}
-		setContentView(R.layout.splash);
-		((TextView)findViewById(R.id.appName)).setTypeface(RunOnceApplication.instance.accentFont);
+		if(RunOnceApplication.instance.getLiteMode()){
+			setContentView(R.layout.splashlite);
+		}else{
+			setContentView(R.layout.splash);
+			((TextView)findViewById(R.id.appName)).setTypeface(RunOnceApplication.instance.accentFont);
+		}
 		hideActionbar();
 		new AsyncTask<Void,Void,AlertDialog>(){
 			public AlertDialog doInBackground(Void[] p) {

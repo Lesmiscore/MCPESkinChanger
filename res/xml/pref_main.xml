@@ -157,6 +157,12 @@
           android:title="@string/plugins"
           android:key="plugins"/>
     </PreferenceScreen>
+	<PreferenceScreen
+		android:title="@string/appSettings">
+        <CheckBoxPreference
+			android:title="@string/liteMode"
+			android:key="lite"/>
+    </PreferenceScreen>
     <PreferenceScreen
       android:title="@string/about">
         <pref.StartPref
