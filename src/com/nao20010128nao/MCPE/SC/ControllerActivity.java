@@ -130,7 +130,6 @@ public class ControllerActivity extends SHablePreferenceActivity {
 							public void onClick(DialogInterface di, int where) {
 								switch (Tools.getSettings("input.mode", 0, ControllerActivity.this)) {
 									case 0://installed
-										startActivity(new Intent(ControllerActivity.this, SplashActivity.class));
 										break;
 									case 1://select
 										startActivityForResult(new Intent(Intent.ACTION_GET_CONTENT).setType("application/vnd.android.package-archive"), 456);
