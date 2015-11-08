@@ -224,7 +224,8 @@ public class ControllerActivity extends SHablePreferenceActivity {
 					}
 			});
 		try {
-			ImageLoader.startLoadImagesAsync(getApkPath());
+			if(!RunOnceApplication.instance.getLiteMode())
+				ImageLoader.startLoadImagesAsync(getApkPath());
 		} catch (PackageManager.NameNotFoundException e) {
 			
 		}
@@ -292,6 +293,8 @@ public class ControllerActivity extends SHablePreferenceActivity {
 						PackageInfo info=pak.getResult();
 						if ("com.mojang.minecraftpe".equals(info.packageName)) {
 							unchecked.renameTo(checked);
+							if(!RunOnceApplication.instance.getLiteMode())
+								ImageLoader.startLoadImagesAsync(checked.toString());
 						} else {
 							ApplicationInfo appInfo=info.applicationInfo;
 							AndroidPackage.AppSnippet as=AndroidPackage.getAppSnippet(this, appInfo, unchecked);
