@@ -60,6 +60,7 @@ public class FilteredMap extends HashMap<String,URI> {
 	}
 	private class PathSet extends HashSet<String> {
 		public PathSet(Set<String> base){
+			super(base);
 			addAll(base);
 		}
 		@Override
