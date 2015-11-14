@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="libnao20010128nao">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/libnao20010128nao.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

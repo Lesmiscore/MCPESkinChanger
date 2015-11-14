@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="Bat">蝙蝠</string>
+  <string name="Blaze">烈焰人</string>
+  <string name="Chicken">鸡</string>
+  <string name="Cow">牛</string>
+  <string name="Creeper">爬行者</string>
+  <string name="GhastNormal">恶魂</string>
+  <string name="MagmaCube">岩浆怪</string>
+  <string name="Mooshroom">哞菇</string>
+  <string name="Pig">猪</string>
+  <string name="ZombiePigman">僵尸猪人</string>
+  <string name="Sheep">羊</string>
+  <string name="SilverFish">蠹虫</string>
+  <string name="Skeleton">骷髅</string>
+  <string name="Slime">史莱姆</string>
+  <string name="SnowGolem">雪傀儡</string>
+  <string name="Squid">鱿鱼</string>
+  <string name="IronGolem">铁傀儡</string>
+  <string name="WolfNormal">狼</string>
+  <string name="Zombie">僵尸</string>
+  <string name="AlexN">Alex</string>
+  <string name="Steve">Steve</string>
+  <string name="SteveN">Steve</string>
+</resources>

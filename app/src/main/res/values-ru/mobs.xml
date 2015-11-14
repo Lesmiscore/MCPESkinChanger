@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="Bat">Летучая мышь</string>
+  <string name="Blaze">Ифрит</string>
+  <string name="Chicken">Курица</string>
+  <string name="Cow">Корова</string>
+  <string name="Creeper">Крипер</string>
+  <string name="GhastNormal">Гаст</string>
+  <string name="MagmaCube">Адский слизень</string>
+  <string name="Mooshroom">Мууухомор</string>
+  <string name="Pig">Свинья</string>
+  <string name="ZombiePigman">Свинозомби</string>
+  <string name="Sheep">Овца</string>
+  <string name="SilverFish">Чешуйница</string>
+  <string name="Skeleton">Скелет</string>
+  <string name="Slime">Слизень</string>
+  <string name="SnowGolem">Снеговик</string>
+  <string name="Squid">Спрут</string>
+  <string name="IronGolem">Железный голем</string>
+  <string name="WolfNormal">Волк</string>
+  <string name="Zombie">Зомби</string>
+  <string name="AlexN">Алекс</string>
+  <string name="Steve">Стив</string>
+  <string name="SteveN">Стив</string>
+</resources>

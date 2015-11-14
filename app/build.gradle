@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.nao20010128nao.MC_PE.SkinChanger"
+        minSdkVersion 8
+        targetSdkVersion 23
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile files('libs/android-support-v4a7cr.jar')
+    compile files('libs/bcprov-jdk16-1.46.jar')
+    compile files('libs/jopt-simple-4.9.jar')
+    compile files('libs/kellinwood-logging-android-1.4.jar')
+    compile files('libs/kellinwood-logging-lib-1.1.jar')
+    compile files('libs/kellinwood-logging-log4j-1.0.jar')
+    compile files('libs/libnao20010128nao.jar')
+    compile files('libs/log4j-1.2.14.jar')
+    compile files('libs/sc-light-jdk15on-1.47.0.2.jar')
+    compile files('libs/scpkix-jdk15on-1.47.0.2.jar')
+    compile files('libs/scprov-jdk15on-1.47.0.2.jar')
+    compile files('libs/zipio-lib-1.8.jar')
+    compile files('libs/zipsigner-lib-1.17.jar')
+    compile files('libs/zipsigner-lib-optional-1.16.jar')
+}
