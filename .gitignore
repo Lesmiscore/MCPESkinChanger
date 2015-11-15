@@ -3,3 +3,4 @@ gen/
 obj/
 libs/*/*.so
 app/build/*
+.gradle/
