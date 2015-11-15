@@ -93,6 +93,8 @@
 	<string name="recompileAgain_ANCC">このアプリを再度コンパイルしてください。ここに列挙されたクラスを発見できませんでした。</string>
 	
 	<string name="changerImpl">変更モジュールを変更</string>
+	<string name="appSettings">アプリ設定</string>
+	<string name="liteMode">ライトモード</string>
 	
     <string-array name="checkName">
         <item>Minecraft PEがインストールされているかを調べています...</item>
