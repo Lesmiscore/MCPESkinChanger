@@ -4,3 +4,4 @@ obj/
 libs/*/*.so
 app/build/*
 .gradle/
+build/
