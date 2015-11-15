@@ -19,7 +19,7 @@ android {
 }
 
 dependencies {
-    compile files('libs/android-support-v4a7cr')
+    compile files('libs/android-support-v4a7cr.jar')
     compile files('libs/bcprov-jdk16-1.46.jar')
     compile files('libs/jopt-simple-4.9.jar')
     compile files('libs/kellinwood-logging-android-1.4.jar')
