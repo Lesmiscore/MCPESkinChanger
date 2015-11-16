@@ -17,6 +17,7 @@ public class SplashActivity extends Activity {
 		// TODO: Implement this method
 		super.onCreate(savedInstanceState);
 		if (RunOnceApplication.instance.isCheckedApp()) {
+			startActivity(new Intent(SplashActivity.this,ControllerActivity.class));
 			finish();
 			return;
 		}
