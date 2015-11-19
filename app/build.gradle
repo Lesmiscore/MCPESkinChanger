@@ -23,7 +23,7 @@ android {
             zipAlignEnabled true
         }
         debug {
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
         }
     }
 }
